@@ -20,10 +20,8 @@
 
             <div class="title-label">About Me</div>
         </div>
-        <div class="content-area">
-            
+        <div class="content-area">            
             <img src="https://raw.githubusercontent.com/DanielVMorgan/classic/main/images/headshot.png" class="round-cropped-image" alt="Rounded Icon">
-
             <a href="#" class="icon-button upper-right-corner-button" title="Home">
                 <img src="https://raw.githubusercontent.com/DanielVMorgan/classic/main/images/home.svg" alt="Home icon">               
             </a>
@@ -32,40 +30,11 @@
             </a>
             <a href="#" class="icon-button lower-right-corner-button" title="Next">             
                 <img src="https://raw.githubusercontent.com/DanielVMorgan/classic/main/images/hand-pointing-right.svg" alt="Hand icon">
-            </a>      
+            </a>
+
         </div>
     </div>
 
-
-    <script>
-        const windowEl = document.getElementById('window');
-        const titleBar = document.getElementById('titleBar');
-      
-        let isDragging = false;
-        let offsetX = 0, offsetY = 0;
-      
-        titleBar.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          const rect = windowEl.getBoundingClientRect();
-          offsetX = e.clientX - rect.left;
-          offsetY = e.clientY - rect.top;
-          document.body.style.cursor = 'move';
-        });
-      
-        document.addEventListener('mouseup', () => {
-          isDragging = false;
-          document.body.style.cursor = 'default';
-        });
-      
-        document.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-            const x = e.clientX - offsetX;
-            const y = e.clientY - offsetY;
-            windowEl.style.left = `${x}px`;
-            windowEl.style.top = `${y}px`;
-          }
-        });
-      </script>
 
 </body>
 

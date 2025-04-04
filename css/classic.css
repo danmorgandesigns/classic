@@ -123,9 +123,10 @@ body {
 
 .hypercard-window {
     width: calc(100% - 20px);
-    max-width: 512px;
+    max-width: 640px;
+    min-width: 300px;
     height: auto;                /* ← allow natural content height */
-    min-height: 342px;           /* ← still keeps minimum height for desktop look */
+    min-height: 480px;           /* ← still keeps minimum height for desktop look */
     max-height: calc(100vh - 20px); /* ← optional: limit height on small screens */
     position: absolute;
     top: 20px;
@@ -249,11 +250,10 @@ body {
 
 .content-area {
     position: absolute;
-    top: 21px;
+    top: 23px;
     left: 2px;
     right: 2px;
     bottom: 2px;
-    border: 2px inset black;
     background: white;
     box-sizing: border-box;
 }
