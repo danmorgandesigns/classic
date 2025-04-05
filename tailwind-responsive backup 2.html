@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+    <!-- Window container -->
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+
+
+        <!-- Title bar -->
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                HyperCard
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+
+        <!-- Content area -->
+
+        <!-- PNG image -->
+        <img src="images/headshot.png" alt="Dan Morgan" class="absolute top-8 left-3 w-[150px] h-[150px] rounded-full" />
+
+    <img src="images/hello.png" alt="Hello" class="absolute top-20 left-180 w-[50px]" />
+        <!-- Top-right icon button -->
+        <button id="icon-top-right" class="icon-button absolute top-10 right-3 w-8 h-8">
+            <img src="images/home.svg" alt="Top Right Icon" />
+        </button>
+
+
+        <div
+            class="absolute top-[200px] left-[80px] right-[80px] mt-2 p-2 border border-black shadow-[1px_1px_0_black] bg-white overflow-auto normal-text leading-loose text-center">
+            <p>Hi!</p>
+            <p>I design things.</p>
+            <p></p>
+            <p>I’m a graphic and software designer in Kansas City.</p>
+            <p>I used to be a farmer and agronomist.</p>
+            <p>I’d prefer to be outside on a trail.</p>
+        
+        </div>
+
+
+        <!-- Bottom-left icon button -->
+        <button id="icon-bottom-left " class="icon-button absolute bottom-1 left-3 w-8 h-8">
+            <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+        </button>
+
+        <!-- Bottom-right icon button -->
+        <button id="icon-bottom-right" class="icon-button absolute bottom-1 right-3 w-8 h-8">
+            <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+        </button>
+
+        <!-- </div> -->
+
+
+
+
+    </div>
+
+</body>
+<script>
+    document.getElementById('icon-top-right').addEventListener('click', () => {
+        alert('Top-right icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-left').addEventListener('click', () => {
+        alert('Bottom-left icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-right').addEventListener('click', () => {
+        alert('Bottom-right icon clicked!');
+    });
+</script>
+
+</html>

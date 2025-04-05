@@ -4,6 +4,10 @@ body {
     height: 100vh;
     
 }
+.bg-mac-os {
+    background: #9F9F9F;
+
+}
 
 
 
@@ -125,36 +129,26 @@ body {
     width: calc(100% - 20px);
     max-width: 640px;
     min-width: 300px;
-    height: auto;                /* ← allow natural content height */
-    min-height: 480px;           /* ← still keeps minimum height for desktop look */
-    max-height: calc(100vh - 20px); /* ← optional: limit height on small screens */
+    min-height: 480px;
+    max-height: calc(100vh - 20px);
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0;
-    border: 1px solid black;
-    background: white;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     cursor: pointer;
-    overflow: auto;
 }
 
-
-.title-bar {
-    position: relative; /* ← This is key */
-    height: 22px;
-    padding-top: 3px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+.normal-text {
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    font-weight: 400;
+}
+.title-bar {
+    height: 22px;
+    padding-top: 2px;
     font-family: 'Chicago', sans-serif;
-    font-weight: normal;
-    background: white;
-    border-bottom: 1px solid black;
+    font-size: 14px;
     cursor: pointer;
     user-select: none;
     box-sizing: border-box;
@@ -203,8 +197,8 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;        /* makes it a circle */
     overflow: hidden;          /* hides anything outside the bounds */
     object-fit: cover;         /* scales and crops to fill the circle */
@@ -222,30 +216,16 @@ body {
     left: 50%;
     width: calc(100% - 8px);
     height: 1px;
-    background: #000000;
+    background-color: #000;
     transform: translateX(-50%);
 }
 
-/* Position each line */
-.titlebar-pinstripe:nth-of-type(1) {
-    top: 4px;
-}
-
-.titlebar-pinstripe:nth-of-type(2) {
-    top: 7px;
-}
-
-.titlebar-pinstripe:nth-of-type(3) {
-    top: 10px;
-}
-
-.titlebar-pinstripe:nth-of-type(4) {
-    top: 13px;
-}
-
-.titlebar-pinstripe:nth-of-type(5) {
-    top: 16px;
-}
+/* Position each line vertically within the title bar */
+.titlebar-pinstripe:nth-of-type(1) { top: 4px; }
+.titlebar-pinstripe:nth-of-type(2) { top: 7px; }
+.titlebar-pinstripe:nth-of-type(3) { top: 10px; }
+.titlebar-pinstripe:nth-of-type(4) { top: 13px; }
+.titlebar-pinstripe:nth-of-type(5) { top: 16px; }
 
 
 .content-area {
@@ -273,3 +253,20 @@ body {
 .icon-button:active img {
     filter: invert(1);
 }
+
+.home-text-box {
+    width: 400px;
+    height: 200px;
+    border-width: 1px;
+    border-color: black;
+    box-shadow: 1px 1px 0 black;
+}
+
+@keyframes colorTransition {
+    from {
+      filter: grayscale(100%);
+    }
+    to {
+      filter: grayscale(0);
+    }
+  }

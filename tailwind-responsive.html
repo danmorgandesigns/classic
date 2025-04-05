@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+    <!-- Window container -->
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+
+
+        <!-- Title bar -->
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                Hello
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+
+        <!-- Content area -->
+
+        <!-- PNG image -->
+        <img src="images/headshot-color.png" alt="Dan Morgan" class="absolute top-8 left-3 w-[150px] h-[150px] filter grayscale"
+        style="animation: colorTransition 2s ease forwards 2s;" />
+
+
+        <img src="images/hello.png" alt="Hello"
+     class="absolute top-20 left-1/2 transform -translate-x-1/2 w-[250px] filter grayscale"
+     style="animation: colorTransition 2s ease forwards 2s;" />
+
+        <!-- Top-right icon button -->
+        <button id="icon-top-right" class="icon-button absolute top-10 right-3 w-8 h-8">
+            <img src="images/home.svg" alt="Top Right Icon" />
+        </button>
+
+
+        <div class="absolute top-[200px] left-[80px] right-[80px] mt-2 p-2 border border-black shadow-[1px_1px_0_black] bg-white overflow-auto normal-text leading-loose text-center">
+            <p>I design things.</p>
+          
+            <img src="images/apple.png" alt="Apple"
+                 class="mx-auto w-[20px] filter grayscale"
+                 style="animation: colorTransition 2s ease forwards 2s;" />
+          
+            <p>I’m a graphic and software designer in Kansas City.</p>
+            <p>I used to be a farmer and agronomist.</p>
+            <p>I’d prefer to be outside on a trail.</p>
+          </div>
+
+
+        <!-- Bottom-left icon button -->
+        <button id="icon-bottom-left " class="icon-button absolute bottom-1 left-3 w-8 h-8">
+            <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+        </button>
+
+        <!-- Bottom-right icon button -->
+        <button id="icon-bottom-right" class="icon-button absolute bottom-1 right-3 w-8 h-8">
+            <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+        </button>
+
+        <!-- </div> -->
+
+
+
+
+    </div>
+
+</body>
+<script>
+    document.getElementById('icon-top-right').addEventListener('click', () => {
+        alert('Top-right icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-left').addEventListener('click', () => {
+        alert('Bottom-left icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-right').addEventListener('click', () => {
+        alert('Bottom-right icon clicked!');
+    });
+</script>
+
+</html>

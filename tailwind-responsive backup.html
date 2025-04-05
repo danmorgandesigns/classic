@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+    <!-- Window container -->
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+
+
+        <!-- Title bar -->
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                HyperCard
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+
+        <!-- Content area -->
+
+        <div class="relative w-full max-w-[400px] border border-black bg-white shadow-[1px_1px_0_black]">
+            <!-- Top row with PNG and right column -->
+            <div class="flex">
+              <!-- PNG in the upper left -->
+              <img src="images/headshot.png" alt="Dan Morgan" 
+                   class="w-[150px] h-[150px] object-cover" />
+          
+              <!-- Right column: top-right icon and responsive text box -->
+              <div class="flex-1 flex flex-col">
+                <!-- Top-right icon button -->
+                <button id="icon-top-right" class="self-end w-8 h-8">
+                  <img src="images/home.svg" alt="Top Right Icon" />
+                </button>
+          
+                <!-- Responsive text box -->
+                <div class="mt-2 p-2 border border-black shadow-[1px_1px_0_black] bg-white text-sm overflow-auto">
+                  <p>
+                    This is a responsive text box with dynamic content. As the viewport shrinks, the box gets narrower and the text wraps—making it taller.
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+
+
+
+        <!-- Bottom-left icon button -->
+        <button id="icon-bottom-left" class="absolute bottom-1 left-3 w-8 h-8">
+            <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+        </button>
+
+        <!-- Bottom-right icon button -->
+        <button id="icon-bottom-right" class="absolute bottom-1 right-3 w-8 h-8">
+            <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+        </button>
+
+        <!-- </div> -->
+
+
+
+
+    </div>
+
+</body>
+<script>
+    document.getElementById('icon-top-right').addEventListener('click', () => {
+        alert('Top-right icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-left').addEventListener('click', () => {
+        alert('Bottom-left icon clicked!');
+    });
+
+    document.getElementById('icon-bottom-right').addEventListener('click', () => {
+        alert('Bottom-right icon clicked!');
+    });
+</script>
+
+</html>
