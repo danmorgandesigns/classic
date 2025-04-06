@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DanMorganDesigns</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/classic.css" rel="stylesheet">
 </head>
@@ -26,22 +25,18 @@
             <div class="titlebar-pinstripe"></div>
             <div class="titlebar-pinstripe"></div>
         </div>
-        <!-- Ensure the grid grows to fill the window -->
-        <div class="grid grid-cols-[minmax(50px,150px)_minmax(150px,1fr)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-1 flex-1 p-2">
+        
+        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
+
             <!-- Top Row -->
-            <div class=" p-1 min-w-0 flex items-center justify-center">
-
-            </div>
-
-            <div class=" p-2 flex items-center justify-center">
-
-            </div>
-
-            <div class=" min-w-0 box-border flex items-start justify-end">
-                <button id="icon-top-right" class="icon-button w-8 h-8 p-0 m-0">
-                    <img src="images/home.svg" alt="Top Right Icon" class="w-full h-full" />
+            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
+                <button id="home-button" class="icon-button w-8 h-8">
+                    <img src="images/home.svg" alt="Home" />
                 </button>
-            </div>
+                <button id="mail-button" class="icon-button w-8 h-8">
+                    <img src="images/mail.svg" alt="Contact Me" />
+                </button>
+            </div>   
 
             <!-- Middle Row: Expands vertically, text at the top -->
             <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
@@ -59,30 +54,33 @@
 
             <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
             <div class=" p-2 col-span-3 row-start-3 flex items-end justify-between">
-                <button id="icon-bottom-left" class="icon-button w-8 h-8">
+                <button id="previous-button" class="icon-button w-8 h-8">
                     <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
                 </button>
-                <button id="icon-bottom-right" class="icon-button w-8 h-8">
+                <button id="next-button" class="icon-button w-8 h-8">
                     <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
                 </button>
             </div>
         </div>
     </div>
 
+    <script>
+          document.getElementById('mail-button')?.addEventListener('click', () => {
+    window.location.href = 'contact-me.html';
+  });
+        document.getElementById('home-button')?.addEventListener('click', () => {
+            window.location.href = 'home.html';
+        });    
+        document.getElementById('previous-button')?.addEventListener('click', () => {
+            window.location.href = 'now.html';
+        });
+    
+        document.getElementById('next-button')?.addEventListener('click', () => {
+            window.location.href = 'portfolio.html';
+        });
+    
+        document.addEventListener("touchstart", function () { }, true);
+    </script>
+
 </body>
-<script>
-document.getElementById('icon-top-right').addEventListener('click', () => {
-  window.location.href = 'home.html';
-});
-    document.getElementById('icon-bottom-left').addEventListener('click', () => {
-        window.location.href = 'now.html';
-    });
-
-    document.getElementById('icon-bottom-right').addEventListener('click', () => {
-        window.location.href = 'portfolio.html';
-    });
-
-    document.addEventListener("touchstart", function() {}, true);
-</script>
-
 </html>

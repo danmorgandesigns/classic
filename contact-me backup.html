@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+    <!-- Window container -->
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                Contact Me
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+        <!-- Ensure the grid grows to fill the window -->
+        <div class="grid grid-cols-[minmax(50px,150px)_minmax(150px,1fr)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-1 flex-1 p-2">
+            <!-- Top Row -->
+            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
+              <button id="home-button" class="icon-button w-8 h-8">
+                  <img src="images/home.svg" alt="Home" />
+              </button>
+              <button id="mail-button" class="icon-button w-8 h-8">
+                  <img src="images/mail.svg" alt="Contact Me" />
+              </button>
+          </div>
+
+            <!-- Middle Row: Expands vertically, text at the top -->
+            <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
+              <div class="container mx-auto px-4 py-10">
+                <div class="bg-white p-6 sm:max-w-md w-full mx-auto">
+                    <h2 class="heading mb-4">Contact Me</h2>
+                    <form id="contactForm" class="space-y-4">
+                        <!-- Name -->
+                        <div>
+                          <label for="name" class="block icon-label">Name</label>
+                          <input type="text" id="name" name="name" class="classic-form-field w-full" required />
+                        </div>                        
+            
+                        <!-- Email Address -->
+                        <div>
+                            <label for="email" class="block icon-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="classic-form-field w-full" required />
+                        </div>
+            
+                        <!-- Comments -->
+                        <div>
+                            <label for="comments" class="block icon-label">Comments</label>
+                            <textarea id="comments" name="comments" rows="3" class="classic-form-field w-full" required></textarea>
+                        </div>
+            
+                        <!-- Submit Button -->
+                        <div class="flex justify-end">
+                          <button type="submit" class="classic-default-button">
+                            Submit
+                          </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Confirmation Dialog -->
+            <div id="confirmationDialog" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
+                <div class="bg-white rounded-xl p-6 max-w-sm w-full shadow-xl text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Thank you!</h3>
+                    <p class="text-gray-600 mb-6">Your message has been sent.</p>
+                    <button id="confirmButton" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                        OK
+                    </button>
+                </div>
+            </div>
+            </div>
+
+            <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
+            <div class=" p-2 col-span-3 row-start-3 flex items-end justify-between">
+                <button id="previous-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+                </button>
+                <button id="next-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      document.getElementById('home-button')?.addEventListener('click', () => {
+          window.location.href = 'home.html';
+      });    
+      document.getElementById('previous-button')?.addEventListener('click', () => {
+          window.location.href = 'about-me.html';
+      });
+  
+      document.getElementById('next-button')?.addEventListener('click', () => {
+          window.location.href = 'home.html';
+      });
+  
+      document.addEventListener("touchstart", function () { }, true);
+
+
+
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent actual submission
+        document.getElementById("confirmationDialog").classList.remove("hidden");
+    });
+
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        // Hide dialog
+        document.getElementById("confirmationDialog").classList.add("hidden");
+        // Redirect to home.html
+        window.location.href = "home.html";
+    });
+
+  </script>
+
+
+</body>
+</html>

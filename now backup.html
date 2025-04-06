@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DanMorganDesigns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/classic.css" rel="stylesheet">
 </head>
@@ -25,23 +26,28 @@
             <div class="titlebar-pinstripe"></div>
             <div class="titlebar-pinstripe"></div>
         </div>
-
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
-
+        <!-- Ensure the grid grows to fill the window -->
+        <div class="grid grid-cols-[minmax(50px,150px)_minmax(150px,1fr)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-1 flex-1 p-2">
             <!-- Top Row -->
-            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
-                <button id="home-button" class="icon-button w-8 h-8">
-                    <img src="images/home.svg" alt="Home" />
+            <div class=" p-1 min-w-0 flex items-center justify-center">
+                <button id="home-button" class="icon-button w-8 h-8 p-0 m-0">
+                    <img src="images/home.svg" alt="Top Right Icon" class="w-full h-full" />
                 </button>
-                <button id="mail-button" class="icon-button w-8 h-8">
-                    <img src="images/mail.svg" alt="Contact Me" />
-                </button>
-            </div>           
+            </div>
 
+            <div class=" p-2 flex items-center justify-center">
+
+            </div>
+
+            <div class=" min-w-0 box-border flex items-start justify-end">
+                <button id="mail-button" class="icon-button w-8 h-8 p-0 m-0">
+                    <img src="images/mail.svg" alt="Top Right Icon" class="w-full h-full" />
+                </button>
+            </div>
 
             <!-- Middle Row: Expands vertically, text at the top -->
             <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
-                <div class="mx-auto inline-block max-w-full py-2 px-6 border border-black shadow-[2px_2px_0_black] bg-white overflow-auto">
+                <div class="mx-auto inline-block max-w-full py-2 px-6 border border-black shadow-[1px_1px_0_black] bg-white overflow-auto">
                     <h1>What I'm Doing Now</h1>
                     <p></p>
                     <span class="normal-text leading-tight space-y-2">            

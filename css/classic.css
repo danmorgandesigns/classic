@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Chicago';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 body {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     background: #eee;
     height: 100vh;
@@ -11,19 +23,11 @@ body {
 
 
 
-@font-face {
-    font-family: 'Chicago';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff') format('woff'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
 .icon-label {
-    font-family: 'Chicago', sans-serif;
-    font-size: 16px;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-weight: 300;
+    font-size: 14px;
     color: black;
 }
 .classic-standard-button {
@@ -55,7 +59,7 @@ body {
     color: black;
     background: white;
     border-radius: 12px;
-    padding: 5px 20px;
+    padding: 3px 20px;
     border: 3px solid black;
     position: relative;
     cursor: pointer;
@@ -129,6 +133,50 @@ body {
     color: white;
 }
 
+.classic-form-field {
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 black;
+    padding: 0.25rem; /* optional, for spacing inside */
+  }
+
+  .classic-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .classic-dismiss-dialog {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 black;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dialog-titlebar {
+    height: 10px;
+    border-bottom: 1px solid black;
+    background-image: url("../images/modal-pattern.png");
+    background-repeat: repeat;
+    background-size: 4px 4px;
+    background-color: transparent;
+  
+    image-rendering: pixelated;         /* 💥 KEY: Forces pixel rendering */
+    image-rendering: crisp-edges;       /* For Safari fallback */
+  }
+  
+  .dialog-content {
+    padding: 1rem;
+    text-align: center;
+  }
+
 
 .hypercard-window {
     width: calc(100% - 20px);
@@ -141,22 +189,25 @@ body {
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
+    box-shadow: 2px 2px 0 black;
     cursor: pointer;
 }
 
 .normal-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
-h1 {
+.heading, h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    text-align: center;
     line-height: 36px;
 }
+
+
+
 .title-bar {
     height: 22px;
     padding-top: 2px;
@@ -284,3 +335,9 @@ h1 {
         filter: grayscale(0);
     }
 }
+
+@media (min-width: 500px) {
+    .custom-two-col {
+      flex-direction: row;
+    }
+  }
