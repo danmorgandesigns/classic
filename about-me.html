@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+    <!-- Window container -->
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                About Me
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+        <!-- Ensure the grid grows to fill the window -->
+        <div class="grid grid-cols-[minmax(50px,150px)_minmax(150px,1fr)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-1 flex-1 p-2">
+            <!-- Top Row -->
+            <div class=" p-1 min-w-0 flex items-center justify-center">
+
+            </div>
+
+            <div class=" p-2 flex items-center justify-center">
+
+            </div>
+
+            <div class=" min-w-0 box-border flex items-start justify-end">
+                <button id="icon-top-right" class="icon-button w-8 h-8 p-0 m-0">
+                    <img src="images/home.svg" alt="Top Right Icon" class="w-full h-full" />
+                </button>
+            </div>
+
+
+            <div class="p-2 col-span-3 row-start-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
+                
+                  <!-- Left Cell -->
+                  <div class="flex flex-col items-center justify-end">
+                    <div class="bg-[#E5E5E5] rounded-[30px] h-[85px] w-full px-4 flex items-center justify-between">
+                      <img src="images/illustrator.png" alt="Adobe Illustrator" class="w-[40px] h-[40px] ml-[25px]" />
+                      <img src="images/indesign.png" alt="Adobe Indesign" class="w-[40px] h-[40px]" />
+                      <img src="images/photoshop.png" alt="Adobe Photoshop" class="w-[40px] h-[40px] mr-[25px]" />
+                    </div>
+                  </div>
+              
+                  <!-- Right Cell -->
+                  <div class="flex flex-col items-center justify-end">
+                    <div class="bg-[#E5E5E5] rounded-[30px] h-[85px] w-full px-4 flex items-center justify-between">
+                      <img src="images/acrobat.png" alt="Adobe Acrobat" class="w-[40px] h-[40px] ml-[25px]" />
+                      <img src="images/figma.png" alt="Figma" class="w-[40px] h-[40px]" />
+                      <img src="images/miro.png" alt="Miro" class="w-[40px] h-[40px] mr-[25px]" />
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="p-2 col-span-3 row-start-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
+                  
+                  <!-- Left cell (unchanged) -->
+                  <div class="flex flex-col items-center justify-end">
+                    <div class="bg-[#E5E5E5] rounded-[30px] h-[180px] w-full">
+                      <!-- content here -->
+                    </div>
+                  </div>
+                  
+                  <!-- Right column (stacked content, wraps under on small screens) -->
+                  <div class="flex flex-col gap-1 h-full">
+                    
+                    <div class="flex items-center justify-center">
+                      <div class="bg-[#E5E5E5] rounded-[30px] h-[85px] w-full">
+                        <!-- top right content -->
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                      <div class="bg-[#E5E5E5] rounded-[30px] h-[85px] w-full">
+                        <!-- bottom right content -->
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+
+
+
+            <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
+            <div class=" p-2 col-span-3 row-start-4 flex items-end justify-between">
+                <button id="icon-bottom-left" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+                </button>
+                <button id="icon-bottom-right" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+document.getElementById('icon-top-right').addEventListener('click', () => {
+  window.location.href = 'home.html';
+});
+    document.getElementById('icon-bottom-left').addEventListener('click', () => {
+        window.location.href = 'portfolio.html';
+    });
+
+    document.getElementById('icon-bottom-right').addEventListener('click', () => {
+        window.location.href = 'home.html';
+    });
+
+    document.addEventListener("touchstart", function() {}, true);
+</script>
+
+</html>

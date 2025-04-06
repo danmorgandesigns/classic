@@ -58,7 +58,7 @@
                     <img src="images/apple.png" alt="Apple" class="mx-auto w-[20px] filter grayscale"
                         style="animation: colorTransition 2s ease forwards 2s;" />
                     <p>I’m a graphic and software designer in Kansas City.</p>
-                    <p>I’d prefer to be outside on a trail.</p>
+                    <p>I'm available for freelance design work. Drop me a line.</p>
                 </div>
             </div>
 
@@ -66,32 +66,32 @@
 
             <div class="p-2 col-span-3 row-start-3">
                 <div class="grid grid-cols-4 gap-1">
-                  <div class="flex flex-col items-center justify-end">
-                    <button id="now-button" class="icon-button w-8 h-8 p-0 m-0">
-                      <img src="images/now.svg" alt="Now" class="w-full h-full" />
-                    </button>
-                    <span class="icon-label mt-1">Now</span>
-                  </div>
-                  <div class="flex flex-col items-center justify-end">
-                    <button id="tools-button" class="icon-button w-8 h-8 p-0 m-0">
-                      <img src="images/tools.svg" alt="Services" class="w-full h-full" />
-                    </button>
-                    <span class="icon-label mt-1">Services</span>
-                  </div>
-                  <div class="flex flex-col items-center justify-end">
-                    <button id="portfolio-button" class="icon-button w-8 h-8 p-0 m-0">
-                      <img src="images/portfolio.svg" alt="Portfolio" class="w-full h-full" />
-                    </button>
-                    <span class="icon-label mt-1">Portfolio</span>
-                  </div>
-                  <div class="flex flex-col items-center justify-end">
-                    <button id="about-button" class="icon-button w-8 h-8 p-0 m-0">
-                      <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full" />
-                    </button>
-                    <span class="icon-label mt-1">About Me</span>
-                  </div>
+                    <div class="flex flex-col items-center justify-end">
+                        <button id="now-button" class="icon-button w-8 h-8 p-0 m-0">
+                            <img src="images/now.svg" alt="Now" class="w-full h-full" />
+                        </button>
+                        <span class="icon-label mt-1">Now</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-end">
+                        <button id="tools-button" class="icon-button w-8 h-8 p-0 m-0">
+                            <img src="images/tools.svg" alt="Services" class="w-full h-full" />
+                        </button>
+                        <span class="icon-label mt-1">Services</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-end">
+                        <button id="portfolio-button" class="icon-button w-8 h-8 p-0 m-0">
+                            <img src="images/portfolio.svg" alt="Portfolio" class="w-full h-full" />
+                        </button>
+                        <span class="icon-label mt-1">Portfolio</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-end">
+                        <button id="about-button" class="icon-button w-8 h-8 p-0 m-0">
+                            <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full" />
+                        </button>
+                        <span class="icon-label mt-1">About Me</span>
+                    </div>
                 </div>
-              </div>
+            </div>
 
 
             <div class="p-2 col-span-3 row-start-4 flex items-end justify-between">
@@ -111,7 +111,7 @@
         //   window.location.href = 'now.html';
     });
     document.getElementById('icon-bottom-left').addEventListener('click', () => {
-        // window.location.href = 'now.html';
+        window.location.href = 'about-me.html';
     });
 
     document.getElementById('icon-bottom-right').addEventListener('click', () => {
@@ -122,7 +122,19 @@
         window.location.href = 'now.html';
     });
 
-    document.addEventListener("touchstart", function() {}, true);
+    document.getElementById('tools-button').addEventListener('click', () => {
+        window.location.href = 'services.html';
+    });
+
+    document.getElementById('portfolio-button').addEventListener('click', () => {
+        window.location.href = 'portfolio.html';
+    });
+
+    document.getElementById('about-button').addEventListener('click', () => {
+        window.location.href = 'about-me.html';
+    });
+
+    document.addEventListener("touchstart", function () { }, true);
 </script>
 
 </html>
