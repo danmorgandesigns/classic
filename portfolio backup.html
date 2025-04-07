@@ -154,8 +154,9 @@
                     modalBox.style.height = "80vh";
                     modalBox.style.width = "auto";
                 }
+
                 modalContent.innerHTML = isPDF
-                    `<iframe src="${fullSrc}" class="pdf-viewer" frameborder="0"></iframe>`
+                    ? `<embed src="${fullSrc}" type="application/pdf" class="pdf-viewer">`
                     : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
 
                 modal.style.display = "flex";
