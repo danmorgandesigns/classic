@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Modal Dialog (8.5x11)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        .thumbnail {
+            width: 150px;
+            cursor: pointer;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 0px;
+            box-shadow: 2px 2px 0 black;
+        }
+
+        /* Modal overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Floating dialog box with 8.5x11 aspect ratio */
+        .modal-content {
+            width: 70vh; /* 11 inches tall in viewport units */
+            aspect-ratio: 8.5 / 11;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid black;
+            box-shadow: 2px 2px 0 black;
+            border-radius: 0px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        /* Title bar */
+        .dialog-titlebar {
+  height: 20px;
+  border-bottom: 1px solid black;
+  background-image: url("images/pinstripes.png");
+  background-repeat: repeat;
+  background-size: auto 20px;
+  background-color: transparent;
+  image-rendering: pixelated; /* still helpful for low-res look */
+}
+
+        /* Modal body below title bar */
+        .modal-body {
+            flex: 1;
+            display: flex;
+        }
+
+        .image-viewer,
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click a thumbnail to preview:</h2>
+
+    <!-- Thumbnails -->
+    <img src="portfolio/page2-thumb.png" alt="Thumbnail" class="thumbnail" data-full="portfolio/page2.jpg" />
+    <img src="portfolio/pdf1-thumb.png" alt="PDF" class="thumbnail" data-full="portfolio/pdf1.pdf" />
+
+    <!-- Modal -->
+    <div id="previewModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="dialog-titlebar"></div>
+            <div id="modalContent" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("previewModal");
+        const modalContent = document.getElementById("modalContent");
+
+        document.querySelectorAll(".thumbnail").forEach(thumb => {
+            thumb.addEventListener("click", () => {
+                const fullSrc = thumb.getAttribute("data-full");
+                const isPDF = fullSrc.toLowerCase().endsWith(".pdf");
+
+                modalContent.innerHTML = isPDF
+                    ? `<embed src="${fullSrc}" type="application/pdf" class="pdf-viewer">`
+                    : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
+
+                modal.style.display = "flex";
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+            modalContent.innerHTML = "";
+        }
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

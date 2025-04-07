@@ -195,7 +195,7 @@ body {
 
 .normal-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
 }
 
@@ -204,6 +204,19 @@ body {
     font-size: 20px;
     font-weight: 500;
     line-height: 36px;
+}
+
+.medallion-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+}
+
+.medallion-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
 }
 
 
