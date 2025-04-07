@@ -25,7 +25,7 @@ body {
 
 
 .icon-label {
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 14px;
     color: black;
@@ -215,13 +215,29 @@ body {
     font-weight: 600;
 }
 
+
+
 .medallion-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 300;
 }
 
+.service-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 0.825rem;
+    
+    font-weight: 600;
+}
 
+.service-details {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    line-height: 0.825rem;
+    font-size: 10px;
+    font-weight: 300;
+}
 
 .title-bar {
     height: 22px;
@@ -340,6 +356,126 @@ body {
     border-color: black;
     box-shadow: 1px 1px 0 black;
 }
+
+
+
+.thumbnail-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.thumbnail {
+    height: 100px;
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 0px;
+    box-shadow: 2px 2px 0 black;
+
+}
+
+/* Modal overlay */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+}
+
+/* Floating dialog box with 8.5x11 aspect ratio */
+.modal-content {
+    width: 70vh;
+    aspect-ratio: 8.5 / 11;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 black;
+    border-radius: 0px;
+}
+
+/* Title bar */
+.modal-titlebar {
+    font-family: 'Chicago', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    /* enable positioning context */
+    height: 20px;
+    border-bottom: 1px solid black;
+    background-image: url("../images/pinstripes.png");
+    background-repeat: repeat;
+    background-size: auto 20px;
+    background-position: 0 0;
+    background-color: transparent;
+    background-clip: content-box;
+    image-rendering: pixelated;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+}
+
+.modal-titlebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.close-box {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0;
+
+    cursor: pointer;
+}
+
+.close-box-wrapper {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.spacer {
+    width: 5px;
+    /* Exactly the space you want before the close box */
+    flex-shrink: 0;
+}
+
+
+/* Modal body below title bar */
+.modal-body {
+    flex: 1;
+    display: flex;
+}
+
+.image-viewer,
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+}
+
 
 @keyframes colorTransition {
     from {

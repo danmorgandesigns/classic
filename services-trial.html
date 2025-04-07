@@ -12,7 +12,8 @@
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
     <!-- Window container -->
-    <div class="hypercard-window border border-black bg-white flex flex-col overflow-hidden max-w-full sm:max-w-[640px] w-full max-h-full sm:h-[480px]">
+    <div
+        class="hypercard-window border border-black bg-white flex flex-col overflow-hidden max-w-full sm:max-w-[640px] w-full max-h-full sm:h-[480px]">
 
         <!-- Title Bar -->
         <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
@@ -40,11 +41,12 @@
                 </button>
             </div>
 
-            
+            <!-- Middle Content (scrolls if needed) -->
             <div class="p-2 flex-1 overflow-auto flex flex-col gap-1">
                 <h1>Design Services</h1>
                 <div class="flex flex-col items-center justify-end px-6">
 
+                    <!-- Grid of rows, each with an icon and text -->
                     <div class="flex items-start mb-4">
                         <img src="images/business-card.svg" class="pt-1" style="width:48px;" alt="Business Cards">
                         <div class="flex flex-col">
@@ -55,7 +57,7 @@
                         </div>
                     </div>
                     <div class="flex items-start mb-4">
-                        <img src="images/letterhead.svg" class="pt-1" style="width:48px;" alt="Letterheads and Branding">
+                        <img src="images/letterhead.svg" class="pt-1" style="height:48px;" alt="Letterheads and Branding">
                         <div class="flex flex-col">
                             <span class="service-title px-2 pb-1">Letterhead and Branding</span>
                             <p class="service-details px-2">Do you have an old logo that needs freshened up and made
@@ -65,7 +67,7 @@
                         </div>
                     </div>
                     <div class="flex items-start mb-4">
-                        <img src="images/flyers.svg" class="pt-1" style="width:48px;" alt="Flyers & Brochures">
+                        <img src="images/flyers.svg" class="pt-1" style="height:48px;" alt="Flyers & Brochures">
                         <div class="flex flex-col">
                             <span class="service-title px-2 pb-1">Flyers & Brochures</span>
                             <p class="service-details px-2">I can design full page flyers, half fold brochures,
@@ -74,7 +76,7 @@
                         </div>
                     </div>
                     <div class="flex items-start mb-4">
-                        <img src="images/pdf-form-stack.svg" class="pt-1" style="width:48px;" alt="PDF Forms">
+                        <img src="images/pdf-form-stack.svg" class="pt-1" style="height:48px; width:auto;" alt="PDF Forms">
                         <div class="flex flex-col">
                             <span class="service-title px-2 pb-1">Fillable PDF Forms</span>
                             <p class="service-details px-2">Complex, fillable Acrobat forms are a specialty of mine.
@@ -113,11 +115,11 @@
         });
 
         document.getElementById('previous-button')?.addEventListener('click', () => {
-            window.location.href = 'now.html';
+            window.location.href = 'portfolio.html';
         });
 
         document.getElementById('next-button')?.addEventListener('click', () => {
-            window.location.href = 'portfolio.html';
+            window.location.href = 'contact-me.html';
         });
 
         document.addEventListener("touchstart", function () { }, true);

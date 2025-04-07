@@ -10,14 +10,14 @@
 </head>
 
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
-
-    <!-- Window container -->
-    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+    
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-hidden max-w-full sm:max-w-[640px] w-full max-h-full sm:h-[480px]">
+    
+        <!-- Title Bar -->
         <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
             <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
                 Portfolio
             </span>
-
             <!-- Pinstripes -->
             <div class="titlebar-pinstripe"></div>
             <div class="titlebar-pinstripe"></div>
@@ -25,45 +25,99 @@
             <div class="titlebar-pinstripe"></div>
             <div class="titlebar-pinstripe"></div>
         </div>
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
 
+        <!-- Inner Layout: Flex column -->
+        <div class="flex flex-col flex-1 p-2">
+        
             <!-- Top Row -->
-            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
+            <div class="p-2 flex items-end justify-between">
                 <button id="home-button" class="icon-button w-8 h-8">
                     <img src="images/home.svg" alt="Home" />
                 </button>
                 <button id="mail-button" class="icon-button w-8 h-8">
                     <img src="images/mail.svg" alt="Contact Me" />
                 </button>
-            </div>   
-
-            <!-- Middle Row: Expands vertically, text at the top -->
-            <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
-                <div class="mx-auto inline-block max-w-full py-2 px-6 border border-black shadow-[1px_1px_0_black] bg-white overflow-auto">
+            </div>
+        
+            <!-- Middle Content (scrolls if needed) -->
+        
+            <div class="flex-1 overflow-auto">
+                <div class="p-2">
                     <h1>Portfolio</h1>
-                    <p></p>
-                    <span class="normal-text leading-tight space-y-2">            
-                        <p>Portfolio goes here.
-                        </p>
-                        <p>
-                        </p>
-                    </span>       
+                    <div class="flex flex-wrap gap-2 px-8 max-h-[280px]">
+                        <!-- your thumbnail blocks -->
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                          <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/page2-thumb.png" alt="Some Image" class="thumbnail block" data-full="portfolio/page2.jpg" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Some Label Here</span>
+                          </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
-            <div class=" p-2 col-span-3 row-start-3 flex items-end justify-between">
-                <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
-                </button>
-                <button id="next-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
-                </button>
+        
+                <!-- Bottom Row -->
+                <div class="p-2 flex items-end justify-between">
+                    <button id="previous-button" class="icon-button w-8 h-8">
+                        <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+                    </button>
+                    <button id="next-button" class="icon-button w-8 h-8">
+                        <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+                    </button>
+                </div>      
             </div>
         </div>
-    </div>
+
+
+
+
+
+
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-titlebar relative flex items-center h-5 border-b border-black">
+                <div class="spacer   shrink-0"></div>
+                <div class="close-box-wrapper">
+                    <div class="close-box" onclick="closeModal()"></div>
+                </div>
+                <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                    <span id="modalTitle" class="bg-white px-2 py-[2px] leading-none z-10 font-chicago text-[13px]">
+                        Modal Title
+                    </span>
+                </div>
+            </div>
+            <div id="modalContent" class="modal-body"></div>
+        </div>
+    </div>    
 
     <script>
+// Script to handle the buttons        
           document.getElementById('mail-button')?.addEventListener('click', () => {
     window.location.href = 'contact-me.html';
   });
@@ -79,6 +133,62 @@
         });
     
         document.addEventListener("touchstart", function () { }, true);
+
+// Script to handle the modal dialogs
+
+        const modal = document.getElementById("previewModal");
+        const modalContent = document.getElementById("modalContent");
+        const modalBox = document.querySelector(".modal-content");
+
+        document.querySelectorAll(".thumbnail").forEach(thumb => {
+            thumb.addEventListener("click", () => {
+                const fullSrc = thumb.getAttribute("data-full");
+                const isPDF = fullSrc.toLowerCase().endsWith(".pdf");
+                const aspectRatio = parseFloat(thumb.getAttribute("data-aspect") || "0.77");
+                const modalTitle = document.getElementById("modalTitle");
+
+                // Set the modal title to the thumbnail's alt text
+                modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
+
+                // Set aspect ratio
+                modalBox.style.aspectRatio = aspectRatio;
+
+                // Resize logic
+                if (aspectRatio >= 1.0) {
+                    modalBox.style.width = "80vw";
+                    modalBox.style.height = "auto";
+                } else {
+                    modalBox.style.height = "80vh";
+                    modalBox.style.width = "auto";
+                }
+
+                modalContent.innerHTML = isPDF
+                    ? `<embed src="${fullSrc}" type="application/pdf" class="pdf-viewer">`
+                    : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
+
+                modal.style.display = "flex";
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+            modalContent.innerHTML = "";
+            modalBox.style.aspectRatio = "";
+            modalBox.style.width = "";
+            modalBox.style.height = "";
+        }
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
     </script>
 
 </body>
