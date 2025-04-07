@@ -363,7 +363,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 400;
-    text-align: center;
 }
 
 .thumbnail {
@@ -373,6 +372,7 @@ body {
     border: 1px solid black;
     border-radius: 0px;
     box-shadow: 2px 2px 0 black;
+  /* display: block; */
 
 }
 
@@ -403,10 +403,14 @@ body {
     border-radius: 0px;
 }
 
-/* Title bar */
-.modal-titlebar {
+.modal-title {
     font-family: 'Chicago', sans-serif;
     font-size: 14px;
+}
+
+/* Title bar */
+.modal-titlebar {
+
     cursor: pointer;
     position: relative;
     /* enable positioning context */
