@@ -133,10 +133,12 @@ body {
     color: white;
 }
 
-.classic-form-field {
+  .classic-form-field {
     border: 1px solid black;
     box-shadow: 2px 2px 0 black;
-    padding: 0.25rem; /* optional, for spacing inside */
+    padding: 0.25rem;
+    border-radius: 0; /* 👈 key fix for iOS */
+    -webkit-appearance: none; /* 👈 optional, also helps strip native styles */
   }
 
   .classic-dialog-overlay {
