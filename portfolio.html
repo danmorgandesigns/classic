@@ -52,7 +52,7 @@
           <div class="flex flex-wrap justify-center gap-2 px-0">
             <!-- Thumbnails -->
             <div class="flex flex-col items-center px-3">
-              <img src="portfolio/catbackers-thumbnail.jpeg" alt="Southwest Catbackers" class="thumbnail block" data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/fiber.pdf" data-aspect="0.77" />
+              <img src="portfolio/catbackers-thumbnail.jpeg" alt="Southwest Catbackers" class="thumbnail block" data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/catbackers.pdf" data-aspect="1.78" />
               <span class="thumbnail-label mt-[-4px] text-center">Catbackers</span>
             </div>
             <div class="flex flex-col items-center px-3">
@@ -134,19 +134,30 @@ let currentPage = 1;
 let totalPages = 0;
 
 function renderPage(num) {
-  pdfDoc.getPage(num).then(page => {
-    const viewport = page.getViewport({ scale: 1.5 });
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-    return page.render(renderContext).promise;
-  });
+  // Fade out
+  canvas.style.opacity = 0;
+
+  setTimeout(() => {
+    pdfDoc.getPage(num).then(page => {
+      const viewport = page.getViewport({ scale: 1.5 });
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+      return page.render(renderContext).promise;
+    }).then(() => {
+      // Fade back in after render
+      canvas.style.opacity = 1;
+    });
+  }, 100); // delay before rendering to allow fade-out
 
   document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
 }
+
+
+
 
     const imageViewer = document.getElementById("image-viewer");
 
@@ -254,10 +265,25 @@ canvas.style.display = "block";
     });
 
     window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeModal();
+  if (e.key === "Escape") {
+    closeModal();
+  }
+
+  if (modal.style.display === "flex" && pdfDoc) {
+    if (e.key === "ArrowRight") {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPage(currentPage);
       }
-    });
+    }
+    if (e.key === "ArrowLeft") {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+      }
+    }
+  }
+});
 
     document.getElementById("prevPage").addEventListener("click", () => {
   if (currentPage <= 1) return;
