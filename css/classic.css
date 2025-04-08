@@ -488,7 +488,12 @@ body {
     object-fit: contain;
 }
 
-
+#pdf-canvas {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.78; /* or set dynamically in JS */
+  }
+  
 @keyframes colorTransition {
     from {
         filter: grayscale(100%);
