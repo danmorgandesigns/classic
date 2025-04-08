@@ -44,14 +44,8 @@
                 <div class="mx-auto inline-block max-w-full py-2 px-6 border border-black shadow-[2px_2px_0_black] bg-white overflow-auto">
                     <h1>What I'm Doing Now</h1>
                     <p></p>
-                    <span class="normal-text leading-tight space-y-2">            
-                        <p>The past month I've been deep down a rabbit hole with two of my vintage Machintosh computers. I have a iBook G3 "clamshell" laptop and an iMac G4 "lamp" computer that I've
-                            been working on to get the latest possible operating systems on. In both instances OS X 10.4.11 Tiger was the last release for both of these computers. They're among the
-                            last to be capable of booting into either Mac OS 9 or OS X Tiger, which makes them kind of useful if you like playing around with both the new and classic OSes.
-                        </p>
-                        <p>Once I got both of them running I starting playing around with HyperCard again. It was just a delightful program that let you create all kinds of unusual things.
-                            It honestly let me to the creation of this site.
-                        </p>
+                    <span id="now-content" class="normal-text leading-tight space-y-2">            
+    
                     </span>       
                 </div>
             </div>
@@ -87,8 +81,18 @@
     
         document.addEventListener("touchstart", function () { }, true);
     </script>
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    fetch('now-text.md')
+      .then(response => response.text())
+      .then(markdown => {
+        const html = marked.parse(markdown);
+        document.getElementById('now-content').innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById('now-content').textContent = 'Failed to load content.';
+        console.error('Error loading Markdown:', error);
+      });
+</script>
 </body>
 </html>
