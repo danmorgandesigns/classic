@@ -161,12 +161,11 @@ function renderPage(num) {
         modalBox.style.aspectRatio = aspectRatio;
 
 
-if (aspectRatio >= 1.0 && isMobile) {
+        if (aspectRatio >= 1.0 && isMobile) {
+  modalBox.style.aspectRatio = aspectRatio;
   modalBox.style.width = "100vw";
-  modalBox.style.height = "auto";
-  modalBox.style.maxHeight = "100vh";
-  // modalBox.style.marginTop = "1px"; // reset top alignment
-  modalBox.style.marginBottom = ""; // re-center if needed
+  modalBox.style.height = ""; // clear height so aspect-ratio can control it
+  modalBox.style.maxHeight = "100vh"; // optional, to prevent overspill
 } else if (aspectRatio >= 1.0) {
   modalBox.style.width = "80vw";
   modalBox.style.height = "auto";
