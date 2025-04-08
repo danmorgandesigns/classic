@@ -158,11 +158,11 @@ function renderPage(num) {
         const isMobile = window.innerWidth <= 640;
 
         modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
-        modalBox.style.aspectRatio = aspectRatio;
+        
 
 
         if (aspectRatio >= 1.0 && isMobile) {
-  modalBox.style.aspectRatio = aspectRatio;
+  
   modalBox.style.width = "100vw";
   modalBox.style.height = ""; // clear height so aspect-ratio can control it
   modalBox.style.maxHeight = "100vh"; // optional, to prevent overspill
@@ -186,10 +186,16 @@ function renderPage(num) {
 
 
 
-        if (isPDF) {
+if (isPDF) {
   canvas.classList.remove("hidden");
   imageViewer.classList.add("hidden");
   document.getElementById("pdf-controls").classList.remove("hidden");
+
+  // ✅ Apply aspect ratio to the canvas, not the modal
+  canvas.style.aspectRatio = aspectRatio;
+  canvas.style.width = "100%";
+  canvas.style.height = "auto";
+
   pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
     pdfDoc = pdf;
     totalPages = pdf.numPages;
