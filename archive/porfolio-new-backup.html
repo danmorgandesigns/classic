@@ -104,50 +104,23 @@
           <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal Title</span>
         </div>
       </div>
-      <div id="modalContent" class="modal-body flex-1 overflow-auto flex justify-center items-center bg-white">
+      <div id="modalContent" class="modal-body flex justify-center items-center bg-white overflow-auto">
         <canvas id="pdf-canvas" class="pdf-canvas hidden"></canvas>
         <img id="image-viewer" class="image-viewer hidden" alt="Full Image" />
-      </div>
-      <!-- <div id="pdf-controls" class="pdf-controls hidden flex gap-2 p-2 justify-center border-t border-black bg-white"> -->
-        <div id="pdf-controls" class="pdf-controls hidden flex gap-2 py-0 px-2 justify-center items-center border-t border-black bg-white">       
-        <button id="prevPage" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-left.svg" alt="Previous Page" />
-        </button>
-        <span id="pageInfo" class="page-number px-2">Page 1 of 1</span>
-        <button id="nextPage" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-right.svg" alt="Next Page" />
-        </button>
       </div>
     </div>
   </div>
 
   <script>
+
+
+
     const modal = document.getElementById("previewModal");
     const modalContent = document.getElementById("modalContent");
     const modalBox = document.querySelector(".modal-content");
     const modalTitle = document.getElementById("modalTitle");
     const canvas = document.getElementById("pdf-canvas");
     const ctx = canvas.getContext("2d");
-
-    let pdfDoc = null;
-let currentPage = 1;
-let totalPages = 0;
-
-function renderPage(num) {
-  pdfDoc.getPage(num).then(page => {
-    const viewport = page.getViewport({ scale: 1.5 });
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-    return page.render(renderContext).promise;
-  });
-
-  document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
-}
-
     const imageViewer = document.getElementById("image-viewer");
 
     document.querySelectorAll(".thumbnail").forEach(thumb => {
@@ -173,19 +146,24 @@ function renderPage(num) {
         }
 
         if (isPDF) {
-  canvas.classList.remove("hidden");
-  imageViewer.classList.add("hidden");
-  document.getElementById("pdf-controls").classList.remove("hidden");
-  pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
-    pdfDoc = pdf;
-    totalPages = pdf.numPages;
-    currentPage = 1;
-    renderPage(currentPage);
-  }).catch(err => {
-    console.error("PDF rendering error:", err);
-  });
-}
-        else {
+          canvas.classList.remove("hidden");
+          imageViewer.classList.add("hidden");
+
+          pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
+            return pdf.getPage(1);
+          }).then(page => {
+            const viewport = page.getViewport({ scale: 1.5 });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const renderContext = {
+              canvasContext: ctx,
+              viewport: viewport
+            };
+            return page.render(renderContext).promise;
+          }).catch(err => {
+            console.error("PDF rendering error:", err);
+          });
+        } else {
           canvas.classList.add("hidden");
           imageViewer.classList.remove("hidden");
           imageViewer.src = fullSrc;
@@ -230,18 +208,6 @@ function renderPage(num) {
         closeModal();
       }
     });
-
-    document.getElementById("prevPage").addEventListener("click", () => {
-  if (currentPage <= 1) return;
-  currentPage--;
-  renderPage(currentPage);
-});
-
-document.getElementById("nextPage").addEventListener("click", () => {
-  if (currentPage >= totalPages) return;
-  currentPage++;
-  renderPage(currentPage);
-});
   </script>
 </body>
 

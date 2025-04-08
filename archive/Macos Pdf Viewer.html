@@ -14,7 +14,7 @@
       font-family: sans-serif;
     }
 
-    .modal-content {
+    /* .modal-content {
       width: 80vw;
       height: 80vh;
       margin: 40px auto;
@@ -23,7 +23,20 @@
       box-shadow: 2px 2px 0 black;
       display: flex;
       flex-direction: column;
-    }
+    } */
+    .modal-content {
+    width: 70vh;
+    aspect-ratio: 8.5 / 11;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 black;
+    border-radius: 0px;
+    overflow: auto;
+}
+
 
     .modal-titlebar {
       height: 20px;
@@ -60,7 +73,7 @@
   </div>
 
   <script>
-    const url = "portfolio/fota-project.pdf"; // Replace with your PDF path
+   const url = "https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/fiber.pdf";
     const canvas = document.getElementById("pdf-canvas");
     const ctx = canvas.getContext("2d");
 

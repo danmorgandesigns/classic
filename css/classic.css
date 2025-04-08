@@ -404,9 +404,16 @@ body {
     overflow: auto;
 }
 
+
 .modal-title {
     font-family: 'Chicago', sans-serif;
     font-size: 14px;
+}
+
+.page-number {
+    font-family: 'Chicago', sans-serif;
+    font-size: 14px;
+    padding-top: 3px; /* or margin-top */
 }
 
 /* Title bar */
