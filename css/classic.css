@@ -187,7 +187,7 @@ body {
     min-height: 480px;
     max-height: calc(100vh - 20px);
     position: absolute;
-    top: 20px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
@@ -509,6 +509,6 @@ body {
   @media (max-width: 640px) {
     .modal {
       align-items: flex-start !important; /* instead of center */
-      padding-top: 46px; /* space from top of screen */
+      padding-top: 40px; /* space from top of screen */
     }
   }
