@@ -146,14 +146,25 @@
                 // Set aspect ratio
                 modalBox.style.aspectRatio = aspectRatio;
 
-                // Resize logic
-                if (aspectRatio >= 1.0) {
-                    modalBox.style.width = "80vw";
-                    modalBox.style.height = "auto";
-                } else {
-                    modalBox.style.height = "80vh";
-                    modalBox.style.width = "auto";
-                }
+// Mobile-friendly resizing
+const isMobile = window.innerWidth <= 640;
+
+if (aspectRatio >= 1.0 && isMobile) {
+  // Landscape PDF on mobile — use full width
+  modalBox.style.width = "100vw";
+  modalBox.style.height = "auto";
+  modalBox.style.maxHeight = "100vh";
+} else if (aspectRatio >= 1.0) {
+  // Landscape on desktop
+  modalBox.style.width = "80vw";
+  modalBox.style.height = "auto";
+} else {
+  // Portrait (default)
+  modalBox.style.height = "80vh";
+  modalBox.style.width = "auto";
+}
+
+
                 modalContent.innerHTML = isPDF
   ? `<iframe src="${fullSrc}" class="pdf-viewer" allowfullscreen></iframe>`
   : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;

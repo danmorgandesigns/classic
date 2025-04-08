@@ -401,6 +401,7 @@ body {
     border: 1px solid black;
     box-shadow: 2px 2px 0 black;
     border-radius: 0px;
+    overflow: auto;
 }
 
 .modal-title {
