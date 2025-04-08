@@ -49,7 +49,7 @@
                         <!-- your thumbnail blocks -->
                         <div class="flex flex-col items-center px-3">
                             <img src="portfolio/catbackers-thumbnail.jpeg" alt="Southwest Catbackers"
-                                class="thumbnail block" data-full="portfolio/fiber.pdf" data-aspect="0.77" />
+                                class="thumbnail block" data-full="portfolio/catbackers.pdf" data-aspect="1.78" />
                             <span class="thumbnail-label mt-[-4px] text-center">Catbackers</span>
                         </div>
                         <div class="flex flex-col items-center px-3">
@@ -149,11 +149,11 @@
 
                 const isMobile = window.innerWidth <= 640;
 
-// 🚪 On mobile, open PDF in new tab instead of embedding
-if (isMobile && isPDF) {
-  window.open(fullSrc, '_blank');
-  return;
-}
+                // 🚪 On mobile, open PDF in new tab instead of embedding
+                if (isMobile && isPDF) {
+                    window.open(fullSrc, '_blank');
+                    return;
+                }
 
                 // Set the modal title to the thumbnail's alt text
                 modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
@@ -179,7 +179,6 @@ if (isMobile && isPDF) {
 
                 modalContent.innerHTML = isPDF
                     ? `<iframe src="${fullSrc}" class="pdf-viewer" allowfullscreen></iframe>`
-                    //   ? `<embed src="${fullSrc}" type="application/pdf" class="pdf-viewer">`
                     : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
 
                 modal.style.display = "flex";
