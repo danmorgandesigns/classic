@@ -196,7 +196,7 @@ if (isPDF) {
   canvas.style.height = "auto";
 
   if (isMobile && aspectRatio > 1.0) {
-    canvas.style.maxHeight = "50vh"; // tweak as needed
+    canvas.style.maxHeight = "60vh"; // tweak as needed
   }
 
   pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
