@@ -191,13 +191,10 @@ if (isPDF) {
   imageViewer.classList.add("hidden");
   document.getElementById("pdf-controls").classList.remove("hidden");
 
+  // ✅ Apply aspect ratio to the canvas, not the modal
   canvas.style.aspectRatio = aspectRatio;
   canvas.style.width = "100%";
   canvas.style.height = "auto";
-
-  if (isMobile && aspectRatio > 1.0) {
-    canvas.style.maxHeight = "60vh"; // tweak as needed
-  }
 
   pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
     pdfDoc = pdf;
