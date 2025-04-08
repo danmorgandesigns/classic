@@ -503,4 +503,8 @@ body {
     .custom-two-col {
       flex-direction: row;
     }
+    #previewModal {
+        align-items: flex-start;
+        padding-top: 16px; /* or 24px if you want more gap */
+      }
   }
