@@ -160,17 +160,40 @@ function renderPage(num) {
         modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
         modalBox.style.aspectRatio = aspectRatio;
 
+        // if (aspectRatio >= 1.0 && isMobile) {
+        //   modalBox.style.width = "100vw";
+        //   modalBox.style.height = "auto";
+        //   modalBox.style.maxHeight = "100vh";
+        // } else if (aspectRatio >= 1.0) {
+        //   modalBox.style.width = "80vw";
+        //   modalBox.style.height = "auto";
+        // } else {
+        //   modalBox.style.height = "80vh";
+        //   modalBox.style.width = "auto";
+        // }
         if (aspectRatio >= 1.0 && isMobile) {
-          modalBox.style.width = "100vw";
-          modalBox.style.height = "auto";
-          modalBox.style.maxHeight = "100vh";
-        } else if (aspectRatio >= 1.0) {
-          modalBox.style.width = "80vw";
-          modalBox.style.height = "auto";
-        } else {
-          modalBox.style.height = "80vh";
-          modalBox.style.width = "auto";
-        }
+  modalBox.style.width = "100vw";
+  modalBox.style.height = "auto";
+  modalBox.style.maxHeight = "100vh";
+  modalBox.style.marginTop = ""; // reset top alignment
+  modalBox.style.marginBottom = "auto"; // re-center if needed
+} else if (aspectRatio >= 1.0) {
+  modalBox.style.width = "80vw";
+  modalBox.style.height = "auto";
+  modalBox.style.margin = "auto";
+} else {
+  // Portrait PDF (< 1.0 aspect ratio)
+  if (isMobile) {
+    modalBox.style.width = "auto";
+    modalBox.style.height = "80vh";
+    modalBox.style.marginTop = "0";
+    modalBox.style.marginBottom = "auto"; // push down from top
+  } else {
+    modalBox.style.height = "80vh";
+    modalBox.style.width = "auto";
+    modalBox.style.margin = "auto";
+  }
+}
 
         if (isPDF) {
   canvas.classList.remove("hidden");
