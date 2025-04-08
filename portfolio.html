@@ -161,50 +161,31 @@ function renderPage(num) {
         modalBox.style.aspectRatio = aspectRatio;
 
 
-// if (aspectRatio >= 1.0 && isMobile) {
-//   modalBox.style.width = "100vw";
-//   modalBox.style.height = "auto";
-//   modalBox.style.maxHeight = "100vh";
-//   modalBox.style.marginTop = ""; // reset top alignment
-//   modalBox.style.marginBottom = "auto"; // re-center if needed
-// } else if (aspectRatio >= 1.0) {
-//   modalBox.style.width = "80vw";
-//   modalBox.style.height = "auto";
-//   modalBox.style.margin = "auto";
-// } else {
-//   // Portrait PDF (< 1.0 aspect ratio)
-//   if (isMobile) {
-//     modalBox.style.width = "auto";
-//     modalBox.style.height = "80vh";
-//     modalBox.style.marginTop = "0";
-//     modalBox.style.marginBottom = "auto";
-//   } else {
-//     modalBox.style.height = "80vh";
-//     modalBox.style.width = "auto";
-//     modalBox.style.margin = "auto";
-//   }
-// }
-
-if (isMobile && aspectRatio < 1.0) {
-  modalBox.style.width = "auto";
-  modalBox.style.height = "80vh";
-  modalBox.style.marginTop = "16px";
-  modalBox.style.marginBottom = "";
-} else if (aspectRatio >= 1.0 && isMobile) {
+if (aspectRatio >= 1.0 && isMobile) {
   modalBox.style.width = "100vw";
   modalBox.style.height = "auto";
   modalBox.style.maxHeight = "100vh";
-  modalBox.style.marginTop = "";
-  modalBox.style.marginBottom = "";
+  modalBox.style.marginTop = "16px"; // reset top alignment
+  modalBox.style.marginBottom = ""; // re-center if needed
 } else if (aspectRatio >= 1.0) {
   modalBox.style.width = "80vw";
   modalBox.style.height = "auto";
   modalBox.style.margin = "auto";
 } else {
-  modalBox.style.height = "80vh";
-  modalBox.style.width = "auto";
-  modalBox.style.margin = "auto";
+  // Portrait PDF (< 1.0 aspect ratio)
+  if (isMobile) {
+    modalBox.style.width = "auto";
+    modalBox.style.height = "80vh";
+    modalBox.style.marginTop = "16px";
+    modalBox.style.marginBottom = "";
+  } else {
+    modalBox.style.height = "80vh";
+    modalBox.style.width = "auto";
+    modalBox.style.margin = "auto";
+  }
 }
+
+
 
         if (isPDF) {
   canvas.classList.remove("hidden");
