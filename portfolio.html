@@ -193,8 +193,12 @@ if (isPDF) {
   document.getElementById("pdf-controls").classList.remove("hidden");
 
   canvas.style.aspectRatio = aspectRatio;
-  canvas.style.width = "100%";
-  canvas.style.height = "auto";
+canvas.style.width = "100%";
+canvas.style.maxWidth = "1024px"; // prevent horizontal stretch
+canvas.style.height = "auto";
+canvas.style.marginLeft = "auto";
+canvas.style.marginRight = "auto";
+canvas.style.display = "block";
 
   if (isMobile && aspectRatio > 1.0) {
     canvas.style.maxHeight = "50vh"; // tweak as needed
