@@ -155,8 +155,8 @@
                     modalBox.style.width = "auto";
                 }
                 modalContent.innerHTML = isPDF
-                    `<iframe src="${fullSrc}" class="pdf-viewer" frameborder="0"></iframe>`
-                    : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
+  ? `<iframe src="${fullSrc}" class="pdf-viewer" allowfullscreen></iframe>`
+  : `<img src="${fullSrc}" alt="Full Image" class="image-viewer">`;
 
                 modal.style.display = "flex";
             });
