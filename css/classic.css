@@ -220,6 +220,7 @@ body {
 .medallion-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
+    line-height: 10px;
     font-weight: 300;
 }
 

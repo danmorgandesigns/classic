@@ -26,8 +26,9 @@
             <div class="titlebar-pinstripe"></div>
         </div>
         <!-- Ensure the grid grows to fill the window -->
-    
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
+
+        <div
+            class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
 
             <!-- Top Row -->
             <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
@@ -50,22 +51,24 @@
                                 <label for="name" class="block icon-label">Name</label>
                                 <input type="text" id="name" name="name" class="classic-form-field w-full" required />
                             </div>
-                        
+
                             <!-- Email Address -->
                             <div>
                                 <label for="email" class="block icon-label">Email Address</label>
-                                <input type="email" id="email" name="email" class="classic-form-field w-full" required />
+                                <input type="email" id="email" name="email" class="classic-form-field w-full"
+                                    required />
                             </div>
-                        
+
                             <!-- Comments -->
                             <div>
                                 <label for="comments" class="block icon-label">Comments</label>
-                                <textarea id="comments" name="comments" rows="2" class="classic-form-field w-full" required></textarea>
+                                <textarea id="comments" name="comments" rows="2" class="classic-form-field w-full"
+                                    required></textarea>
                             </div>
-                        
+
                             <!-- Optional Subject -->
                             <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        
+
                             <!-- Submit Button -->
                             <div class="flex justify-end">
                                 <button type="submit" class="classic-default-button">
@@ -93,47 +96,41 @@
 
             </div>
 
-            <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
-            <!-- <div class=" p-2 col-span-3 row-start-3 flex items-end justify-between">
-                <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
-                </button>
-                <button id="next-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
-                </button>
-            </div> -->
 
             <div class="p-2 col-span-3 row-start-3 flex items-center justify-between">
                 <!-- Left Icon -->
                 <button id="previous-button" class="icon-button w-8 h-8">
-                  <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
                 </button>
-              
+
                 <!-- Center Section -->
                 <div class="flex-grow flex justify-center gap-4 px-4">
-                  <a href="https://bsky.app/profile/danmorgandesigns.bsky.social" target="_blank" rel="noopener noreferrer" class="media-button">
-                    <img src="images/bluesky-classic-w.svg" alt="Bluesky" />
-                  </a>
-                  <a href="https://www.instagram.com/danmorgandesigns/" target="_blank" rel="noopener noreferrer" class="media-button">
-                    <img src="images/instagram-classic-w.svg" alt="Instagram" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/daniel-v-morgan/" target="_blank" rel="noopener noreferrer" class="media-button">
-                    <img src="images/linkedin-classic-w.svg" alt="LinkedIn" />
-                  </a>
-                  <a href="https://vmst.io/@danmorgan" rel="me" target="_blank" class="media-button">
-                    <img src="images/mastodon-classic-w.svg" alt="Mastodon" />
-                  </a>
+                    <a href="https://bsky.app/profile/danmorgandesigns.bsky.social" target="_blank"
+                        rel="noopener noreferrer" class="media-button">
+                        <img src="images/bluesky-classic-w.svg" alt="Bluesky" />
+                    </a>
+                    <a href="https://www.instagram.com/danmorgandesigns/" target="_blank" rel="noopener noreferrer"
+                        class="media-button">
+                        <img src="images/instagram-classic-w.svg" alt="Instagram" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/daniel-v-morgan/" target="_blank" rel="noopener noreferrer"
+                        class="media-button">
+                        <img src="images/linkedin-classic-w.svg" alt="LinkedIn" />
+                    </a>
+                    <a href="https://vmst.io/@danmorgan" rel="me" target="_blank" class="media-button">
+                        <img src="images/mastodon-classic-w.svg" alt="Mastodon" />
+                    </a>
                 </div>
-              
+
                 <!-- Right Icon -->
                 <button id="next-button" class="icon-button w-8 h-8">
-                  <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
                 </button>
-              </div>
+            </div>
 
-   
 
-            
+
+
 
 
 
@@ -157,31 +154,31 @@
 
 
         document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+            e.preventDefault();
 
-  const form = this;
-  const formData = new FormData(form);
+            const form = this;
+            const formData = new FormData(form);
 
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json"
-    }
-  })
-    .then((response) => {
-      if (response.ok) {
-        document.getElementById("confirmationDialog").classList.remove("hidden");
-        form.reset(); // clear the form after successful submission
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("Something went wrong!");
-    });
-});
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        document.getElementById("confirmationDialog").classList.remove("hidden");
+                        form.reset(); // clear the form after successful submission
+                    } else {
+                        alert("Oops! There was a problem submitting your form.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    alert("Something went wrong!");
+                });
+        });
 
         document.getElementById("confirmButton").addEventListener("click", function () {
             // Hide dialog

@@ -26,6 +26,6 @@
   <rect x="6.5" y="4" width="1" height="13"/>
   <rect x="24.5" y="4" width="1" height="13"/>
   <rect x="7.5" y="17" width="17" height="1"/>
-  <polygon points="16.5 7 16.5 11 15.5 11 15.5 12 16.5 12 17.5 12 17.5 7 16.5 7"/>
+  <polygon points="16 7 16 11 15 11 15 12 16 12 17 12 17 7 16 7"/>
   <rect class="st0" x="5.5" y="28" width="21" height="3"/>
 </svg>
