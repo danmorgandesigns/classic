@@ -334,6 +334,14 @@ body {
     box-sizing: border-box;
 }
 
+
+.logo-button img {
+    width: 64px;
+    height: auto;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 .icon-button img {
     width: 32px;
     height: auto;
