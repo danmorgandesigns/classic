@@ -1,3 +1,9 @@
+**2025.04.09**
+I pointed my domain at this site yesterday and am still finding lots of things I want to add or change. Today I added a Colophon to the _About Me__ page because I know some people will question my use of 1-bit icons and think I did it accidentally. I'm still struggling with browser caching when I'm updating content and CSS often. This isn't meant to be a blog, but I needed to get it out of my system.
+
+
+**2025.04.07**
+
 The past month I've been deep down a rabbit hole with two of my vintage Machintosh computers. I have a iBook G3 "clamshell" laptop and an iMac G4 "lamp" computer that I've been trying to upgrade to the last operating system they would support
 
 
@@ -11,7 +17,3 @@ It led me to the creation of this site first as a proof-of-concept to see if I c
 
 
 I'm nearly ready to push it live and point my web address to it thus Christening it formally as my personal site for blatant self promotion.
-
-
-—Dan
-
