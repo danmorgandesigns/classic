@@ -162,6 +162,40 @@ body {
     flex-direction: column;
   }
   
+
+  .classic-scrollbox {
+    /* background-color: white;
+    color: black;
+    font-family: 'Chicago', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    border: 1px solid black;
+    padding: 8px;
+    height: 120px; */
+    overflow-y: auto;
+    /* box-shadow: inset 1px 1px 0 #000; */
+    scrollbar-color: black white;
+    scrollbar-width: thin;
+  }
+  .classic-scrollbox::-webkit-scrollbar {
+    width: 12px;
+  }
+  .classic-scrollbox::-webkit-scrollbar-track {
+    background: white;
+    border-left: 1px solid black;
+  }
+  .classic-scrollbox::-webkit-scrollbar-thumb {
+    background: black;
+    border: 2px solid white;
+    box-shadow: inset -1px -1px 0 black;
+  }
+  .classic-scrollbox::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+
+
+
+
   .dialog-titlebar {
     height: 10px;
     border-bottom: 1px solid black;
@@ -205,7 +239,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    line-height: 36px;
+    /* line-height: 36px; */
 }
 
 .medallion-title {
@@ -492,6 +526,10 @@ body {
     justify-content: center;
     flex-shrink: 0;
 }
+
+
+
+
 
 .spacer {
     width: 5px;
