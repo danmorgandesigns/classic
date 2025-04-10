@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DanMorganDesigns</title>    
+    <title>DanMorganDesigns</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/classic.css" rel="stylesheet">
 </head>
@@ -135,6 +135,42 @@
         });
 
         document.addEventListener("touchstart", function () { }, true);
+
+
+        // handle swipes
+        const nextPageURL = '/now.html';  // Swipe RIGHT
+        const prevPageURL = '/contact-me.html';  // Swipe LEFT
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            const isHorizontalSwipe = Math.abs(deltaX) > 50 && Math.abs(deltaY) < 30;
+
+            if (isHorizontalSwipe) {
+                if (deltaX > 0 && nextPageURL) {
+                    window.location.href = nextPageURL; // Swipe right
+                } else if (deltaX < 0 && prevPageURL) {
+                    window.location.href = prevPageURL; // Swipe left
+                }
+            }
+        });
+
+        // end handle swipes
+
     </script>
 
 

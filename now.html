@@ -26,7 +26,8 @@
             <div class="titlebar-pinstripe"></div>
         </div>
 
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
+        <div
+            class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
 
             <!-- Top Row -->
             <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
@@ -36,18 +37,18 @@
                 <button id="mail-button" class="icon-button w-8 h-8">
                     <img src="images/mail.svg" alt="Contact Me" />
                 </button>
-            </div>           
+            </div>
 
 
             <!-- Middle Row: Expands vertically, text at the top -->
             <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
                 <h1>What I'm Doing Now</h1>
                 <div class="mx-auto inline-block max-w-full p-3 border border-black bg-white h-[300px] overflow-y-auto">
- 
+
                     <p></p>
-                    <span id="now-content" class="normal-text leading-tight space-y-2">            
-    
-                    </span>       
+                    <span id="now-content" class="normal-text leading-tight space-y-2">
+
+                    </span>
                 </div>
             </div>
 
@@ -66,36 +67,72 @@
     </div>
 
     <script>
-  document.getElementById('mail-button')?.addEventListener('click', () => {
-    window.location.href = 'contact-me.html';
-  });
+        document.getElementById('mail-button')?.addEventListener('click', () => {
+            window.location.href = 'contact-me.html';
+        });
 
         document.getElementById('home-button')?.addEventListener('click', () => {
             window.location.href = 'index.html';
-        });    
+        });
 
         document.getElementById('previous-button')?.addEventListener('click', () => {
             window.location.href = 'index.html';
         });
-    
+
         document.getElementById('next-button')?.addEventListener('click', () => {
             window.location.href = 'services.html';
         });
-    
+
         document.addEventListener("touchstart", function () { }, true);
     </script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    fetch('now-text.md')
-      .then(response => response.text())
-      .then(markdown => {
-        const html = marked.parse(markdown);
-        document.getElementById('now-content').innerHTML = html;
-      })
-      .catch(error => {
-        document.getElementById('now-content').textContent = 'Failed to load content.';
-        console.error('Error loading Markdown:', error);
-      });
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        fetch('now-text.md')
+            .then(response => response.text())
+            .then(markdown => {
+                const html = marked.parse(markdown);
+                document.getElementById('now-content').innerHTML = html;
+            })
+            .catch(error => {
+                document.getElementById('now-content').textContent = 'Failed to load content.';
+                console.error('Error loading Markdown:', error);
+            });
+
+        // handle swipes  
+        const nextPageURL = '/services.html';  // Swipe RIGHT
+        const prevPageURL = '/index.html';  // Swipe LEFT
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            const isHorizontalSwipe = Math.abs(deltaX) > 50 && Math.abs(deltaY) < 30;
+
+            if (isHorizontalSwipe) {
+                if (deltaX > 0 && nextPageURL) {
+                    window.location.href = nextPageURL; // Swipe right
+                } else if (deltaX < 0 && prevPageURL) {
+                    window.location.href = prevPageURL; // Swipe left
+                }
+            }
+        });
+        // end handle swipes
+
+
+    </script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@
 
     <!-- Window container -->
     <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
-    <!-- <div class="hypercard-window border border-black bg-white flex flex-col overflow-hidden sm:max-w-[640px] w-full max-h-full sm:h-[480px]"> -->
+        <!-- <div class="hypercard-window border border-black bg-white flex flex-col overflow-hidden sm:max-w-[640px] w-full max-h-full sm:h-[480px]"> -->
 
         <!-- Title Bar -->
         <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
@@ -41,7 +41,7 @@
                 </button>
             </div>
 
-            
+
             <div class="p-2 flex-1 overflow-auto flex flex-col gap-1">
                 <h1>Design Services</h1>
                 <div class="flex flex-col items-center justify-end px-6">
@@ -56,7 +56,8 @@
                         </div>
                     </div>
                     <div class="flex items-start mb-4">
-                        <img src="images/letterhead.svg" class="pt-1" style="width:48px;" alt="Letterheads and Branding">
+                        <img src="images/letterhead.svg" class="pt-1" style="width:48px;"
+                            alt="Letterheads and Branding">
                         <div class="flex flex-col">
                             <span class="service-title px-2 pb-1">Letterhead and Branding</span>
                             <p class="service-details px-2">Do you have an old logo that needs freshened up and made
@@ -122,6 +123,40 @@
         });
 
         document.addEventListener("touchstart", function () { }, true);
+
+        // handle swipes
+        const nextPageURL = '/portfolio.html';  // Swipe RIGHT
+        const prevPageURL = '/now.html';  // Swipe LEFT
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            const isHorizontalSwipe = Math.abs(deltaX) > 50 && Math.abs(deltaY) < 30;
+
+            if (isHorizontalSwipe) {
+                if (deltaX > 0 && nextPageURL) {
+                    window.location.href = nextPageURL; // Swipe right
+                } else if (deltaX < 0 && prevPageURL) {
+                    window.location.href = prevPageURL; // Swipe left
+                }
+            }
+        });
+        // end handle swipes
+
     </script>
 
 </body>
