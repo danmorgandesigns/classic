@@ -220,7 +220,7 @@
 
 
 
-                if (isPDF) {
+if (isPDF) {
     canvas.classList.remove("hidden");
     imageViewer.classList.add("hidden");
     document.getElementById("pdf-controls").classList.remove("hidden");
@@ -230,14 +230,35 @@
     canvas.style.marginRight = "auto";
     canvas.style.display = "block";
 
+// start of new handling
+
+    // if (aspectRatio < 1.0) {
+    //     canvas.style.width = "auto";
+    //     canvas.style.height = "100%";
+    //     canvas.style.maxHeight = "90vh";
+    //     canvas.style.maxWidth = "auto";
+
     if (aspectRatio < 1.0) {
-        // Portrait: constrain by height
-        canvas.style.width = "auto";
-        canvas.style.height = "100%";
-        canvas.style.maxHeight = "90vh";
-        canvas.style.maxWidth = "auto";
+    if (isMobile) {
+        modalBox.style.width = "95vw";  // ⬅️ Key: use viewport width
+        modalBox.style.height = "auto";
+        modalBox.style.maxHeight = "90vh";
+        modalBox.style.margin = "auto";
+        modalBox.style.overflow = "hidden";  // prevent scrollbars
     } else {
-        // Landscape or square: constrain by width
+        modalBox.style.height = "80vh";
+        modalBox.style.width = "auto";
+        modalBox.style.margin = "auto";
+    }
+
+    canvas.style.width = "100%";
+    canvas.style.height = "auto";
+    canvas.style.maxWidth = "100%";
+    canvas.style.maxHeight = "100%";
+}
+
+//end of new handling
+    } else {
         canvas.style.width = "100%";
         canvas.style.height = "auto";
         canvas.style.maxWidth = "1024px";
