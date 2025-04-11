@@ -98,6 +98,8 @@
                 data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/travolta.pdf" />
               <span class="thumbnail-label mt-[-4px] text-center">Travolta</span>
             </div>
+
+
           </div>
 
 
@@ -261,10 +263,10 @@ modalBox.style.aspectRatio = '';
           imageViewer.src = fullSrc;
         }
 // Reset draggable position before opening
-modalBox.style.position = '';
-modalBox.style.left = '';
-modalBox.style.top = '';
-modalBox.style.margin = '';
+// modalBox.style.position = '';
+// modalBox.style.left = '';
+// modalBox.style.top = '';
+// modalBox.style.margin = '';
         modal.style.display = "flex";
       });
     });
@@ -339,35 +341,7 @@ modalBox.style.margin = '';
 
 
 
-    document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.querySelector('.modal-content');
-  const titlebar = modal.querySelector('.modal-titlebar');
 
-  let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
-
-  titlebar.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    const rect = modal.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-    modal.style.position = 'absolute';
-    modal.style.zIndex = 10000; // optional: bring it to front
-    modal.style.margin = 0;     // avoid centering issues
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-      modal.style.left = `${e.clientX - offsetX}px`;
-      modal.style.top = `${e.clientY - offsetY}px`;
-    }
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-});
   </script>
 </body>
 
