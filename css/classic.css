@@ -542,6 +542,8 @@ body {
     transition: opacity 0.2s ease;
   }
 
+  
+
 @keyframes colorTransition {
     from {
         filter: grayscale(100%);

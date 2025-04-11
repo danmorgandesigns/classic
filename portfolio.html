@@ -2,347 +2,323 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DanMorganDesigns</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <link href="css/classic.css" rel="stylesheet">
-  <style>
-    .pdf-canvas {
-      width: 100%;
-      height: auto;
-      max-height: 100%;
-      display: block;
-      margin: auto;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanMorganDesigns</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link href="css/classic.css" rel="stylesheet">
+    <style>
+        .pdf-canvas {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
-  <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
-    <!-- Title Bar -->
-    <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
-      <span class="relative z-10 bg-white px-2 py-[2px] leading-none">Portfolio</span>
-      <div class="titlebar-pinstripe"></div>
-      <div class="titlebar-pinstripe"></div>
-      <div class="titlebar-pinstripe"></div>
-      <div class="titlebar-pinstripe"></div>
-      <div class="titlebar-pinstripe"></div>
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+        <!-- Title Bar -->
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">Portfolio</span>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+        </div>
+
+        <!-- Inner Layout: Flex column -->
+        <div class="flex flex-col flex-1 p-2">
+            <!-- Top Row -->
+            <div class="p-2 flex items-end justify-between">
+                <button id="home-button" class="icon-button w-8 h-8">
+                    <img src="images/home.svg" alt="Home" />
+                </button>
+                <button id="mail-button" class="icon-button w-8 h-8">
+                    <img src="images/mail.svg" alt="Contact Me" />
+                </button>
+            </div>
+
+            <!-- Middle Content -->
+            <div class="flex-1 overflow-auto">
+                <div class="p-2">
+                    <h1>Portfolio</h1>
+
+
+                    <div class="flex flex-wrap justify-center gap-2 px-0">
+                        <!-- Thumbnails -->
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/employee-manager-thumbnail.jpg" alt="ServiTech Employee Manager" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager.pdf" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Employee Manager</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/asset-manager-thumbnail.jpg" alt="ServiTech Asset Manager" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/asset-manager.pdf" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Asset Manager</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/catbackers-thumbnail.jpeg" alt="Southwest Catbackers" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/catbackers.pdf"
+                                data-aspect="1.78" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Catbackers</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/fota-thumbnail.jpeg" alt="FOTA Membership" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/fota.pdf"
+                                data-aspect="1.78" />
+                            <span class="thumbnail-label mt-[-4px] text-center">FOTA Membership</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/servitech-field-thumbnail.jpeg" alt="ServiTech Field Intelligence Catalog" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-field.pdf"
+                                data-aspect="1.78" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Field Intelligence</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/servitech-pdc-thumbnail.jpeg" alt="ServiTech PDC Program" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-pdc.pdf"
+                                data-aspect="1.78" />
+                            <span class="thumbnail-label mt-[-4px] text-center">PDC Program</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/servitech-social-thumbnail.jpeg" alt="ServiTech Selected Social Media" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-social.pdf"
+                                data-aspect="1.78" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Social Media</span>
+                        </div>
+                        <div class="flex flex-col items-center px-3">
+                            <img src="portfolio/travolta-thumbnail.jpeg" alt="Full Moon Fever Homage" class="thumbnail block"
+                                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/travolta.pdf" />
+                            <span class="thumbnail-label mt-[-4px] text-center">Travolta</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="p-2 flex items-end justify-between">
+                <button id="previous-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
+                </button>
+                <button id="next-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Inner Layout: Flex column -->
-    <div class="flex flex-col flex-1 p-2">
-      <!-- Top Row -->
-      <div class="p-2 flex items-end justify-between">
-        <button id="home-button" class="icon-button w-8 h-8">
-          <img src="images/home.svg" alt="Home" />
-        </button>
-        <button id="mail-button" class="icon-button w-8 h-8">
-          <img src="images/mail.svg" alt="Contact Me" />
-        </button>
-      </div>
-
-      <!-- Middle Content -->
-      <div class="flex-1 overflow-auto">
-        <div class="p-2">
-          <h1>Portfolio</h1>
-
-
-          <div class="flex flex-wrap justify-center gap-2 px-0">
-            <!-- Thumbnails -->
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/employee-manager-thumbnail.jpg" alt="ServiTech Employee Manager" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager.pdf"/>
-              <span class="thumbnail-label mt-[-4px] text-center">Employee Manager</span>
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-titlebar relative flex items-center">
+                <div class="spacer shrink-0"></div>
+                <div class="close-box-wrapper">
+                    <div class="close-box" onclick="closeModal()"></div>
+                </div>
+                <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                    <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal
+                        Title</span>
+                </div>
             </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/asset-manager-thumbnail.jpg" alt="ServiTech Asset Manager" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/asset-manager.pdf"/>
-              <span class="thumbnail-label mt-[-4px] text-center">Asset Manager</span>
+            <div id="modalContent" class="modal-body flex-1 overflow-auto flex justify-center items-center bg-white">
+                <canvas id="pdf-canvas" class="pdf-canvas hidden"></canvas>
+                <img id="image-viewer" class="image-viewer hidden" alt="Full Image" />
             </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/catbackers-thumbnail.jpeg" alt="Southwest Catbackers" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/catbackers.pdf"
-                data-aspect="1.78" />
-              <span class="thumbnail-label mt-[-4px] text-center">Catbackers</span>
+            <div id="pdf-controls"
+                class="pdf-controls hidden flex gap-2 py-0 px-2 justify-center items-center border-t border-black bg-white">
+                <button id="prevPage" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-left.svg" alt="Previous Page" />
+                </button>
+                <span id="pageInfo" class="page-number px-2">Page 1 of 1</span>
+                <button id="nextPage" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Next Page" />
+                </button>
             </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/fota-thumbnail.jpeg" alt="FOTA Membership" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/fota.pdf"
-                data-aspect="1.78" />
-              <span class="thumbnail-label mt-[-4px] text-center">FOTA Membership</span>
-            </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/servitech-field-thumbnail.jpeg" alt="ServiTech Field Intelligence Catalog"
-                class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-field.pdf"
-                data-aspect="1.78" />
-              <span class="thumbnail-label mt-[-4px] text-center">Field Intelligence</span>
-            </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/servitech-pdc-thumbnail.jpeg" alt="ServiTech PDC Program" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-pdc.pdf"
-                data-aspect="1.78" />
-              <span class="thumbnail-label mt-[-4px] text-center">PDC Program</span>
-            </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/servitech-social-thumbnail.jpeg" alt="ServiTech Selected Social Media"
-                class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/servitech-social.pdf"
-                data-aspect="1.78" />
-              <span class="thumbnail-label mt-[-4px] text-center">Social Media</span>
-            </div>
-            <div class="flex flex-col items-center px-3">
-              <img src="portfolio/travolta-thumbnail.jpeg" alt="Full Moon Fever Homage" class="thumbnail block"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/travolta.pdf" />
-              <span class="thumbnail-label mt-[-4px] text-center">Travolta</span>
-            </div>
-
-
-          </div>
-
-
         </div>
-      </div>
-
-      <!-- Bottom Row -->
-      <div class="p-2 flex items-end justify-between">
-        <button id="previous-button" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
-        </button>
-        <button id="next-button" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
-        </button>
-      </div>
     </div>
-  </div>
 
-  <div id="previewModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-titlebar relative flex items-center">
-        <div class="spacer shrink-0"></div>
-        <div class="close-box-wrapper">
-          <div class="close-box" onclick="closeModal()"></div>
-        </div>
-        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-          <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal Title</span>
-        </div>
-      </div>
-      <div id="modalContent" class="modal-body flex-1 overflow-auto flex justify-center items-center bg-white">
-        <canvas id="pdf-canvas" class="pdf-canvas hidden"></canvas>
-        <img id="image-viewer" class="image-viewer hidden" alt="Full Image" />
-      </div>
-      <div id="pdf-controls"
-        class="pdf-controls hidden flex gap-2 py-0 px-2 justify-center items-center border-t border-black bg-white">
-        <button id="prevPage" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-left.svg" alt="Previous Page" />
-        </button>
-        <span id="pageInfo" class="page-number px-2">Page 1 of 1</span>
-        <button id="nextPage" class="icon-button w-8 h-8">
-          <img src="images/hand-pointing-right.svg" alt="Next Page" />
-        </button>
-      </div>
-    </div>
-  </div>
+    <script>
+        const modal = document.getElementById("previewModal");
+        const modalContent = document.getElementById("modalContent");
+        const modalBox = document.querySelector(".modal-content");
+        const modalTitle = document.getElementById("modalTitle");
+        const canvas = document.getElementById("pdf-canvas");
+        const ctx = canvas.getContext("2d");
 
-  <script>
-    const modal = document.getElementById("previewModal");
-    const modalContent = document.getElementById("modalContent");
-    const modalBox = document.querySelector(".modal-content");
-    const modalTitle = document.getElementById("modalTitle");
-    const canvas = document.getElementById("pdf-canvas");
-    const ctx = canvas.getContext("2d");
+        let pdfDoc = null;
+        let currentPage = 1;
+        let totalPages = 0;
 
-    let pdfDoc = null;
-    let currentPage = 1;
-    let totalPages = 0;
+        function renderPage(num) {
+            // Fade out
+            canvas.style.opacity = 0;
 
-    function renderPage(num) {
-      // Fade out
-      canvas.style.opacity = 0;
+            setTimeout(() => {
+                pdfDoc.getPage(num).then(page => {
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+                    return page.render(renderContext).promise;
+                }).then(() => {
+                    // Fade back in after render
+                    canvas.style.opacity = 1;
+                });
+            }, 100); // delay before rendering to allow fade-out
 
-      setTimeout(() => {
-        pdfDoc.getPage(num).then(page => {
-          const viewport = page.getViewport({ scale: 1.5 });
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const renderContext = {
-            canvasContext: ctx,
-            viewport: viewport
-          };
-          return page.render(renderContext).promise;
-        }).then(() => {
-          // Fade back in after render
-          canvas.style.opacity = 1;
+            document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
+        }
+
+
+
+
+        const imageViewer = document.getElementById("image-viewer");
+
+        document.querySelectorAll(".thumbnail").forEach(thumb => {
+            thumb.addEventListener("click", () => {
+                const fullSrc = thumb.getAttribute("data-full");
+                const isPDF = fullSrc.toLowerCase().endsWith(".pdf");
+                const aspectRatio = parseFloat(thumb.getAttribute("data-aspect") || "0.77");
+                const isMobile = window.innerWidth <= 640;
+
+                modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
+
+
+
+                if (aspectRatio >= 1.0 && isMobile) {
+
+                    modalBox.style.width = "100vw";
+                    modalBox.style.height = ""; // clear height so aspect-ratio can control it
+                    modalBox.style.maxHeight = "100vh"; // optional, to prevent overspill
+                } else if (aspectRatio >= 1.0) {
+                    modalBox.style.width = "80vw";
+                    modalBox.style.maxHeight = "80vh";
+                    modalBox.style.height = "auto";
+                    modalBox.style.margin = "auto";
+                } else {
+                    // Portrait PDF (< 1.0 aspect ratio)
+                    if (isMobile) {
+                        modalBox.style.width = "auto";
+                        modalBox.style.height = "80vh";
+                        // modalBox.style.marginTop = "1px";
+                        modalBox.style.marginBottom = "";
+                    } else {
+                        modalBox.style.height = "80vh";
+                        modalBox.style.width = "auto";
+                        modalBox.style.margin = "auto";
+                    }
+                }
+
+
+
+                if (isPDF) {
+                    canvas.classList.remove("hidden");
+                    imageViewer.classList.add("hidden");
+                    document.getElementById("pdf-controls").classList.remove("hidden");
+
+                    canvas.style.aspectRatio = aspectRatio;
+                    canvas.style.width = "100%";
+                    canvas.style.maxWidth = "1024px"; // prevent horizontal stretch
+                    canvas.style.height = "auto";
+                    canvas.style.marginLeft = "auto";
+                    canvas.style.marginRight = "auto";
+                    canvas.style.display = "block";
+
+                    if (isMobile && aspectRatio > 1.0) {
+                        canvas.style.maxHeight = "50vh"; // tweak as needed
+                    }
+
+                    pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
+                        pdfDoc = pdf;
+                        totalPages = pdf.numPages;
+                        currentPage = 1;
+                        renderPage(currentPage);
+                    }).catch(err => {
+                        console.error("PDF rendering error:", err);
+                    });
+                }
+                else {
+                    canvas.classList.add("hidden");
+                    imageViewer.classList.remove("hidden");
+                    imageViewer.src = fullSrc;
+                }
+
+                modal.style.display = "flex";
+            });
         });
-      }, 100); // delay before rendering to allow fade-out
 
-      document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
-    }
-
-
-
-
-    const imageViewer = document.getElementById("image-viewer");
-
-    document.querySelectorAll(".thumbnail").forEach(thumb => {
-      thumb.addEventListener("click", () => {
-        const fullSrc = thumb.getAttribute("data-full");
-        const isPDF = fullSrc.toLowerCase().endsWith(".pdf");
-        const aspectRatio = parseFloat(thumb.getAttribute("data-aspect") || "0.77");
-        const isMobile = window.innerWidth <= 640;
-
-        modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
-
-
-
-        if (aspectRatio >= 1.0 && isMobile) {
-
-          modalBox.style.width = "100vw";
-          modalBox.style.height = ""; // clear height so aspect-ratio can control it
-          modalBox.style.maxHeight = "100vh"; // optional, to prevent overspill
-        } else 
-// Reset previous sizing to avoid Safari quirks
-modalBox.style.width = '';
-modalBox.style.height = '';
-modalBox.style.maxHeight = '';
-modalBox.style.aspectRatio = '';
-        if (aspectRatio >= 1.0) {
-          modalBox.style.width = "80vw";
-          modalBox.style.maxHeight = "80vh";
-          modalBox.style.height = "auto";
-          modalBox.style.aspectRatio = aspectRatio; //added line!!
-          modalBox.style.margin = "auto";
-        } else {
-          // Portrait PDF (< 1.0 aspect ratio)
-          if (isMobile) {
-            modalBox.style.width = "auto";
-            modalBox.style.height = "80vh";
-            modalBox.style.marginBottom = ""; // (un-deleted line!!)
-          } else {
-            modalBox.style.height = "80vh";
-            modalBox.style.width = "auto";
-            modalBox.style.margin = "auto";   // (un-deleted line!!)
-          }
-          // modalBox.style.aspectRatio = aspectRatio; //added line!!
-          // modalBox.style.margin = "auto"; //added line!!
+        function closeModal() {
+            modal.style.display = "none";
+            canvas.classList.add("hidden");
+            imageViewer.classList.add("hidden");
+            imageViewer.src = "";
+            modalBox.style.aspectRatio = "";
+            modalBox.style.width = "";
+            modalBox.style.height = "";
+            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
         }
 
+        document.getElementById('mail-button')?.addEventListener('click', () => {
+            window.location.href = 'contact-me.html';
+        });
+        document.getElementById('home-button')?.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+        document.getElementById('previous-button')?.addEventListener('click', () => {
+            window.location.href = 'services.html';
+        });
+        document.getElementById('next-button')?.addEventListener('click', () => {
+            window.location.href = 'about-me.html';
+        });
 
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
 
-        if (isPDF) {
-          canvas.classList.remove("hidden");
-          imageViewer.classList.add("hidden");
-          document.getElementById("pdf-controls").classList.remove("hidden");
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
+            }
 
-          canvas.style.aspectRatio = aspectRatio;
-          canvas.style.width = "100%";
-          canvas.style.maxWidth = "1024px"; // prevent horizontal stretch
-          canvas.style.height = "auto";
-          canvas.style.marginLeft = "auto";
-          canvas.style.marginRight = "auto";
-          canvas.style.display = "block";
+            if (modal.style.display === "flex" && pdfDoc) {
+                if (e.key === "ArrowRight") {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        renderPage(currentPage);
+                    }
+                }
+                if (e.key === "ArrowLeft") {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderPage(currentPage);
+                    }
+                }
+            }
+        });
 
-          if (isMobile && aspectRatio > 1.0) {
-            canvas.style.maxHeight = "50vh"; // tweak as needed
-          }
-
-          pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
-            pdfDoc = pdf;
-            totalPages = pdf.numPages;
-            currentPage = 1;
-            renderPage(currentPage);
-          }).catch(err => {
-            console.error("PDF rendering error:", err);
-          });
-        }
-        else {
-          canvas.classList.add("hidden");
-          imageViewer.classList.remove("hidden");
-          imageViewer.src = fullSrc;
-        }
-// Reset draggable position before opening
-// modalBox.style.position = '';
-// modalBox.style.left = '';
-// modalBox.style.top = '';
-// modalBox.style.margin = '';
-        modal.style.display = "flex";
-      });
-    });
-
-    function closeModal() {
-modalBox.style.position = '';
-modalBox.style.left = '';
-modalBox.style.top = '';
-modalBox.style.margin = '';      
-      modal.style.display = "none";
-      canvas.classList.add("hidden");
-      imageViewer.classList.add("hidden");
-      imageViewer.src = "";
-      modalBox.style.aspectRatio = "";
-      modalBox.style.width = "";
-      modalBox.style.height = "";
-      
-      canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    document.getElementById('mail-button')?.addEventListener('click', () => {
-      window.location.href = 'contact-me.html';
-    });
-    document.getElementById('home-button')?.addEventListener('click', () => {
-      window.location.href = 'index.html';
-    });
-    document.getElementById('previous-button')?.addEventListener('click', () => {
-      window.location.href = 'services.html';
-    });
-    document.getElementById('next-button')?.addEventListener('click', () => {
-      window.location.href = 'about-me.html';
-    });
-
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeModal();
-      }
-
-      if (modal.style.display === "flex" && pdfDoc) {
-        if (e.key === "ArrowRight") {
-          if (currentPage < totalPages) {
-            currentPage++;
-            renderPage(currentPage);
-          }
-        }
-        if (e.key === "ArrowLeft") {
-          if (currentPage > 1) {
+        document.getElementById("prevPage").addEventListener("click", () => {
+            if (currentPage <= 1) return;
             currentPage--;
             renderPage(currentPage);
-          }
-        }
-      }
-    });
+        });
 
-    document.getElementById("prevPage").addEventListener("click", () => {
-      if (currentPage <= 1) return;
-      currentPage--;
-      renderPage(currentPage);
-    });
-
-    document.getElementById("nextPage").addEventListener("click", () => {
-      if (currentPage >= totalPages) return;
-      currentPage++;
-      renderPage(currentPage);
-    });
-
-
-
-
-  </script>
+        document.getElementById("nextPage").addEventListener("click", () => {
+            if (currentPage >= totalPages) return;
+            currentPage++;
+            renderPage(currentPage);
+        });
+    </script>
 </body>
 
 </html>
