@@ -7,43 +7,41 @@
     <title>DanMorganDesigns</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/classic.css" rel="stylesheet">
-
 </head>
 
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
     <!-- Window container -->
-    <div class="hypercard-window">
-
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
         <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
             <div class="spacer shrink-0"></div>
             <div class="close-box-wrapper">
                 <div class="close-box" onclick="closeModal()"></div>
             </div>
             <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Portfolio</span>
+                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Contact Me</span>
             </div>
         </div>
+        <!-- Ensure the grid grows to fill the window -->
 
-        <!-- Inner Layout -->
-        <div class="flex flex-col flex-1 overflow-hidden min-h-0">
+        <div
+            class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
 
-            <!-- Top Row (Fixed 32px) -->
-            <div class="h-8 px-4 pt-5 flex items-center justify-between">
+            <!-- Top Row -->
+            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
                 <button id="home-button" class="icon-button w-8 h-8">
                     <img src="images/home.svg" alt="Home" />
                 </button>
                 <button id="mail-button" class="icon-button w-8 h-8">
-                    <img src="images/mail.svg" alt="Contact" />
+                    <img src="images/mail.svg" alt="Contact Me" />
                 </button>
             </div>
 
-            <!-- Scrollable Content -->
-            <span class="page-heading pt-6 pb-2 pl-4">Contact Me</span>
-            <div class="flex-1 overflow-y-auto space-y-4">
+
+            <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
                 <div class="container mx-auto px-4 py-0">
                     <div class="bg-white px-6 sm:max-w-md w-full mx-auto">
-                        
+                        <h1 class=" mb-2">Contact Me</h1>
                         <form id="contactForm" action="https://formspree.io/f/mblgpgyl" method="POST" class="space-y-4">
                             <!-- Name -->
                             <div>
@@ -77,35 +75,61 @@
                         </form>
                     </div>
                 </div>
-                                <!-- Confirmation Dialog -->
-                                <div id="confirmationDialog" class="classic-dialog-overlay hidden">
-                                    <div class="classic-dismiss-dialog">
-                                        <div class="dialog-titlebar"></div>
-                
-                                        <div class="dialog-content">
-                                            <h3 class="heading mb-2">Thank you!</h3>
-                                            <p class="normal-text mb-4">Your message has been sent.</p>
-                                            <button id="confirmButton" class="classic-default-button">
-                                                OK
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
 
+                <!-- Confirmation Dialog -->
+                <div id="confirmationDialog" class="classic-dialog-overlay hidden">
+                    <div class="classic-dismiss-dialog">
+                        <div class="dialog-titlebar"></div>
 
+                        <div class="dialog-content">
+                            <h3 class="heading mb-2">Thank you!</h3>
+                            <p class="normal-text mb-4">Your message has been sent.</p>
+                            <button id="confirmButton" class="classic-default-button">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
 
-            <!-- Bottom Row (Fixed 32px) -->
-            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+            <div class="p-2 col-span-3 row-start-3 flex items-center justify-between">
+                <!-- Left Icon -->
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Previous" />
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
                 </button>
-                <button id="next-button"class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Next" />
+
+                <!-- Center Section -->
+                <div class="flex-grow flex justify-center gap-4 px-4">
+                    <a href="https://bsky.app/profile/danmorgandesigns.bsky.social" target="_blank"
+                        rel="noopener noreferrer" class="media-button">
+                        <img src="images/bluesky-classic-w.svg" alt="Bluesky" />
+                    </a>
+                    <a href="https://www.instagram.com/danmorgandesigns/" target="_blank" rel="noopener noreferrer"
+                        class="media-button">
+                        <img src="images/instagram-classic-w.svg" alt="Instagram" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/daniel-v-morgan/" target="_blank" rel="noopener noreferrer"
+                        class="media-button">
+                        <img src="images/linkedin-classic-w.svg" alt="LinkedIn" />
+                    </a>
+                    <a href="https://vmst.io/@danmorgan" rel="me" target="_blank" class="media-button">
+                        <img src="images/mastodon-classic-w.svg" alt="Mastodon" />
+                    </a>
+                </div>
+
+                <!-- Right Icon -->
+                <button id="next-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
                 </button>
             </div>
+
+
+
+
+
+
 
         </div>
     </div>

@@ -12,55 +12,50 @@
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
     <!-- Window container -->
-    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
+    <div class="hypercard-window">
+
         <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
             <div class="spacer shrink-0"></div>
             <div class="close-box-wrapper">
                 <div class="close-box" onclick="closeModal()"></div>
             </div>
             <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal Title</span>
+                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Now</span>
             </div>
         </div>
 
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
+        <!-- Inner Layout -->
+        <div class="flex flex-col flex-1 overflow-hidden min-h-0">
 
-            <!-- Top Row -->
-            <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
+            <!-- Top Row (Fixed 32px) -->
+            <div class="h-8 px-4 pt-5 flex items-center justify-between">
                 <button id="home-button" class="icon-button w-8 h-8">
                     <img src="images/home.svg" alt="Home" />
                 </button>
                 <button id="mail-button" class="icon-button w-8 h-8">
-                    <img src="images/mail.svg" alt="Contact Me" />
+                    <img src="images/mail.svg" alt="Contact" />
                 </button>
             </div>
 
+            <!-- Scrollable Content -->
+            <span class="page-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
 
-            <!-- Middle Row: Expands vertically, text at the top -->
-             
-            <div class="p-2 col-span-3 row-start-2 flex flex-col justify-start">
-                <h1>What I'm Doing Now</h1>
-                
-                <div class="mx-auto inline-block max-w-full p-3 border border-black bg-white h-[300px] overflow-y-auto">
-                    <p></p>
-                    <span id="now-content" class="normal-text leading-tight space-y-2">
 
-                    </span>
-                </div>
+            
+            <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
+                <span id="now-content" class="normal-text leading-tight space-y-2">
+                </span>
             </div>
 
-
-
-            <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
-            <div class=" px-2 pt-4 col-span-3 row-start-3 flex items-end justify-between">
+            <!-- Bottom Row (Fixed 32px) -->
+            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" class="self-end" />
+                    <img src="images/hand-pointing-left.svg" alt="Previous" />
                 </button>
-                <button id="next-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" class="self-end" />
+                <button id="next-button"class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Next" />
                 </button>
             </div>
-
 
         </div>
     </div>
@@ -100,6 +95,7 @@
 
 
     </script>
+
 </body>
 
 </html>

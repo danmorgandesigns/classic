@@ -12,37 +12,44 @@
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
     <!-- Window container -->
-    <div class="hypercard-window">
+    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
 
+        <!-- Title Bar -->
         <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
             <div class="spacer shrink-0"></div>
             <div class="close-box-wrapper">
                 <div class="close-box" onclick="closeModal()"></div>
             </div>
             <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">About ME</span>
+                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">About Me</span>
             </div>
         </div>
 
-        <!-- Inner Layout -->
-        <div class="flex flex-col flex-1 overflow-hidden min-h-0">
+        <!-- Inner Layout: Flex column -->
+        <div class="flex flex-col flex-1 p-2">
 
-            <!-- Top Row (Fixed 32px) -->
-            <div class="h-8 px-4 pt-5 flex items-center justify-between">
+            <!-- Top Row -->
+            <div class="p-2 flex items-end justify-between">
                 <button id="home-button" class="icon-button w-8 h-8">
+
                     <img src="images/home.svg" alt="Home" />
                 </button>
                 <button id="mail-button" class="icon-button w-8 h-8">
-                    <img src="images/mail.svg" alt="Contact" />
+                    <img src="images/mail.svg" alt="Contact Me" />
                 </button>
             </div>
 
-            <!-- Scrollable Content -->
-            <span class="page-heading pt-6 pb-2 pl-4">Education, Passions, and Certifications</span>
+            <!-- Middle Content (scrolls if needed) -->
+            <div class="p-2 flex-1 overflow-auto flex flex-col gap-1">
 
-            <div class="flex-1 overflow-y-auto space-y-4">
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mx-6">
+
+                <h1>Education, Passions, and Certifications</h1>
+
+
+                <!-- Row 2 content -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
                     <div class="flex flex-col gap-3 h-full">
                         <div class="flex items-center justify-center">
                             <div
@@ -57,6 +64,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="flex items-center justify-center">
                             <div
                                 class="border border-black shadow-[2px_2px_0_black] bg-[#ffffff] rounded-[0px] h-[84px] w-full overflow-hidden">
@@ -85,6 +93,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="flex flex-col items-center justify-end">
                         <div
                             class="border border-black shadow-[2px_2px_0_black] bg-[#ffffff] rounded-[0px] h-[180px] w-full px-7 py-6">
@@ -114,33 +123,42 @@
                         </div>
                     </div>
                 </div>
-        
-            <p class="page-heading m-0 pt-0 pb-0 pl-4  ">Colophon</p>
-            <div class="px-3 pb-3 pt-2 border border-black shadow-[2px_2px_0_black] mx-6">
-                <div class="normal-text">
-                  <p> This site was designed to evoke the look and feel of Classic Mac OS and HyperCard when the
-                    graphics were 1-bit black and white pixels.
-                    Most of the navigation icons—the pointing hands, home button, mail button, category icons—are
-                    vector recreations that will always appear as 1-bit icons at any size.
-                    I wrote the code over a four-day sprint and it is hosted at
-                    <a href="https://github.com/danmorgandesigns/classic" class="underline">GitHub</a>.</p>
-                 <p class="mt-2">Super special tip of the hat to Susan Kare, for the original Mac icon look.
-                        Nothing would look as cool as it does without her original work!</p>
+                <h1 class="mt-2">Colophon</h1>
+                
+                <div class="h-[80px] overflow-y-auto p-3 border border-black">
+                    <span class="normal-text block">
+                        This site was designed to evoke the look and feel of Classic Mac OS and HyperCard when the
+                        graphics were 1-bit black and white pixels.
+                        Most of the navigation icons—the pointing hands, home button, mail button, category icons—are
+                        vector recreations that will always appear as 1-bit icons at any size.
+                        I wrote the code over a four-day sprint and it is hosted at
+                        <a href="https://github.com/danmorgandesigns/classic" class="underline">GitHub</a>.</p>
+                        <p class="mt-2">Super special tip of the hat to Susan Kare, for the original Mac icon look.
+                            Nothing would look as cool as it does without her original work!</p>
+                    </span>
                 </div>
-              </div>
+
+
+
 
 
             </div>
 
-            <!-- Bottom Row (Fixed 32px) -->
-            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+            <!-- Bottom Row -->
+            <div class="p-2 flex items-end justify-between">
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Previous" />
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
                 </button>
-                <button id="next-button"class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Next" />
+                <button id="next-button" class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
                 </button>
             </div>
+
+
+
+
+
+
 
         </div>
     </div>
