@@ -174,7 +174,6 @@ body {
     background-repeat: repeat;
     background-size: 4px 4px;
     background-color: transparent;
-  
     image-rendering: pixelated;         /* 💥 KEY: Forces pixel rendering */
     image-rendering: crisp-edges;       /* For Safari fallback */
   }
@@ -447,25 +446,33 @@ body {
     padding-top: 3px; /* or margin-top */
 }
 
-/* Title bar */
-.modal-titlebar {
 
-    cursor: pointer;
+/* .modal-titlebar {
     position: relative;
-    /* enable positioning context */
-    height: 20px;
+    height: 22px;
     border-bottom: 1px solid black;
-    background-image: url("../images/pinstripes.png");
-    background-repeat: repeat;
-    background-size: auto 20px;
+    background-image: url("../images/pinstripes.svg");
+    background-repeat: repeat-x;
     background-position: 0 0;
-    background-color: transparent;
-    background-clip: content-box;
-    image-rendering: pixelated;
     display: flex;
     align-items: center;
     padding-left: 3px;
+} */
+
+
+.modal-titlebar {
+    position: relative;
+    height: 22px;
+    border-bottom: 1px solid black;
+    background-image: url("../images/pinstripes.svg");
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+    cursor: pointer; 
 }
+
 
 .modal-titlebar::after {
     content: "";

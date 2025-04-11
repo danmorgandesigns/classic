@@ -118,7 +118,7 @@
 
   <div id="previewModal" class="modal">
     <div class="modal-content">
-      <div class="modal-titlebar relative flex items-center h-5 border-b border-black">
+      <div class="modal-titlebar relative flex items-center">
         <div class="spacer shrink-0"></div>
         <div class="close-box-wrapper">
           <div class="close-box" onclick="closeModal()"></div>
@@ -200,23 +200,31 @@
           modalBox.style.width = "100vw";
           modalBox.style.height = ""; // clear height so aspect-ratio can control it
           modalBox.style.maxHeight = "100vh"; // optional, to prevent overspill
-        } else if (aspectRatio >= 1.0) {
+        } else 
+// Reset previous sizing to avoid Safari quirks
+modalBox.style.width = '';
+modalBox.style.height = '';
+modalBox.style.maxHeight = '';
+modalBox.style.aspectRatio = '';
+        if (aspectRatio >= 1.0) {
           modalBox.style.width = "80vw";
           modalBox.style.maxHeight = "80vh";
           modalBox.style.height = "auto";
+          modalBox.style.aspectRatio = aspectRatio; //added line!!
           modalBox.style.margin = "auto";
         } else {
           // Portrait PDF (< 1.0 aspect ratio)
           if (isMobile) {
             modalBox.style.width = "auto";
             modalBox.style.height = "80vh";
-            // modalBox.style.marginTop = "1px";
-            modalBox.style.marginBottom = "";
+            // modalBox.style.marginBottom = "";  (deleted line!!)
           } else {
             modalBox.style.height = "80vh";
             modalBox.style.width = "auto";
-            modalBox.style.margin = "auto";
+            // modalBox.style.margin = "auto";    (deleted line!!)
           }
+          modalBox.style.aspectRatio = aspectRatio; //added line!!
+          modalBox.style.margin = "auto"; //added line!!
         }
 
 
@@ -252,12 +260,20 @@
           imageViewer.classList.remove("hidden");
           imageViewer.src = fullSrc;
         }
-
+// Reset draggable position before opening
+modalBox.style.position = '';
+modalBox.style.left = '';
+modalBox.style.top = '';
+modalBox.style.margin = '';
         modal.style.display = "flex";
       });
     });
 
     function closeModal() {
+modalBox.style.position = '';
+modalBox.style.left = '';
+modalBox.style.top = '';
+modalBox.style.margin = '';      
       modal.style.display = "none";
       canvas.classList.add("hidden");
       imageViewer.classList.add("hidden");
@@ -265,6 +281,7 @@
       modalBox.style.aspectRatio = "";
       modalBox.style.width = "";
       modalBox.style.height = "";
+      
       canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
     }
 
@@ -319,6 +336,38 @@
       currentPage++;
       renderPage(currentPage);
     });
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('.modal-content');
+  const titlebar = modal.querySelector('.modal-titlebar');
+
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  titlebar.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    const rect = modal.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    modal.style.position = 'absolute';
+    modal.style.zIndex = 10000; // optional: bring it to front
+    modal.style.margin = 0;     // avoid centering issues
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      modal.style.left = `${e.clientX - offsetX}px`;
+      modal.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+});
   </script>
 </body>
 
