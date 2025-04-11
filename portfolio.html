@@ -240,11 +240,11 @@ if (isPDF) {
 
     if (aspectRatio < 1.0) {
     if (isMobile) {
-        modalBox.style.width = "95vw";  // ⬅️ Key: use viewport width
+        modalBox.style.width = "100vw";       // Make modal fit screen width
+        modalBox.style.maxWidth = "100vw";
         modalBox.style.height = "auto";
         modalBox.style.maxHeight = "90vh";
         modalBox.style.margin = "auto";
-        modalBox.style.overflow = "hidden";  // prevent scrollbars
     } else {
         modalBox.style.height = "80vh";
         modalBox.style.width = "auto";
