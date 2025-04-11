@@ -12,9 +12,8 @@
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
     <!-- Window container -->
-    <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">        
+    <div class="hypercard-window">
 
-        <!-- Title Bar -->
         <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
             <div class="spacer shrink-0"></div>
             <div class="close-box-wrapper">
@@ -25,27 +24,23 @@
             </div>
         </div>
 
+        <!-- Inner Layout -->
+        <div class="flex flex-col flex-1 overflow-hidden min-h-0">
 
-
-
-        <!-- Inner Layout: Flex column -->
-        <div class="flex flex-col flex-1 p-2">
-
-            <!-- Top Row -->
-            <div class="p-2 flex items-end justify-between">
+            <!-- Top Row (Fixed 32px) -->
+            <div class="h-8 px-4 pt-5 flex items-center justify-between">
                 <button id="home-button" class="icon-button w-8 h-8">
                     <img src="images/home.svg" alt="Home" />
                 </button>
                 <button id="mail-button" class="icon-button w-8 h-8">
-                    <img src="images/mail.svg" alt="Contact Me" />
+                    <img src="images/mail.svg" alt="Contact" />
                 </button>
             </div>
 
-            
-            <h1 class="pt-2 pl-2 ">Design Services</h1>
-            <div class="mx-auto inline-block max-w-full p-3 h-[305px] overflow-y-auto">
-            <!-- <div class="p-2 flex-1 overflow-auto flex flex-col gap-1"> -->
+            <!-- Scrollable Content -->
+            <span class="page-heading pt-6 pb-2 pl-4">Design Services</span>
 
+            <div class="flex-1 overflow-y-auto space-y-4">
                 <div class="flex flex-col items-center justify-end px-6">
                     <div class="flex items-start mt-2 mb-4">
                         <img src="images/business-card.svg" class="pt-1" style="width:48px;" alt="Business Cards">
@@ -104,23 +99,17 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
 
-            <!-- Bottom Row -->
-            <div class=" px-2 pt-4 col-span-3 row-start-3 flex items-end justify-between">
-            <!-- <div class="px-2 pt-4 flex items-end justify-between"> -->
+            <!-- Bottom Row (Fixed 32px) -->
+            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" class="self-end" />
+                    <img src="images/hand-pointing-left.svg" alt="Previous" />
                 </button>
-                <button id="next-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" class="self-end" />
+                <button id="next-button"class="icon-button w-8 h-8">
+                    <img src="images/hand-pointing-right.svg" alt="Next" />
                 </button>
             </div>
-            
 
         </div>
     </div>
@@ -135,16 +124,14 @@
         });
 
         document.getElementById('previous-button')?.addEventListener('click', () => {
-            window.location.href = 'now.html';
+            window.location.href = 'index.html';
         });
 
         document.getElementById('next-button')?.addEventListener('click', () => {
-            window.location.href = 'portfolio.html';
+            window.location.href = 'services.html';
         });
 
         document.addEventListener("touchstart", function () { }, true);
-
-
     </script>
 
 </body>

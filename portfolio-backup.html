@@ -22,14 +22,13 @@
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
     <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
         <!-- Title Bar -->
-        <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
-            <div class="spacer shrink-0"></div>
-            <div class="close-box-wrapper">
-                <div class="close-box" onclick="closeModal()"></div>
-            </div>
-            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Portfolio</span>
-            </div>
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">Portfolio</span>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
         </div>
 
         <!-- Inner Layout: Flex column -->
@@ -123,8 +122,7 @@
                     <div class="close-box" onclick="closeModal()"></div>
                 </div>
                 <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                    <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal
-                        Title</span>
+                    <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal Title</span>
                 </div>
             </div>
             <div id="modalContent" class="modal-body flex-1 overflow-auto flex justify-center items-center bg-white">

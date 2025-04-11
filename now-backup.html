@@ -13,17 +13,21 @@
 
     <!-- Window container -->
     <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
-        <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
-            <div class="spacer shrink-0"></div>
-            <div class="close-box-wrapper">
-                <div class="close-box" onclick="closeModal()"></div>
-            </div>
-            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Modal Title</span>
-            </div>
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                What I'm Doing Now
+            </span>
+
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
         </div>
 
-        <div class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
+        <div
+            class="grid grid-cols-[minmax(0,32px)_minmax(150px,560px)_minmax(0,32px)] grid-rows-[auto_1fr_auto] gap-0 flex-1 p-2 max-w-[640px]">
 
             <!-- Top Row -->
             <div class=" p-2 col-span-3 row-start-1 flex items-end justify-between">
@@ -52,16 +56,14 @@
 
 
             <!-- Bottom Row: One cell with icons frozen at bottom left and bottom right -->
-            <div class=" px-2 pt-4 col-span-3 row-start-3 flex items-end justify-between">
+            <div class=" p-2 col-span-3 row-start-3 flex items-end justify-between">
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" class="self-end" />
+                    <img src="images/hand-pointing-left.svg" alt="Bottom Left Icon" />
                 </button>
                 <button id="next-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" class="self-end" />
+                    <img src="images/hand-pointing-right.svg" alt="Bottom Right Icon" />
                 </button>
             </div>
-
-
         </div>
     </div>
 

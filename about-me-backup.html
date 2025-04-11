@@ -15,14 +15,16 @@
     <div class="hypercard-window border border-black bg-white flex flex-col overflow-auto">
 
         <!-- Title Bar -->
-        <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
-            <div class="spacer shrink-0"></div>
-            <div class="close-box-wrapper">
-                <div class="close-box" onclick="closeModal()"></div>
-            </div>
-            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">About Me</span>
-            </div>
+        <div class="title-bar flex items-start justify-center bg-white border-b border-black relative">
+            <span class="relative z-10 bg-white px-2 py-[2px] leading-none">
+                About Me
+            </span>
+            <!-- Pinstripes -->
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
+            <div class="titlebar-pinstripe"></div>
         </div>
 
         <!-- Inner Layout: Flex column -->
