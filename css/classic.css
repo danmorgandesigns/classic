@@ -12,9 +12,9 @@
   
   @font-face {
     font-family: 'GenevaBitmap';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.woff') format('woff'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.ttf') format('truetype');
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -24,8 +24,8 @@
   @font-face {
     font-family: 'Times18Med';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff') format('woff');
-    
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.ttf') format('truetype');   
     font-style: normal;
     font-display: swap;
 }
@@ -33,11 +33,52 @@
 @font-face {
     font-family: 'Times24Med';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff') format('woff');
-    
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.ttf') format('truetype');    
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Geneva9';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geneva10';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica9';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica10';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -74,6 +115,31 @@ body {
     -moz-osx-font-smoothing: auto;
     image-rendering: pixelated;
 }
+
+.classic-normal-text {
+    font-family: 'Helvetica9', 'Helvetica', sans-serif;
+    font-size: 22px;
+    line-height: 0.8;
+    color: black;
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+  }
+
+  .classic-thumbnail-label {
+    font-family: 'GenevaBitmap', 'Geneva', sans-serif;
+    font-size: 24px;
+    line-height: 0.8;
+    color: black;
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+}
+
 
 
 .form-label {
@@ -279,6 +345,11 @@ h1 {
     font-family: 'Times24Med', serif;
     font-size: 20px;
     font-weight: 400;
+        /* Disable smoothing */
+        font-smooth: never; /* Non-standard, but some support */
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: auto;
+        image-rendering: pixelated;
 }
 
 
@@ -381,21 +452,6 @@ h1 {
     position: relative;
 }
 
-.titlebar-pinstripe {
-    position: absolute;
-    left: 50%;
-    width: calc(100% - 8px);
-    height: 1px;
-    background-color: #000;
-    transform: translateX(-50%);
-}
-
-/* Position each line vertically within the title bar */
-.titlebar-pinstripe:nth-of-type(1) { top: 4px; }
-.titlebar-pinstripe:nth-of-type(2) { top: 7px; }
-.titlebar-pinstripe:nth-of-type(3) { top: 10px; }
-.titlebar-pinstripe:nth-of-type(4) { top: 13px; }
-.titlebar-pinstripe:nth-of-type(5) { top: 16px; }
 
 
 .content-area {
