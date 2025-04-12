@@ -57,6 +57,45 @@
     font-display: swap;
 }
 
+
+@font-face {
+    font-family: 'Geneva12';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geneva14';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff2') format('woff2'),
+        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Geneva18';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff2') format('woff2'),
+        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geneva20';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff2') format('woff2'),
+        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+
 @font-face {
     font-family: 'Helvetica9';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.woff2') format('woff2'),
@@ -93,7 +132,7 @@ body {
 }
 
 .classic-icon-label {
-    font-family: 'GenevaBitmap', 'Geneva', sans-serif;
+    font-family: 'Geneva18', 'Geneva', sans-serif;
     font-size: 24px;
     line-height: 0.8;
     color: black;
@@ -105,7 +144,7 @@ body {
   }
 
   .classic-form-label {
-    font-family: 'GenevaBitmap', 'Geneva', sans-serif;
+    font-family: 'Geneva18', 'Geneva', sans-serif;
     font-size: 24px;
     line-height: 1.0;
     color: black;
@@ -117,9 +156,9 @@ body {
 }
 
 .classic-normal-text {
-    font-family: 'Helvetica9', 'Helvetica', sans-serif;
-    font-size: 22px;
-    line-height: 0.8;
+    font-family: 'Geneva10', 'Geneva', sans-serif;
+    font-size: 13px;
+    line-height: 1.3;
     color: black;
     /* Disable smoothing */
     font-smooth: never; /* Non-standard, but some support */
@@ -127,6 +166,42 @@ body {
     -moz-osx-font-smoothing: auto;
     image-rendering: pixelated;
   }
+
+  .classic-medallion-subtitle {
+    font-family: 'Geneva9', 'Geneva', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    font-kerning: none;
+    color: black;
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+}
+
+.classic-passion-subtitle {
+    font-family: 'Geneva9', 'Geneva', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    color: black;
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+}
+
+
+.classic-medallion-title {
+    font-family: 'Chicago', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    color: black;
+ 
+   
+}
+
 
   .classic-thumbnail-label {
     font-family: 'GenevaBitmap', 'Geneva', sans-serif;
