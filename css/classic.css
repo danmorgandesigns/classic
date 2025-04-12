@@ -32,10 +32,11 @@ body {
 
 }
 
-.system-six-label {
+.classic-icon-label {
     font-family: 'GenevaBitmap', 'Geneva', sans-serif;
     font-size: 24px;
-  
+    line-height: 0.8;
+    color: black;
     /* Disable smoothing */
     font-smooth: never; /* Non-standard, but some support */
     -webkit-font-smoothing: none;
@@ -43,13 +44,25 @@ body {
     image-rendering: pixelated;
   }
 
+  .classic-form-label {
+    font-family: 'GenevaBitmap', 'Geneva', sans-serif;
+    font-size: 24px;
+    line-height: 1.0;
+    color: black;
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+}
 
-.icon-label {
+
+.form-label {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
     font-size: 14px;
     color: black;
 }
+
 .classic-standard-button {
     font-family: 'Chicago', sans-serif;
     font-size: 12px;
@@ -73,7 +86,7 @@ body {
 
 .classic-default-button {
     font-family: 'Chicago', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     height: 30px;
     width: 108px;
     color: black;
@@ -221,6 +234,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    z-index: 10;
 }
 
 .normal-text {
