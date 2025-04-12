@@ -21,7 +21,7 @@
                 <div class="close-box" onclick="closeModal()"></div>
             </div>
             <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Portfolio</span>
+                <span id="modalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Contact Me</span>
             </div>
         </div>
 
@@ -96,16 +96,33 @@
 
             </div>
 
-
-            <!-- Bottom Row (Fixed 32px) -->
-            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+            <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between gap-2">
+                <!-- Left button -->
                 <button id="previous-button" class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-left.svg" alt="Previous" />
+                  <img src="images/hand-pointing-left.svg" alt="Previous" />
                 </button>
-                <button id="next-button"class="icon-button w-8 h-8">
-                    <img src="images/hand-pointing-right.svg" alt="Next" />
+              
+                <!-- Center social media icons -->
+                <div class="flex-grow flex justify-center gap-4 px-4">
+                  <a href="https://bsky.app/profile/danmorgandesigns.bsky.social" target="_blank" rel="noopener noreferrer" class="media-button">
+                    <img src="images/bluesky-classic-w.svg" alt="Bluesky" />
+                  </a>
+                  <a href="https://www.instagram.com/danmorgandesigns/" target="_blank" rel="noopener noreferrer" class="media-button">
+                    <img src="images/instagram-classic-w.svg" alt="Instagram" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/daniel-v-morgan/" target="_blank" rel="noopener noreferrer" class="media-button">
+                    <img src="images/linkedin-classic-w.svg" alt="LinkedIn" />
+                  </a>
+                  <a href="https://vmst.io/@danmorgan" rel="me" target="_blank" class="media-button">
+                    <img src="images/mastodon-classic-w.svg" alt="Mastodon" />
+                  </a>
+                </div>
+              
+                <!-- Right button -->
+                <button id="next-button" class="icon-button w-8 h-8">
+                  <img src="images/hand-pointing-right.svg" alt="Next" />
                 </button>
-            </div>
+              </div>
 
         </div>
     </div>
