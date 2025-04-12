@@ -3,12 +3,23 @@
 @font-face {
     font-family: 'Chicago';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff') format('woff'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.ttf') format('truetype');
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/sysfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+  }
+  
+  @font-face {
+    font-family: 'GenevaBitmap';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9-1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -21,7 +32,16 @@ body {
 
 }
 
-
+.system-six-label {
+    font-family: 'GenevaBitmap', 'Geneva', sans-serif;
+    font-size: 24px;
+  
+    /* Disable smoothing */
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+  }
 
 
 .icon-label {
