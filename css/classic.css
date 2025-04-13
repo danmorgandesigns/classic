@@ -145,7 +145,7 @@ body {
 
   .classic-form-label {
     font-family: 'Geneva9', 'Geneva', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.2;
     color: black;
     /* Disable smoothing */
@@ -237,12 +237,14 @@ body {
     display: inline-block;
 }
 
+
+
 .classic-standard-button:active {
     background: black;
     color: white;
 }
 
-.classic-default-button {
+/* .classic-default-button {
     font-family: 'Chicago', sans-serif;
     font-size: 14px;
     height: 30px;
@@ -267,6 +269,34 @@ body {
     bottom: 1px;
     border: 1px solid black;
     border-radius: 8px;
+    pointer-events: none;
+} */
+
+.classic-default-button {
+    font-family: 'Chicago', sans-serif;
+    font-size: 14px;
+    height: 28px;
+    width: 88px;
+    color: black;
+    background: white;
+    border-radius: 8px;
+    padding: 2px 20px;
+    border: 3px solid black;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+}
+
+.classic-default-button::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    border: 1px solid black;
+    border-radius: 4px;
     pointer-events: none;
 }
 
@@ -342,6 +372,8 @@ body {
     z-index: 50;
   }
   
+
+
   .classic-dismiss-dialog {
     background-color: white;
     border: 1px solid black;
@@ -351,11 +383,18 @@ body {
     border-radius: 0;
     display: flex;
     flex-direction: column;
+    padding: 2px; /* creates the 2px gap */
   }
   
-
-
-
+  .classic-inner-box {
+    border: 2px solid black;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
 
 
   .dialog-titlebar {
