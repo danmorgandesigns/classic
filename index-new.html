@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DanMorganDesigns</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/classic.css" rel="stylesheet">
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- iOS Icon -->
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+  <!-- Android/Chrome Icons -->
+  <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+  <link rel="icon" sizes="512x512" href="/icons/icon-512x512.png">
+
+  <!-- Optional: Enable standalone iOS mode -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+
+<!-- System Menubar -->
+<div class="system-menubar fixed left-0 right-0 z-40">
+    <img src="images/apple-icon.svg" alt="Apple" class="apple-icon" />
+    <div class="menu-labels">
+      <span class="system-menubar-font">File</span>
+      <span class="system-menubar-font">Edit</span>
+      <span class="system-menubar-font">Go</span>
+      <span class="system-menubar-font">Font</span>
+      <span class="system-menubar-font">Style</span>
+      <span class="system-menubar-font">Home</span>
+    </div>
+    <img src="images/help-mini.svg" alt="Help" class="help-icon" />
+    <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon" />
+  </div>
+
+   
+
+  <!-- Window container -->
+
+  <div class="hypercard-window">
+
+
+    <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
+      <div class="spacer shrink-0"></div>
+      <div class="close-box-wrapper">
+        <div class="close-box" onclick="closeModal()"></div>
+      </div>
+      <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Home</span>
+      </div>
+    </div>
+
+
+    <!-- Inner Layout -->
+    <div class="flex flex-col flex-1 overflow-hidden min-h-0">
+
+
+      <div id="hypercard-top-row" class="relative w-full h-[72px] pt-[10px]">
+        <div id="MailIcon" class="absolute top-0 right-0 pt-[10px] pr-4 h-8 flex items-start justify-end">
+          <button id="mail-button" class="icon-button w-8 h-8">
+            <img src="images/mail.svg" alt="Top Right Icon" class="w-full h-full" />
+          </button>
+        </div>
+
+        <!-- Row: Avatar + Hello (MailIcon floats separately) -->
+        <div class="flex items-center justify-start w-full pr-[60px]">
+          <!-- Avatar (now flush left) -->
+
+          <div id="Avatar" class="flex items-start justify-start pl-[10px]">
+            <div class="max-w-[150px] min-w-[50px] w-full box-border">
+              <img src="images/headshot-color.png" alt="Dan Morgan" class="w-full aspect-square filter grayscale"
+                style="animation: colorTransition 2s ease forwards 2s;" />
+            </div>
+          </div>
+
+          <!-- Hello -->
+          <div id="Hello" class="mx-auto flex items-center justify-center">
+            <div class="max-w-[300px] min-w-[50px] w-full px-2">
+              <img src="images/hello.png" alt="Hello" class="w-full h-auto filter grayscale"
+                style="animation: colorTransition 2s ease forwards 2s;" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOME ICON ROW -->
+
+
+
+
+
+      <!-- Scrollable Content -->
+
+      <!-- 🔽 Middle Content Block (Text + Buttons) -->
+      <div class="flex-1 overflow-y-auto space-y-4 px-4 pt-4  mt-[80px]">
+        <div class="p-2 col-span-3 flex flex-col justify-start">
+          <div
+            class="mx-auto inline-block max-w-full py-2 px-6 bg-white overflow-auto leading-tight classic-normal-text text-center space-y-3">
+            <p>I design things.</p>
+            <img src="images/glossy-apple.svg" alt="Apple" class="mx-auto h-[24px] filter grayscale"
+              style="animation: colorTransition 2s ease forwards 2s;" />
+              <!-- <img src="images/apple.png" alt="Apple" class="mx-auto w-[20px] filter grayscale"
+              style="animation: colorTransition 2s ease forwards 2s;" /> -->
+            <p>I’m a graphic and software designer in Kansas City.</p>
+            <p>I'm available for freelance design work.<br>
+              Drop me a line.</p>
+          </div>
+        </div>
+
+        <div class="p-2 col-span-3 row-start-3">
+          <div class="grid grid-cols-4 gap-x-1 gap-y-0">
+            <div class="flex flex-col items-center justify-end">
+              <button id="now-button" class="icon-button w-8 h-8 p-0 m-0">
+                <img src="images/news.svg" alt="Now" class="w-full h-full align-bottom" />
+              </button>
+              
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Now</span>
+            </div>
+            <div class="flex flex-col items-center justify-end">
+              <button id="services-button" class="icon-button w-8 h-8 p-0 m-0">
+                <img src="images/services.svg" alt="Services" class="w-full h-full align-top" />
+              </button>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Services</span>
+            </div>
+            <div class="flex flex-col items-center justify-end">
+              <button id="portfolio-button" class="icon-button w-8 h-8 p-0 m-0">
+                <img src="images/macpaint.svg" alt="Portfolio" class="w-full h-full align-bottom" />
+              </button>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Portfolio</span>
+            </div>
+            <div class="flex flex-col items-center justify-end">
+              <button id="about-button" class="icon-button w-8 h-8 p-0 m-0">
+                <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full align-top" />
+              </button>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">About Me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row (Fixed 32px) -->
+      <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+        <button id="previous-button" class="icon-button w-8 h-8">
+          <img src="images/hand-pointing-left.svg" alt="Previous" />
+        </button>
+        <button id="next-button" class="icon-button w-8 h-8">
+          <img src="images/hand-pointing-right.svg" alt="Next" />
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- After main content -->
+
+  <!-- Upper Right: Macintosh HD -->
+  <div class="fixed top-0 right-0 mr-[16px] mt-[52px] flex flex-col items-center">
+    <img src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 1px; padding-left: 2px;">
+        Macintosh HD
+    </span>
+</div>
+
+  <!-- Upper Second: Hypercard Open -->
+  <div class="fixed top-0 right-0 mr-[24px] mt-[140px] flex flex-col items-center">
+    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 1px; padding-left: 2px;">
+        HyperCard
+    </span>
+</div>
+
+<!-- Lower Right: Trash -->
+<div class="fixed bottom-0 right-0 mr-[40px] mb-4 flex flex-col items-center">
+    <img src="images/trash.svg" alt="Trash" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 2px; padding-left: 2px;">
+        Trash
+    </span>
+</div>
+
+  <script>
+    document.getElementById('mail-button')?.addEventListener('click', () => {
+      window.location.href = 'contact-me.html';
+    });
+
+    document.getElementById('now-button')?.addEventListener('click', () => {
+      window.location.href = 'now.html';
+    });
+
+    document.getElementById('services-button')?.addEventListener('click', () => {
+      window.location.href = 'services.html';
+    });
+
+    document.getElementById('portfolio-button')?.addEventListener('click', () => {
+      window.location.href = 'portfolio.html';
+    });
+
+    document.getElementById('about-button')?.addEventListener('click', () => {
+      window.location.href = 'about-me.html';
+    });
+
+    document.getElementById('previous-button')?.addEventListener('click', () => {
+      window.location.href = 'contact-me.html';
+    });
+
+    document.getElementById('next-button')?.addEventListener('click', () => {
+      window.location.href = 'now.html';
+    });
+
+    document.addEventListener("touchstart", function () { }, true);
+
+
+  </script>
+
+</body>
+
+</html>
