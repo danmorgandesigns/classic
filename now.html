@@ -11,6 +11,22 @@
 
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
+  <!-- System Menubar -->
+<div class="system-bezel"></div>
+<div class="system-menubar">
+    <img src="images/apple-icon.svg" alt="Apple" class="apple-icon" />
+    <div class="menu-labels">
+      <span class="system-menubar-font">File</span>
+      <span class="system-menubar-font">Edit</span>
+      <span class="system-menubar-font">Go</span>
+      <span class="system-menubar-font">Font</span>
+      <span class="system-menubar-font">Style</span>
+      <span class="system-menubar-font">Home</span>
+    </div>
+    <img src="images/help-mini.svg" alt="Help" class="help-icon" />
+    <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon" />
+</div> 
+    
     <!-- Window container -->
     <div class="hypercard-window">
 
@@ -59,25 +75,34 @@
 
         </div>
     </div>
-    <!-- After main content -->
+  <!-- After main content -->
 
-    <!-- Upper Right: Macintosh HD -->
-    <div class="fixed top-0 right-0 mr-4 mt-4 flex flex-col items-center">
-        <img src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[48px] w-auto" />
-        <span class="classic-icon-label"
-            style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 1px; padding-left: 2px;">
-            Macintosh HD
-        </span>
-    </div>
+  <!-- Upper Right: Macintosh HD -->
+  <div class="fixed top-0 right-0 mr-[10px] mt-[52px] flex flex-col items-center">
+    <img src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 1px; padding-left: 2px;">
+        Macintosh HD
+    </span>
+</div>
 
-    <!-- Lower Right: Trash -->
-    <div class="fixed bottom-0 right-0 mr-8 mb-4 flex flex-col items-center">
-        <img src="images/trash.svg" alt="Trash" class="h-[48px] w-auto" />
-        <span class="classic-icon-label"
-            style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 2px; padding-left: 2px;">
-            Trash
-        </span>
-    </div>
+  <!-- Upper Second: Hypercard Open -->
+  <div class="fixed top-0 right-0 mr-[20px] mt-[140px] flex flex-col items-center">
+    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 1px; padding-left: 2px;">
+        HyperCard
+    </span>
+</div>
+
+<!-- Lower Right: Trash -->
+<div class="fixed bottom-0 right-0 mr-[35px] mb-4 flex flex-col items-center">
+    <img src="images/trash.svg" alt="Trash" class="h-[48px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 0px; padding-right: 1px; padding-bottom: 2px; padding-left: 2px;">
+        Trash
+    </span>
+</div>
 
     <script>
         document.getElementById('mail-button')?.addEventListener('click', () => {
