@@ -133,7 +133,7 @@ body {
 
 .classic-icon-label {
     font-family: 'Geneva9', 'Geneva', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.0;
     color: black;
     /* Disable smoothing */
@@ -202,8 +202,8 @@ body {
 
 
 .classic-thumbnail-label {
-    font-family: 'Geneva10', 'Geneva', sans-serif;
-    font-size: 11px;
+    font-family: 'Geneva9', 'Geneva', sans-serif;
+    font-size: 12px;
     line-height: 1;
     font-kerning: none;
     color: black;
@@ -836,7 +836,18 @@ h1 {
     transition: opacity 0.2s ease;
   }
 
+  @keyframes rotate-once {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
   
+  .rotate-once {
+    animation: rotate-once 1.5s ease-out forwards;
+  }
 
 @keyframes colorTransition {
     from {
