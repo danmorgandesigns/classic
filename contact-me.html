@@ -56,7 +56,9 @@
 
             <!-- Scrollable Content -->
             <span class="classc-serif-heading pt-6 pb-2 pl-4">Contact Me</span>
-
+            <!-- <span style="cursor: pointer; color: black;" onclick="document.getElementById('confirmationDialog').classList.remove('hidden')">
+                Test
+              </span> -->
             <div class="flex-1 overflow-y-auto space-y-4">
                 <div class="container mx-auto px-4 py-0">
                     <div class="bg-white px-6 sm:max-w-md w-full mx-auto">
@@ -101,12 +103,22 @@
                         
                   
                         <div class="dialog-content">
-                          <h3 class="classic-service-title mb-2">Thank you!</h3>
-                          <p class="classic-service-title mb-4">Your message has been sent.</p>
-                          <button id="confirmButton" class="classic-default-button">
-                            OK
-                          </button>
-                        </div>
+                            <div class="flex">
+                              <img src="images/alert-face-info.svg" alt="Alert" class="h-[32px] w-auto mr-4" />
+                              <div>
+                                <p class="classic-dialog-text mb-2">Thank you!</p>
+                                <p class="classic-dialog-text mb-0">Your message has been sent.</p>
+                              </div>
+                            </div>
+                            <div class="mt-8 text-center">
+                              <button id="confirmButton" class="classic-default-button">
+                                OK
+                              </button>
+                            </div>
+                          </div>
+
+
+
                       </div>
                     </div>
                   </div>
