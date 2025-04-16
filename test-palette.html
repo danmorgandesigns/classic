@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tool Palette Test</title>
+  <link rel="stylesheet" href="css/classic.css">
+  <style>
+    body {
+      padding: 2rem;
+      font-family: sans-serif;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="togglePalette()">Toggle Tool Palette</button>
+
+  <div id="palette" class="tool-palette hidden">
+    <div class="tool-palette-titlebar"></div>
+    <!-- Content can go here -->
+  </div>
+
+  <script>
+    function togglePalette() {
+      const palette = document.getElementById('palette');
+      palette.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
