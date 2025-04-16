@@ -95,26 +95,34 @@
     font-display: swap;
 }
 
-
 @font-face {
-    font-family: 'Helvetica9';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.woff') format('woff'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica9-Medium.ttf') format('truetype');    
+    font-family: 'NewYorkRegular';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
-
-@font-face {
-    font-family: 'Helvetica10';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.woff2') format('woff2'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.woff') format('woff'),
-        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Helvetica10-Medium.ttf') format('truetype');    
+  }
+  @font-face {
+    font-family: 'NewYorkBold';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+  }
 
-
+  @font-face {
+    font-family: 'NewYorkItalic';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
 
 
@@ -495,9 +503,9 @@ h1 {
 }
 
 .classc-serif-heading {
-    font-family: 'Times24Med', serif;
-    font-size: 20px;
-    font-weight: 400;
+    font-family: 'NewYorkItalic';
+    font-size: 24px;
+    /* font-weight: 600; */
         /* Disable smoothing */
         font-smooth: never; /* Non-standard, but some support */
         -webkit-font-smoothing: none;
