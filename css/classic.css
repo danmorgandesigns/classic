@@ -244,7 +244,6 @@ body {
     color: white;
 }
 
-
 .classic-default-button {
     font-family: 'Chicago', sans-serif;
     font-size: 14px;
@@ -253,7 +252,8 @@ body {
     color: black;
     background: white;
     border-radius: 8px;
-    padding: 2px 24px;
+    line-height: 22px;
+    padding: 0 24px;
     border: 3px solid black;
     position: relative;
     cursor: pointer;
