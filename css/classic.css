@@ -429,14 +429,13 @@ body {
 
 
 
-
   .apple-icon {
     position: absolute;
     top: 3px;
     left: 18px;
     height: 11px;
     width: auto;
-    cursor: url('../cursors/watch-cursor.svg') 0 0, pointer;
+    cursor: pointer;
 }
 
 

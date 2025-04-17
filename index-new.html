@@ -37,8 +37,10 @@
       <span class="system-menubar-font">Style</span>
       <span class="system-menubar-font">Home</span>
     </div>
-    <img src="images/help-mini.svg" alt="Help" class="help-icon" />
-    <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon" />
+    <img src="images/help-mini.svg" alt="Help" class="help-icon" />   
+    <button onclick="togglePalette()">
+      <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon">
+    </button>
 </div>
 
 
@@ -106,10 +108,11 @@
           <div
             class="mx-auto inline-block max-w-full py-2 px-6 bg-white overflow-auto leading-tight classic-normal-text text-center space-y-3">
             <p>I design things.</p>
-            <img src="images/glossy-apple.svg" alt="Apple" class="mx-auto h-[24px] filter grayscale"
-              style="animation: colorTransition 2s ease forwards 2s;" />
-              <!-- <img src="images/apple.png" alt="Apple" class="mx-auto w-[20px] filter grayscale"
+            <!-- <img src="images/glossy-apple.svg" alt="Apple" class="mx-auto h-[24px] filter grayscale"
               style="animation: colorTransition 2s ease forwards 2s;" /> -->
+              <audio id="startup-sound" src="sounds/StartupPowerMacPCI.wav" preload="auto"></audio>
+<img src="images/glossy-apple.svg" alt="Apple" class="mx-auto h-[24px] filter grayscale"
+style="animation: colorTransition 2s ease forwards 2s;" onclick="document.getElementById('startup-sound').play()" />
             <p>I’m a graphic and software designer in Kansas City.</p>
             <p>I'm available for freelance design work.<br>
               Drop me a line.</p>
@@ -119,26 +122,26 @@
         <div class="p-2 col-span-3 row-start-3">
           <div class="grid grid-cols-4 gap-x-1 gap-y-0">
             <div class="flex flex-col items-center justify-end">
-              <button id="now-button" class="icon-button w-8 h-8 p-0 m-0">
+              <button id="now-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/news.svg" alt="Now" class="w-full h-full align-bottom" />
               </button>
               
               <span class="classic-thumbnail-label" style="margin-top: 3px;">Now</span>
             </div>
             <div class="flex flex-col items-center justify-end">
-              <button id="services-button" class="icon-button w-8 h-8 p-0 m-0">
-                <img src="images/services.svg" alt="Services" class="w-full h-full align-top" />
+              <button id="services-button" class="icon-button h-8 p-0 m-0">
+                <img src="images/appleshare.svg" alt="Services" class="w-full h-full align-top" />
               </button>
               <span class="classic-thumbnail-label" style="margin-top: 3px;">Services</span>
             </div>
             <div class="flex flex-col items-center justify-end">
-              <button id="portfolio-button" class="icon-button w-8 h-8 p-0 m-0">
-                <img src="images/macpaint.svg" alt="Portfolio" class="w-full h-full align-bottom" />
+              <button id="portfolio-button" class="icon-button h-8 p-0 m-0">
+                <img src="images/portfolio-scrapbook.svg" alt="Portfolio" class="w-full h-full align-bottom" />
               </button>
               <span class="classic-thumbnail-label" style="margin-top: 3px;">Portfolio</span>
             </div>
             <div class="flex flex-col items-center justify-end">
-              <button id="about-button" class="icon-button w-8 h-8 p-0 m-0">
+              <button id="about-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full align-top" />
               </button>
               <span class="classic-thumbnail-label" style="margin-top: 3px;">About Me</span>
@@ -215,6 +218,77 @@
     </span>
   </div>
 
+<!-- tool palette -->
+<div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
+    
+  <div class="tool-palette-titlebar relative flex items-center">
+      <div class="tool-palette-spacer shrink-0"></div>
+      <div class="tool-palette-close-box-wrapper">
+          <div class="tool-palette-close-box" onclick="togglePalette()"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 grid-rows-6 w-full h-full">
+      
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/finger-point-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/button-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/field-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/selection-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/lasso-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/pencil-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/paint-brush-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/eraser-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/line-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/spray-paint-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/rectangle-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/round-rect-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/paint-bucket-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/oval-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/freehand-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/text-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/polygon-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/polyline-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+
+    </div>
+</div>
+<!-- end tool palette -->
+
+
   <script>
     document.getElementById('mail-button')?.addEventListener('click', () => {
       window.location.href = 'contact-me.html';
@@ -288,6 +362,12 @@ const clarusIcon = document.getElementById('clarus-icon');
     }, 5000); // 10 seconds
   });
   //trash empty to full end
+
+
+  function togglePalette() {
+      const palette = document.getElementById('palette');
+      palette.classList.toggle('hidden');
+    }
 
   </script>
 
