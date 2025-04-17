@@ -9,6 +9,17 @@
     font-style: normal;
     font-display: swap;
   }
+
+  @font-face {
+    font-family: 'Cairo';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
   
   @font-face {
     font-family: 'GenevaBitmap';
@@ -38,6 +49,16 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Times-18';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff') format('woff'),
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.ttf') format('truetype');   
+    font-style: normal;
+    font-display: swap;
+}
+
 
 @font-face {
     font-family: 'Geneva9';
@@ -70,7 +91,7 @@
 @font-face {
     font-family: 'Geneva14';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff2') format('woff2'),
-        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff') format('woff'),
+        url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff') format('woff'),
         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.ttf') format('truetype');    
     font-style: normal;
     font-display: swap;
@@ -80,7 +101,7 @@
 @font-face {
     font-family: 'Geneva18';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff2') format('woff2'),
-        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff') format('woff'),
+        url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff') format('woff'),
         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.ttf') format('truetype');    
     font-style: normal;
     font-display: swap;
@@ -89,40 +110,11 @@
 @font-face {
     font-family: 'Geneva20';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff2') format('woff2'),
-        url('https: //raw .githubusercontent .com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff') format('woff'),
+        url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff') format('woff'),
         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.ttf') format('truetype');    
     font-style: normal;
     font-display: swap;
 }
-
-@font-face {
-    font-family: 'NewYorkRegular';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.woff') format('woff'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYork10.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NewYorkBold';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.woff') format('woff'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'NewYorkItalic';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.woff') format('woff'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/NewYorkItalic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
 
 
 
@@ -503,11 +495,13 @@ h1 {
 }
 
 .classc-serif-heading {
-    font-family: 'NewYorkItalic';
+    
+    font-family: 'Times24Med', 'Times New Roman', Times, serif;
+    
     font-size: 24px;
-    /* font-weight: 600; */
+    /* font-weight: 500; */
         /* Disable smoothing */
-        font-smooth: never; /* Non-standard, but some support */
+        font-smooth: never; 
         -webkit-font-smoothing: none;
         -moz-osx-font-smoothing: auto;
         image-rendering: pixelated;
