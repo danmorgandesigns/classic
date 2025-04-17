@@ -452,7 +452,9 @@ body {
     width: 16px;
   }
 
-
+.hypercard-icon:active {
+    filter: invert(1);
+  }
 
 
   .hypercard-window {
@@ -641,13 +643,13 @@ h1 {
 }
 
 
-.logo-button img {
+/* .logo-button img {
     width: 64px;
     height: auto;
     display: inline-block;
     cursor: pointer;
     transition: transform 0.2s;
-}
+} */
 .icon-button img {
     width: 32px;
     height: auto;
@@ -826,21 +828,83 @@ h1 {
 
 
 .tool-palette {
-    width: 90px;
-    height: 136px;
+    width: 68px;
+    height: 139px;
     border: 1px solid black;
     background-color: white;
     box-shadow: 2px 2px 0 black;
     display: flex;
     flex-direction: column;
+    z-index: 100;
   }
   
   .tool-palette-titlebar {
-    height: 9px;
+    height: 10px;
     border-bottom: 1px solid black;
     background-image: url('../images/palette-fill.svg');
     background-repeat: repeat;
   }
+
+  .tool-palette-close-box {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 0px;
+
+    cursor: pointer;
+}
+
+.tool-palette-close-box-wrapper {
+    width: 9px;
+    height: 8px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.tool-palette-spacer {
+    width: 6px;
+    /* Exactly the space you want before the close box */
+    flex-shrink: 0;
+}
+
+.tool-cell {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+  }
+  
+  /* Remove top border on first row */
+  .tool-cell:nth-child(-n+3) {
+    border-top: none;
+  }
+  
+  /* Remove left border on first column */
+  .tool-cell:nth-child(3n+1) {
+    border-left: none;
+  }
+
+
+  .tool-button img {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+  .tool-button:active img {
+    filter: invert(1);
+}
+
+
 
 
 .image-viewer,

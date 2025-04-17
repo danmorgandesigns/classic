@@ -24,7 +24,9 @@
       <span class="system-menubar-font">Home</span>
     </div>
     <img src="images/help-mini.svg" alt="Help" class="help-icon" />
-    <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon" />
+    <button onclick="togglePalette()">
+        <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon">
+      </button>
 </div>
 
     <!-- Window container -->
@@ -218,6 +220,77 @@
     </span>
   </div>
 
+<!-- tool palette -->
+<div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
+    
+    <div class="tool-palette-titlebar relative flex items-center">
+        <div class="tool-palette-spacer shrink-0"></div>
+        <div class="tool-palette-close-box-wrapper">
+            <div class="tool-palette-close-box" onclick="togglePalette()"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 grid-rows-6 w-full h-full">
+        
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/finger-point-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/button-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/field-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/selection-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/lasso-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/pencil-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/paint-brush-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/eraser-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/line-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/spray-paint-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/rectangle-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/round-rect-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/paint-bucket-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/oval-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/freehand-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/text-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/polygon-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+        <div class="tool-cell tool-button flex items-center justify-center">
+          <img src="images/polyline-tile.svg" class="w-[22px] h-[20px]" />
+        </div>
+  
+      </div>
+  </div>
+  <!-- end tool palette -->
+
+
     <script>
         document.getElementById('mail-button')?.addEventListener('click', () => {
             window.location.href = 'contact-me.html';
@@ -283,7 +356,10 @@ const clarusIcon = document.getElementById('clarus-icon');
    
    
    
-   
+  function togglePalette() {
+      const palette = document.getElementById('palette');
+      palette.classList.toggle('hidden');
+    }   
    
    
    
