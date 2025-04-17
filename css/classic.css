@@ -436,7 +436,9 @@ body {
     left: 18px;
     height: 11px;
     width: auto;
-  }
+    cursor: url('../cursors/watch-cursor.svg') 0 0, pointer;
+}
+
 
   .help-icon {
     position: absolute;
