@@ -11,6 +11,16 @@
   }
 
   @font-face {
+    font-family: 'Chicago-12';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Chicago-12.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Chicago-12.woff') format('woff'),
+         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Chicago-12.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
     font-family: 'Cairo';
     src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff2') format('woff2'),
          url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff') format('woff'),
@@ -457,7 +467,7 @@ body {
     position: absolute;
     top: 3px;
     right: 70px; /* adjust until it lines up nicely to the left of .help-icon */
-    font-family: 'Chicago', sans-serif;
+    font-family: 'Chicago-12', sans-serif;
     font-size: 14px;
     line-height: 1;
     white-space: nowrap;
