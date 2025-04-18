@@ -117,6 +117,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Palatino25';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.woff') format('woff'),
+        /* url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.woff') format('woff'), */
+        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.ttf') format('truetype');    
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 
 
@@ -594,11 +604,20 @@ h1 {
     font-weight: 500;
 }
 
-.classc-serif-heading {
-    
-    font-family: 'Times24Med', 'Times New Roman', Times, serif;
-    
+.classc-serif-heading {   
+    font-family: 'Times24Med', 'Times New Roman', Times, serif;   
     font-size: 24px;
+    /* font-weight: 500; */
+        /* Disable smoothing */
+        font-smooth: never; 
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: auto;
+        image-rendering: pixelated;
+}
+
+.palatino25-serif {   
+    font-family: 'Palatino25', sans-serif;   
+    font-size: 25px;
     /* font-weight: 500; */
         /* Disable smoothing */
         font-smooth: never; 
