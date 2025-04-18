@@ -118,8 +118,8 @@
 }
 
 @font-face {
-    font-family: 'Palatino25';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.woff') format('woff'),
+    font-family: 'Palatino-25';
+    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/PalatinoBitmap25.woff') format('woff'),
         /* url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.woff') format('woff'), */
         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino_25.ttf') format('truetype');    
     font-style: normal;
@@ -615,8 +615,8 @@ h1 {
         image-rendering: pixelated;
 }
 
-.palatino25-serif {   
-    font-family: 'Palatino25', sans-serif;   
+.palatino25 {   
+    font-family: 'Palatino-25', sans-serif;   
     font-size: 25px;
     /* font-weight: 500; */
         /* Disable smoothing */
