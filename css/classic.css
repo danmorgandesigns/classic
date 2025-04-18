@@ -144,7 +144,7 @@ body {
   }
 
   .classic-form-label {
-    font-family: 'Geneva9', 'Geneva', sans-serif;
+    font-family: 'Geneva12', 'Geneva', sans-serif;
     font-size: 13px;
     line-height: 1.2;
     color: black;
@@ -426,9 +426,6 @@ body {
     align-items: center;
   }
 
-
-
-
   .apple-icon {
     position: absolute;
     top: 3px;
@@ -438,14 +435,13 @@ body {
     cursor: pointer;
 }
 
-
   .help-icon {
     position: absolute;
     top: 2px;
     right: 44px;
     width: 16px;
   }
-  
+
   .hypercard-icon {
     position: absolute;
     top: 3px;
@@ -456,6 +452,19 @@ body {
 .hypercard-icon:active {
     filter: invert(1);
   }
+
+  .clock {
+    position: absolute;
+    top: 3px;
+    right: 70px; /* adjust until it lines up nicely to the left of .help-icon */
+    font-family: 'Chicago', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+  }
+
 
 
   .hypercard-window {
