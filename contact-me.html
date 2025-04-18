@@ -409,8 +409,8 @@ function setupClock() {
   const now = new Date();
   const mm = now.getMonth() + 1; // 1–12
   const dd = now.getDate();      // 1–31
-  const yyyy = now.getFullYear();
-  return `${mm}/${dd}/${yyyy}`;
+  const yy = now.getFullYear().toString().slice(-2); // "25"
+  return `${mm}/${dd}/${yy}`;
 };
 
   let showingDate = false;

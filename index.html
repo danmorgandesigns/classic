@@ -52,7 +52,7 @@
   <div class="hypercard-window">
 
 
-    <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
+    <div class="modal-titlebar relative flex items-center">
       <div class="spacer shrink-0"></div>
       <div class="close-box-wrapper">
         <div class="close-box" onclick="closeModal()"></div>
@@ -127,25 +127,25 @@ style="animation: colorTransition 2s ease forwards 2s;" onclick="document.getEle
                 <img src="images/news.svg" alt="Now" class="w-full h-full align-bottom" />
               </button>
               
-              <span class="classic-icon-label" style="margin-top: 3px;">Now</span>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Now</span>
             </div>
             <div class="flex flex-col items-center justify-end">
               <button id="services-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/appleshare.svg" alt="Services" class="w-full h-full align-top" />
               </button>
-              <span class="classic-icon-label" style="margin-top: 3px;">Services</span>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Services</span>
             </div>
             <div class="flex flex-col items-center justify-end">
               <button id="portfolio-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/portfolio-scrapbook.svg" alt="Portfolio" class="w-full h-full align-bottom" />
               </button>
-              <span class="classic-icon-label" style="margin-top: 3px;">Portfolio</span>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">Portfolio</span>
             </div>
             <div class="flex flex-col items-center justify-end">
               <button id="about-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full align-top" />
               </button>
-              <span class="classic-icon-label" style="margin-top: 3px;">About Me</span>
+              <span class="classic-thumbnail-label" style="margin-top: 3px;">About Me</span>
             </div>
           </div>
         </div>
@@ -390,8 +390,8 @@ function setupClock() {
   const now = new Date();
   const mm = now.getMonth() + 1; // 1–12
   const dd = now.getDate();      // 1–31
-  const yyyy = now.getFullYear();
-  return `${mm}/${dd}/${yyyy}`;
+  const yy = now.getFullYear().toString().slice(-2); // "25"
+  return `${mm}/${dd}/${yy}`;
 };
 
   let showingDate = false;

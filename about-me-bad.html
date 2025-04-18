@@ -157,17 +157,14 @@
                             <div class="flex">
             
                                 <div>
-                                    <p class="classc-serif-heading pt-3 pb-0 pl-0">Colophon</p>
-                                    <div >
-                                        <p class="classic-geneva9">This is a test for readability. Services Macintosh HD — Geneva9 </p>
-                                        <p class="classic-geneva10">This is a test for readability. Services Macintosh HD — Geneva10 </p>
-                                        <p class="classic-geneva12">This is a test for readability. Services Macintosh HD — Geneva12 </p>
-                                        <p class="classic-geneva14">This is a test for readability. Services Macintosh HD — Geneva14 </p>
+                                    <p class="classc-serif-heading pt-3 pb-0 pl-4">Colophon</p>
+                                    <div class="classic-normal-text">
+                                        <p> This site was designed to evoke the look and feel of Classic Mac OS System 1.0 through
+                                            7.0 and HyperCard when the graphics were 1-bit black and white pixels.</p>
                                     </div>
-
                                 </div>
                                 <div class="mt-7 text-right">
-                                    <button id="ok-colophon" class="classic-default-button absolute right-[10px] bottom-[10px]">
+                                    <button id="ok-colophon" class="classic-default-button absolute right-[34px] bottom-[11px]">
                                         OK
                                     </button>
                                 </div>
@@ -410,8 +407,8 @@ function setupClock() {
   const now = new Date();
   const mm = now.getMonth() + 1; // 1–12
   const dd = now.getDate();      // 1–31
-  const yy = now.getFullYear().toString().slice(-2); // "25"
-  return `${mm}/${dd}/${yy}`;
+  const yyyy = now.getFullYear();
+  return `${mm}/${dd}/${yyyy}`;
 };
 
   let showingDate = false;

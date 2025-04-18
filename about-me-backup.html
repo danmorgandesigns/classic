@@ -134,48 +134,25 @@
                 </div>
 
                 <p class="classc-serif-heading pt-3 pb-0 pl-4">Colophon</p>
-                <div class="px-3 pb-0 pt-0 mx-6">
+                <div class="px-3 pb-3 pt-2 border mx-6">
                     <div class="classic-normal-text">
-                        <p> This site was designed to evoke the look and feel of Classic Mac OS System 1.0 through 7.0 and HyperCard when the
-                            graphics were 1-bit black and white pixels. 
-    
-                          <button id="continue-button" class="classic-default-button mt-2" style="cursor: pointer;" onclick="document.getElementById('colophonDialog').classList.remove('hidden')">
-                            Continue...
-                          </button>
+                        <p> This site was designed to evoke the look and feel of Classic Mac OS and HyperCard when the
+                            graphics were 1-bit black and white pixels.
+                            Most of the navigation icons—the pointing hands, home button, mail button, category
+                            icons—are
+                            vector recreations that will always appear as 1-bit icons at any size.
+                            I wrote the code over a four-day sprint and it is hosted at
+                            <a href="https://github.com/danmorgandesigns/classic" class="underline">GitHub</a>.
                         </p>
-
+                        <p class="mt-2">Super special tip of the hat to Susan Kare, for the original Mac icon look.
+                            Nothing would look as cool as it does without her original work!</p>
                     </div>
                 </div>
 
 
             </div>
 
-            <div id="colophonDialog" class="classic-dialog-overlay hidden">
-                <div class="colophon-dialog">
-                    <div class="colophon-inner-box relative">
-                        <div class="dialog-content">
-                            <div class="flex">
-            
-                                <div>
-                                    <p class="classc-serif-heading pt-3 pb-0 pl-0">Colophon</p>
-                                    <div >
-                                        <p class="classic-geneva9">This is a test for readability. Services Macintosh HD — Geneva9 </p>
-                                        <p class="classic-geneva10">This is a test for readability. Services Macintosh HD — Geneva10 </p>
-                                        <p class="classic-geneva12">This is a test for readability. Services Macintosh HD — Geneva12 </p>
-                                        <p class="classic-geneva14">This is a test for readability. Services Macintosh HD — Geneva14 </p>
-                                    </div>
-
-                                </div>
-                                <div class="mt-7 text-right">
-                                    <button id="ok-colophon" class="classic-default-button absolute right-[10px] bottom-[10px]">
-                                        OK
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Bottom Row (Fixed 32px) -->
             <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
                 <button id="previous-button" class="icon-button w-8 h-8">
                     <img src="images/hand-pointing-left.svg" alt="Previous" />
@@ -377,14 +354,6 @@ const clarusIcon = document.getElementById('clarus-icon');
   //trash empty to full end
   
    
-  document.getElementById("ok-colophon").addEventListener("click", function () {
-            // Hide dialog
-            document.getElementById("colophonDialog").classList.add("hidden");
-            // Redirect to index.html
-            // window.location.href = "index.html";
-        });
-
-
    
    
   function togglePalette() {
@@ -410,8 +379,8 @@ function setupClock() {
   const now = new Date();
   const mm = now.getMonth() + 1; // 1–12
   const dd = now.getDate();      // 1–31
-  const yy = now.getFullYear().toString().slice(-2); // "25"
-  return `${mm}/${dd}/${yy}`;
+  const yyyy = now.getFullYear();
+  return `${mm}/${dd}/${yyyy}`;
 };
 
   let showingDate = false;
