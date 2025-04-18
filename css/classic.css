@@ -284,13 +284,17 @@ body {
 .classic-standard-button {
     font-family: 'Chicago', sans-serif;
     font-size: 12px;
+    font-smooth: never; 
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
     color: black;
     background: white;
     border: 1px solid black;
     border-radius: 8px;
     height: 22px;
-    width: 100px;
-    padding: 3px 12px;
+    width: auto;
+    padding: 0 24px;
     outline: none;
     cursor: pointer;
     user-select: none;
