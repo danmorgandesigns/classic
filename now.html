@@ -1,3 +1,7 @@
+---
+layout: none
+title: Now
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,8 +63,9 @@
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
 
             <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
-                <span id="now-content" class="classic-normal-text leading-tight space-y-2">
-                </span>
+              <span class="classic-normal-text leading-tight space-y-2">
+                {% include latest-now.html %}
+              </span>
             </div>
 
 
