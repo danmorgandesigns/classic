@@ -155,6 +155,55 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Palatino10';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-10.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-10.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-10.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palatino12';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-12.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-12.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-12.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palatino14';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-14.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-14.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-14.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palatino18';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-18.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-18.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-18.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palatino24';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-24.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-24.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-24.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 body {
@@ -697,8 +746,8 @@ h1 {
     font-weight: 500;
 }
 
-.classc-serif-heading {   
-    font-family: 'Times24Med', 'Times New Roman', Times, serif;   
+.classic-serif-heading {   
+    font-family: 'Palatino24', 'palatino', serif;   
     font-size: 24px;
     /* font-weight: 500; */
         /* Disable smoothing */
