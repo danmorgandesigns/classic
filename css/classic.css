@@ -20,18 +20,6 @@
     font-style: normal;
     font-display: swap;
   }
-  
-  
-  @font-face {
-    font-family: 'GenevaBitmap';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.woff') format('woff'),
-         url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/geneva-9.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
 
   @font-face {
     font-family: 'Times18Med';
@@ -118,12 +106,34 @@
 }
 
 @font-face {
-    font-family: 'Palatino-24';
-    src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/PalatinoBitmapSVG.woff') format('woff');
-    font-style: normal;
-    font-display: swap;
+  font-family: 'EspySans9';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans9.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans9.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans9.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'EspySans10';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans10.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans10.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans10.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EspySans12';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans12.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans12.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans12.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 
@@ -139,6 +149,45 @@ body {
     background: #9F9F9F;
 
 }
+
+
+.EspySans9 {
+  font-family: 'EspySans9', 'Geneva', sans-serif;
+  font-size: 10px;
+  line-height: 1.0;
+  color: black;
+  /* Disable smoothing */
+  font-smooth: never; /* Non-standard, but some support */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
+
+.EspySans10 {
+  font-family: 'EspySans10', 'Geneva', sans-serif;
+  font-size: 10px;
+  line-height: 1.0;
+  color: black;
+  /* Disable smoothing */
+  font-smooth: never; /* Non-standard, but some support */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
+
+.EspySans12 {
+  font-family: 'EspySans12', 'Geneva', sans-serif;
+  font-size: 10px;
+  line-height: 1.0;
+  color: black;
+  /* Disable smoothing */
+  font-smooth: never; /* Non-standard, but some support */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
+
+
 
 .classic-icon-label {
     font-family: 'Geneva10', 'Geneva', sans-serif;
