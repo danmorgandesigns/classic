@@ -136,6 +136,16 @@
 }
 
 @font-face {
+  font-family: 'EspySansBold12';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-12.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-12.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-12.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'EspySans14';
   src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans14.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans14.woff') format('woff'),
@@ -366,7 +376,7 @@ body {
   }
 
   .classic-medallion-subtitle {
-    font-family: 'Geneva12', 'Geneva', sans-serif;
+    font-family: 'EspySans12', 'Geneva', sans-serif;
     font-size: 12px;
     line-height: 1;
     font-kerning: none;
@@ -400,7 +410,7 @@ body {
 
 
 .classic-thumbnail-label {
-    font-family: 'Geneva12', 'Geneva', sans-serif;
+    font-family: 'EspySans12', 'Geneva', sans-serif;
     font-size: 12px;
     line-height: 1;
     font-kerning: none;
