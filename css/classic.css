@@ -156,6 +156,16 @@
 }
 
 @font-face {
+  font-family: 'EspySansBold14';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-14.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-14.woff') format('woff'),
+       url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySansBold-14.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'EspySans16';
   src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans16.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/EspySans16.woff') format('woff'),
@@ -303,7 +313,7 @@ body {
   }
 
   .classic-form-label {
-    font-family: 'Geneva12', 'Geneva', sans-serif;
+    font-family: 'EspySans12', 'Geneva', sans-serif;
     font-size: 12px;
     line-height: 1.2;
     color: black;
@@ -324,6 +334,15 @@ body {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: auto;
     image-rendering: pixelated;
+  }
+
+  .classic-normal-text ul {
+    list-style-type: disc;
+    margin-left: 3rem;
+    padding-left: 0;
+  }
+  .classic-normal-text li {
+    margin-bottom: 4px; /* vertical spacing between items */
   }
 
   .classic-geneva9 {
@@ -389,7 +408,7 @@ body {
 }
 
 .classic-passion-subtitle {
-    font-family: 'Geneva10', 'Geneva', sans-serif;
+    font-family: 'EspySans10', 'Geneva', sans-serif;
     font-size: 10px;
     line-height: 1;
     color: black;
@@ -402,10 +421,14 @@ body {
 
 
 .classic-medallion-title {
-    font-family: 'Chicago', sans-serif;
+    font-family: 'EspySansBold14', sans-serif;
     font-size: 14px;
     line-height: 1;
     color: black;
+    font-smooth: never; /* Non-standard, but some support */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
 }
 
 
@@ -590,7 +613,7 @@ body {
     background-color: white;
     border: 1px solid black;
     width: 600px;
-    height: 400px;
+    height: 370px;
     border-radius: 0;
     display: flex;
     flex-direction: column;
@@ -803,13 +826,13 @@ h1 {
 }
 
 .classic-service-title {
-    font-family: 'Chicago', sans-serif;
-    font-size: 14px;
+    font-family: 'EspySansBold12', sans-serif;
+    font-size: 12px;
     line-height: 1;
     color: black;
-    /* -webkit-font-smoothing: none;
+    -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: auto;
-    image-rendering: pixelated; */
+    image-rendering: pixelated;
 }
 
 .classic-dialog-text {
@@ -1017,8 +1040,13 @@ h1 {
 
 .page-number {
     font-family: 'Chicago', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     padding-top: 3px; /* or margin-top */
+                /* Disable smoothing */
+                font-smooth: never; 
+                -webkit-font-smoothing: none;
+                -moz-osx-font-smoothing: auto;
+                image-rendering: pixelated;
 }
 
 

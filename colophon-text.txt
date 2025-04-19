@@ -1,0 +1,17 @@
+This site was designed to evoke the look and feel of Classic Mac OS System 1.0 through 7.0 and HyperCard when the graphics were 1-bit black and white pixels.
+
+Most of the navigation icons—the pointing hands, home button, mail button, category icons—are vector recreations that will always appear as 1-bit icons at any size.
+
+The fonts are converted from the original bitmap system fonts into modern TrueType (.ttf) fonts and web-optiized .woff and .woff2 file types.
+
+This project wouldn't have been possible without a large community of retro Macintosh enthusiasts freely sharing their discoveries, workflows, and files. Here's a non-comprehensive list.
+
+- [HyperCard Simulator](https://hcsimulator.com)
+- [Infinite Mac](https://infinitemac.org)
+- [Macintosh Garden](https://macintoshgarden.org)
+- [Macintosh Repository](https://www.macintoshrepository.org)
+- [Joshua Stein's Classic Mac Font Repo](https://github.com/jcs/classic-mac-fonts)
+- [Matt Kane's site for inspiration](https://mk.gg)
+- [dfontSplitter bt Peter Upfold](https://peter.upfold.org.uk/projects/dfontsplitter)
+- [FontLab 8](https://www.fontlab.com/font-editor/fontlab/)
+
