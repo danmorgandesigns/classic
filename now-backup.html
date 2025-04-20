@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DanMorganDesigns</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/now-loader.js" defer></script>
     <link href="css/classic.css" rel="stylesheet">
 </head>
 
@@ -58,12 +60,15 @@
             <!-- Scrollable Content -->
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
 
+            <div id="now-content" class="classic-normal-text leading-tight space-y-2">
+              Loading latest update...
+            </div>
+            <div id="post-nav" class="classic-normal-text mt-4"></div>
 
-
-            <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
+            <!-- <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
                 <span id="now-content" class="classic-normal-text leading-tight space-y-2">
                 </span>
-            </div>
+            </div> -->
 
             <!-- Bottom Row (Fixed 32px) -->
             <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
