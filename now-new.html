@@ -64,7 +64,8 @@ layout: none
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
 <!-- Scrollable Content -->
 <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
-
+  <p><strong>Post count:</strong> {{ site.posts | size }}</p>
+  <p><strong>Posts loaded:</strong> {{ site.posts }}</p>
     {% if site.posts.size > 0 %}
     {% assign latest_post = site.posts.first %}
     <article>
