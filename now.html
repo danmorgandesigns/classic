@@ -234,16 +234,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        fetch('now-text.md')
-            .then(response => response.text())
-            .then(markdown => {
-                const html = marked.parse(markdown);
-                document.getElementById('now-content').innerHTML = html;
-            })
-            .catch(error => {
-                document.getElementById('now-content').textContent = 'Failed to load content.';
-                console.error('Error loading Markdown:', error);
-            });
+
 
                //toggle happy and sad mac begin
     const macIcon = document.getElementById('mac-icon');
