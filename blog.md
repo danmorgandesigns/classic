@@ -4,4 +4,4 @@ title: Blog
 permalink: /blog/
 ---
 
-This is a test blog page.
+Welcome to the blog test page.
