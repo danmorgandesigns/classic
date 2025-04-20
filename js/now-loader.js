@@ -7,13 +7,19 @@ async function loadLatestPost() {
     const posts = await res.json();
     const latest = posts[0];
 
+    console.log("Loading latest post:", latest.filename);
+
     const postRes = await fetch("posts/" + latest.filename);
     const md = await postRes.text();
+
+    console.log("Post markdown loaded, parsing...");
+
     const html = marked.parse(md);
     const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+
     contentContainer.innerHTML = withClass;
 
-    // Add previous posts
+    // Build past entries nav
     if (posts.length > 1) {
       let navHtml = "<h3 class='past-entries'>Past Entries:</h3><ul>";
       const maxShown = 10;
@@ -21,15 +27,15 @@ async function loadLatestPost() {
         navHtml += `<li><a href="#" onclick="loadPost('${posts[i].filename}');return false;">${posts[i].title}</a></li>`;
       }
       if (posts.length > maxShown + 1) {
-        navHtml += `<li><a href="/posts/">More...</a></li>`;
+        navHtml += `<li><a href="/archive.html">More...</a></li>`;
       }
       navHtml += "</ul>";
       navContainer.innerHTML = navHtml;
     }
 
   } catch (err) {
-    contentContainer.innerText = "Failed to load post.";
-    console.error(err);
+    console.error("🚨 Failed to load latest post", err);
+    contentContainer.innerText = "⚠️ Failed to load latest post.";
   }
 }
 
