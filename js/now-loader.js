@@ -9,11 +9,13 @@ async function loadLatestPost() {
 
     const postRes = await fetch("posts/" + latest.filename);
     const md = await postRes.text();
-    contentContainer.innerHTML = marked.parse(md);
+    const html = marked.parse(md);
+const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+contentContainer.innerHTML = withClass;
 
     // Add previous posts
     if (posts.length > 1) {
-      let navHtml = "<h3>Past Entries:</h3><ul>";
+      let navHtml = "<h3 class='past-entries'>Past Entries:</h3><ul>";
       const maxShown = 10;
       for (let i = 1; i < Math.min(posts.length, maxShown + 1); i++) {
         navHtml += `<li><a href="#" onclick="loadPost('${posts[i].filename}');return false;">${posts[i].title}</a></li>`;

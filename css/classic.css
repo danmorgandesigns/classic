@@ -854,7 +854,7 @@ h1 {
     font-weight: 600;
 }
 
-.classic-service-title, h3 {
+.classic-service-title {
     font-family: 'EspySansBold12', sans-serif;
     font-size: 12px;
     line-height: 1;
@@ -862,6 +862,28 @@ h1 {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: auto;
     image-rendering: pixelated;
+}
+
+.post-date {
+  font-family: 'EspySansBold12', sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: black;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
+
+.past-entries {
+  font-family: 'EspySansBold12', sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: black;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+  margin-bottom: 4px;
+
 }
 
 .classic-dialog-text {
