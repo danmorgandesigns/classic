@@ -13,14 +13,20 @@ async function loadLatestPost() {
     const withClass = html.replace("<h1>", "<h1 class='post-date'>");
     contentContainer.innerHTML = withClass;
 
-    // if (posts.length > 1) {
-    //   let navHtml = `
-    //     <div class="flex justify-center items-center gap-6 mt-4">
-    //       <img src="images/next-arrow.svg" alt="Older post" height="21px" width="22" class="cursor-pointer"
-    //         onclick="loadPost('${posts[1].filename}', 1)" />
-    //     </div>`;
-    //   navContainer.innerHTML = navHtml;
-    // }
+    // Set up navigation buttons
+    const nextBtn = document.getElementById("nav-next");
+    const prevBtn = document.getElementById("nav-prev");
+
+    prevBtn.classList.add("hidden");
+    prevBtn.onclick = null;
+
+    if (posts.length > 1) {
+      nextBtn.classList.remove("hidden");
+      nextBtn.onclick = () => loadPost(posts[1].filename, 1);
+    } else {
+      nextBtn.classList.add("hidden");
+      nextBtn.onclick = null;
+    }
 
   } catch (err) {
     contentContainer.innerText = "⚠️ Failed to load latest post.";
@@ -31,6 +37,7 @@ async function loadLatestPost() {
 async function loadPost(filename, index) {
   const contentContainer = document.getElementById("now-content");
   const navContainer = document.getElementById("post-nav");
+
   try {
     const res = await fetch("posts/" + filename);
     const md = await res.text();
@@ -41,15 +48,24 @@ async function loadPost(filename, index) {
     const resPosts = await fetch("posts.json");
     const posts = await resPosts.json();
 
-    // let navHtml = "<div class='flex justify-center items-center gap-6 mt-4'>";
-    // if (index > 0) {
-    //   navHtml += `<img src="images/prev-arrow.svg" alt="Newer post" height="21"  width="23" class="cursor-pointer" onclick="loadPost('${posts[index - 1].filename}', ${index - 1})" />`;
-    // }
-    // if (index + 1 < posts.length) {
-    //   navHtml += `<img src="images/next-arrow.svg" alt="Older post" height="21"  width="23" class="cursor-pointer" onclick="loadPost('${posts[index + 1].filename}', ${index + 1})" />`;
-    // }
-    // navHtml += "</div>";
-    // navContainer.innerHTML = navHtml;
+    // Show/hide nav icons and attach handlers
+    const prevBtn = document.getElementById("nav-prev");
+    const nextBtn = document.getElementById("nav-next");
+
+    prevBtn.classList.add("hidden");
+    nextBtn.classList.add("hidden");
+    prevBtn.onclick = null;
+    nextBtn.onclick = null;
+
+    if (index > 0) {
+      prevBtn.classList.remove("hidden");
+      prevBtn.onclick = () => loadPost(posts[index - 1].filename, index - 1);
+    }
+
+    if (index + 1 < posts.length) {
+      nextBtn.classList.remove("hidden");
+      nextBtn.onclick = () => loadPost(posts[index + 1].filename, index + 1);
+    }
 
   } catch (err) {
     contentContainer.innerText = "Failed to load selected post.";
