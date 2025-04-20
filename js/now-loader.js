@@ -47,9 +47,18 @@ async function loadPost(filename) {
   }
 }
 
-function tryLoadNowPage() {
+function loadNowSafely() {
+  // prevent double-loading
+  if (window._hasLoadedNowContent) return;
+  window._hasLoadedNowContent = true;
   loadLatestPost();
 }
 
-document.addEventListener("DOMContentLoaded", tryLoadNowPage);
-window.addEventListener("pageshow", tryLoadNowPage);  // ensures reload on back/forward nav
+if (document.readyState === "complete" || document.readyState === "interactive") {
+  // already loaded
+  loadNowSafely();
+} else {
+  // wait for DOM or bfcache-style restore
+  document.addEventListener("DOMContentLoaded", loadNowSafely, { once: true });
+  window.addEventListener("pageshow", loadNowSafely, { once: true });
+}
