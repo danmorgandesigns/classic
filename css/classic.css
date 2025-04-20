@@ -637,10 +637,8 @@ body {
     overflow-y: auto;         
   }
 
-  .disabled-icon {
-    opacity: 0.25;
-    pointer-events: none;
-    filter: grayscale(100%);
+  .nav-icon:active {
+    filter: invert(1);
   }
 
   .dialog-titlebar {

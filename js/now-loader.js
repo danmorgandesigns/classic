@@ -16,16 +16,13 @@ async function loadLatestPost() {
     const nextBtn = document.getElementById("nav-next");
     const prevBtn = document.getElementById("nav-prev");
 
-    // Disable prev button on latest post
-    prevBtn.classList.add("disabled-icon");
+    // Disable prev on latest post
     prevBtn.onclick = null;
 
-    // Enable next button if more posts exist
+    // Enable next if available
     if (posts.length > 1) {
-      nextBtn.classList.remove("disabled-icon");
       nextBtn.onclick = () => loadPost(posts[1].filename, 1);
     } else {
-      nextBtn.classList.add("disabled-icon");
       nextBtn.onclick = null;
     }
 
@@ -52,21 +49,17 @@ async function loadPost(filename, index) {
     const prevBtn = document.getElementById("nav-prev");
     const nextBtn = document.getElementById("nav-next");
 
-    // Reset all states
-    prevBtn.classList.add("disabled-icon");
-    nextBtn.classList.add("disabled-icon");
+    // Reset both buttons
     prevBtn.onclick = null;
     nextBtn.onclick = null;
 
-    // Enable prev if there is a newer post
+    // Enable prev if possible
     if (index > 0) {
-      prevBtn.classList.remove("disabled-icon");
       prevBtn.onclick = () => loadPost(posts[index - 1].filename, index - 1);
     }
 
-    // Enable next if there is an older post
+    // Enable next if possible
     if (index + 1 < posts.length) {
-      nextBtn.classList.remove("disabled-icon");
       nextBtn.onclick = () => loadPost(posts[index + 1].filename, index + 1);
     }
 
