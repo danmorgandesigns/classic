@@ -13,18 +13,19 @@ async function loadLatestPost() {
     const withClass = html.replace("<h1>", "<h1 class='post-date'>");
     contentContainer.innerHTML = withClass;
 
-    // Set up navigation buttons
     const nextBtn = document.getElementById("nav-next");
     const prevBtn = document.getElementById("nav-prev");
 
-    prevBtn.classList.add("hidden");
+    // Disable prev button on latest post
+    prevBtn.classList.add("disabled-icon");
     prevBtn.onclick = null;
 
+    // Enable next button if more posts exist
     if (posts.length > 1) {
-      nextBtn.classList.remove("hidden");
+      nextBtn.classList.remove("disabled-icon");
       nextBtn.onclick = () => loadPost(posts[1].filename, 1);
     } else {
-      nextBtn.classList.add("hidden");
+      nextBtn.classList.add("disabled-icon");
       nextBtn.onclick = null;
     }
 
@@ -48,22 +49,24 @@ async function loadPost(filename, index) {
     const resPosts = await fetch("posts.json");
     const posts = await resPosts.json();
 
-    // Show/hide nav icons and attach handlers
     const prevBtn = document.getElementById("nav-prev");
     const nextBtn = document.getElementById("nav-next");
 
-    prevBtn.classList.add("hidden");
-    nextBtn.classList.add("hidden");
+    // Reset all states
+    prevBtn.classList.add("disabled-icon");
+    nextBtn.classList.add("disabled-icon");
     prevBtn.onclick = null;
     nextBtn.onclick = null;
 
+    // Enable prev if there is a newer post
     if (index > 0) {
-      prevBtn.classList.remove("hidden");
+      prevBtn.classList.remove("disabled-icon");
       prevBtn.onclick = () => loadPost(posts[index - 1].filename, index - 1);
     }
 
+    // Enable next if there is an older post
     if (index + 1 < posts.length) {
-      nextBtn.classList.remove("hidden");
+      nextBtn.classList.remove("disabled-icon");
       nextBtn.onclick = () => loadPost(posts[index + 1].filename, index + 1);
     }
 

@@ -637,33 +637,11 @@ body {
     overflow-y: auto;         
   }
 
-  /* .colophon-dialog {
-    background-color: white;
-    border: 1px solid black;
-    width: 100%;               
-    max-width: 100%;          
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 2px;
-    overflow: visible;         
+  .disabled-icon {
+    opacity: 0.25;
+    pointer-events: none;
+    filter: grayscale(100%);
   }
-
-.colophon-inner-box {
-  border: 2px solid black;
-  background-color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  overflow: visible;        
-}
-
-.dialog-content {
-  padding: 1rem;
-  width: 100%;
-} */
-
 
   .dialog-titlebar {
     height: 10px;
