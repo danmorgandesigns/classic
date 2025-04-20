@@ -65,14 +65,18 @@ layout: none
 <!-- Scrollable Content -->
 <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
 
+    {% if site.posts.size > 0 %}
     {% assign latest_post = site.posts.first %}
     <article>
-      <h2 class="classic-serif-heading text-xl font-bold">{{ latest_post.title }}</h2>
-      <p class="text-sm mb-2"><em>{{ latest_post.date | date: "%B %d, %Y" }}</em></p>
-      <div class="prose max-w-none">
+      <h2>{{ latest_post.title }}</h2>
+      <p><em>{{ latest_post.date | date: "%B %d, %Y" }}</em></p>
+      <div>
         {{ latest_post.content }}
       </div>
     </article>
+  {% else %}
+    <p>No posts found.</p>
+  {% endif %}
   
     <!-- Fixed-position icon in bottom-left of pane -->
     <img
