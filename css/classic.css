@@ -854,7 +854,7 @@ h1 {
     font-weight: 600;
 }
 
-.classic-service-title {
+.classic-service-title, h3 {
     font-family: 'EspySansBold12', sans-serif;
     font-size: 12px;
     line-height: 1;
