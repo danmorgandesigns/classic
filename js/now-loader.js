@@ -47,4 +47,6 @@ async function loadPost(filename) {
   }
 }
 
-loadLatestPost();
+document.addEventListener("DOMContentLoaded", () => {
+  loadLatestPost();
+});
