@@ -15,14 +15,17 @@ async function loadLatestPost() {
 
     const nextBtn = document.getElementById("nav-next");
     const prevBtn = document.getElementById("nav-prev");
-
-    // Disable prev on latest post
+    
+    // Set "Prev" to disabled image and no click
+    prevBtn.src = "images/prev-arrow-disabled.svg";
     prevBtn.onclick = null;
-
-    // Enable next if available
+    
+    // Set "Next" to enabled if available
     if (posts.length > 1) {
+      nextBtn.src = "images/next-arrow.svg";
       nextBtn.onclick = () => loadPost(posts[1].filename, 1);
     } else {
+      nextBtn.src = "images/next-arrow-disabled.svg";
       nextBtn.onclick = null;
     }
 
@@ -48,18 +51,24 @@ async function loadPost(filename, index) {
 
     const prevBtn = document.getElementById("nav-prev");
     const nextBtn = document.getElementById("nav-next");
-
-    // Reset both buttons
+    
+    // Reset
     prevBtn.onclick = null;
     nextBtn.onclick = null;
-
-    // Enable prev if possible
+    
+    // Set default to disabled icons
+    prevBtn.src = "images/prev-arrow-disabled.svg";
+    nextBtn.src = "images/next-arrow-disabled.svg";
+    
+    // Enable Prev if available
     if (index > 0) {
+      prevBtn.src = "images/prev-arrow.svg";
       prevBtn.onclick = () => loadPost(posts[index - 1].filename, index - 1);
     }
-
-    // Enable next if possible
+    
+    // Enable Next if available
     if (index + 1 < posts.length) {
+      nextBtn.src = "images/next-arrow.svg";
       nextBtn.onclick = () => loadPost(posts[index + 1].filename, index + 1);
     }
 
