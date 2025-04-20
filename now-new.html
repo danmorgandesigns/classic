@@ -1,3 +1,6 @@
+---
+layout: none
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DanMorganDesigns</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="js/now-loader.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+    <!-- <script src="js/now-loader.js" defer></script> -->
     <link href="css/classic.css" rel="stylesheet">
 </head>
 
@@ -59,21 +62,27 @@
 
             <!-- Scrollable Content -->
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
-            <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
-              <div id="now-content" class="classic-normal-text leading-tight space-y-2">
-                Loading latest update...
-              </div>
-              <div id="post-nav" class="classic-normal-text mt-4"></div>
-            
-              <!-- Fixed-position icon in bottom-left of pane -->
-              <img
-                src="images/vlg-white-rtn-arrow.svg"
-                alt="Return to latest"
-                width="25"
-                onclick="loadLatestPost()"
-                class="absolute bottom-2 left-2 cursor-pointer z-10"
-              />
-            </div>
+<!-- Scrollable Content -->
+<div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
+
+    {% assign latest_post = site.posts.first %}
+    <article>
+      <h2 class="classic-serif-heading text-xl font-bold">{{ latest_post.title }}</h2>
+      <p class="text-sm mb-2"><em>{{ latest_post.date | date: "%B %d, %Y" }}</em></p>
+      <div class="prose max-w-none">
+        {{ latest_post.content }}
+      </div>
+    </article>
+  
+    <!-- Fixed-position icon in bottom-left of pane -->
+    <img
+      src="images/vlg-white-rtn-arrow.svg"
+      alt="Return to latest"
+      width="25"
+      onclick="loadLatestPost()"
+      class="absolute bottom-2 left-2 cursor-pointer z-10"
+    />
+  </div>
 
             <!-- Bottom Row (Fixed 32px) -->
             <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
