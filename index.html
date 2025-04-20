@@ -115,9 +115,9 @@ style="animation: colorTransition 2s ease forwards 2s;" onclick="document.getEle
         <div class="p-2 col-span-3 row-start-3">
           <div class="grid grid-cols-4 gap-x-1 gap-y-0">
             <div class="flex flex-col items-center justify-end">
-              <button id="now-button" class="icon-button h-8 p-0 m-0">
+              <a href="now.html" id="now-button" class="icon-button h-8 p-0 m-0">
                 <img src="images/news.svg" alt="Now" class="w-full h-full align-bottom" />
-              </button>
+              </a>
               
               <span class="classic-thumbnail-label" style="margin-top: 3px;">Now</span>
             </div>
@@ -287,9 +287,9 @@ style="animation: colorTransition 2s ease forwards 2s;" onclick="document.getEle
       window.location.href = 'contact-me.html';
     });
 
-    document.getElementById('now-button')?.addEventListener('click', () => {
-      window.location.href = 'now.html';
-    });
+    // document.getElementById('now-button')?.addEventListener('click', () => {
+    //   window.location.href = 'now.html';
+    // });
 
     document.getElementById('services-button')?.addEventListener('click', () => {
       window.location.href = 'services.html';
