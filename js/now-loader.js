@@ -24,7 +24,7 @@ async function loadLatestPost() {
       navHtml += "</ul>";
       navContainer.innerHTML = navHtml;
     }
-
+ 
   } catch (err) {
     contentContainer.innerText = "Failed to load post.";
     console.error(err);
