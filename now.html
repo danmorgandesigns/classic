@@ -65,14 +65,41 @@
               </div>
               <div id="post-nav" class="classic-normal-text mt-4"></div>
             
-              <!-- Fixed-position icon in bottom-left of pane -->
-              <img
-                src="images/vlg-white-rtn-arrow.svg"
-                alt="Return to latest"
-                width="25"
-                onclick="loadLatestPost()"
-                class="absolute bottom-2 left-2 cursor-pointer z-10"
-              />
+<!-- Fixed-position nav icons: left + center -->
+<div class="absolute bottom-2 left-0 w-full flex items-center justify-between px-4 z-10">
+  <!-- Left: Return to Latest -->
+  <img
+    src="images/vlg-white-rtn-arrow.svg"
+    alt="Return to latest"
+    width="25"
+    height="25"
+    onclick="loadLatestPost()"
+    class="cursor-pointer"
+  />
+
+  <!-- Center: Prev + Next icons -->
+  <div class="flex gap-6 items-center">
+    <img
+      id="nav-prev"
+      src="images/prev-arrow.svg"
+      alt="Newer post"
+      width="21"
+      height="21"
+      class="cursor-pointer hidden"
+    />
+    <img
+      id="nav-next"
+      src="images/next-arrow.svg"
+      alt="Older post"
+      width="21"
+      height="21"
+      class="cursor-pointer hidden"
+    />
+  </div>
+
+  <!-- Right spacer (empty) -->
+  <div style="width: 25px;"></div>
+</div>
             </div>
 
             <!-- Bottom Row (Fixed 32px) -->
