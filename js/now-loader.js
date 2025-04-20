@@ -21,7 +21,7 @@ async function loadLatestPost() {
 
     // Build past entries nav
     if (posts.length > 1) {
-      let navHtml = "<h3 class='past-entries'>Past Entries:</h3><ul>";
+      let navHtml = "<h3 class='past-entries'>What I was doing...</h3><ul>";
       const maxShown = 10;
       for (let i = 1; i < Math.min(posts.length, maxShown + 1); i++) {
         navHtml += `<li><a href="#" onclick="loadPost('${posts[i].filename}');return false;">${posts[i].title}</a></li>`;
