@@ -47,6 +47,9 @@ async function loadPost(filename) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function tryLoadNowPage() {
   loadLatestPost();
-});
+}
+
+document.addEventListener("DOMContentLoaded", tryLoadNowPage);
+window.addEventListener("pageshow", tryLoadNowPage);  // ensures reload on back/forward nav
