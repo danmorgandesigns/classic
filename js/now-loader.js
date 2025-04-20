@@ -10,8 +10,8 @@ async function loadLatestPost() {
     const postRes = await fetch("posts/" + latest.filename);
     const md = await postRes.text();
     const html = marked.parse(md);
-const withClass = html.replace("<h1>", "<h1 class='post-date'>");
-contentContainer.innerHTML = withClass;
+    const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+    contentContainer.innerHTML = withClass;
 
     // Add previous posts
     if (posts.length > 1) {
@@ -26,7 +26,7 @@ contentContainer.innerHTML = withClass;
       navHtml += "</ul>";
       navContainer.innerHTML = navHtml;
     }
- 
+
   } catch (err) {
     contentContainer.innerText = "Failed to load post.";
     console.error(err);
@@ -38,7 +38,9 @@ async function loadPost(filename) {
   try {
     const res = await fetch("posts/" + filename);
     const md = await res.text();
-    contentContainer.innerHTML = marked.parse(md);
+    const html = marked.parse(md);
+    const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+    contentContainer.innerHTML = withClass;
   } catch (err) {
     contentContainer.innerText = "Failed to load selected post.";
     console.error(err);
