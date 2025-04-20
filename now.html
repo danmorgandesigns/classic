@@ -60,14 +60,19 @@
             <!-- Scrollable Content -->
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
             <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
-            <div id="now-content" class="classic-normal-text leading-tight space-y-2">
-              Loading latest update...
-            </div>
-            <div id="post-nav" class="classic-normal-text mt-4"></div>
-
-            
-                <!-- <span id="now-content" class="classic-normal-text leading-tight space-y-2">
-                </span> -->
+              <div id="now-content" class="classic-normal-text leading-tight space-y-2">
+                Loading latest update...
+              </div>
+              <div id="post-nav" class="classic-normal-text mt-4"></div>
+              <div class="relative">
+                <img
+                  src="images/vlg-white-rtn-arrow.svg"
+                  alt="Return to latest"
+                  width="25"
+                  onclick="loadLatestPost()"
+                  class="absolute bottom-2 left-2 cursor-pointer"
+                />
+              </div>
             </div>
 
             <!-- Bottom Row (Fixed 32px) -->
