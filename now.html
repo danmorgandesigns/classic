@@ -59,20 +59,20 @@
 
             <!-- Scrollable Content -->
             <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
-            <div class="flex-1 p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
+            <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
               <div id="now-content" class="classic-normal-text leading-tight space-y-2">
                 Loading latest update...
               </div>
               <div id="post-nav" class="classic-normal-text mt-4"></div>
-              <div class="relative">
-                <img
-                  src="images/vlg-white-rtn-arrow.svg"
-                  alt="Return to latest"
-                  width="25"
-                  onclick="loadLatestPost()"
-                  class="absolute bottom-2 left-2 cursor-pointer"
-                />
-              </div>
+            
+              <!-- Fixed-position icon in bottom-left of pane -->
+              <img
+                src="images/vlg-white-rtn-arrow.svg"
+                alt="Return to latest"
+                width="25"
+                onclick="loadLatestPost()"
+                class="absolute bottom-2 left-2 cursor-pointer z-10"
+              />
             </div>
 
             <!-- Bottom Row (Fixed 32px) -->
