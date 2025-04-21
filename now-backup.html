@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DanMorganDesigns</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/now-loader.js" defer></script>
   <link href="css/classic.css" rel="stylesheet">
 </head>
 
@@ -38,7 +40,7 @@
         <div class="close-box" onclick="closeModal()"></div>
       </div>
       <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Services</span>
+        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Now</span>
       </div>
     </div>
 
@@ -56,132 +58,49 @@
       </div>
 
       <!-- Scrollable Content -->
-      <span class="classic-serif-heading pt-6 pb-2 pl-4">Design Services</span>
+      <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
+      <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
+        <!-- <div class="flex flex-col h-full border border-black shadow-[2px_2px_0_black] bg-white mx-6 rounded-[0px]"> -->
 
-      <div class="flex-1 overflow-y-auto space-y-4">
-        <div class="flex flex-col items-center justify-end px-6">
-          <div class="flex items-start mt-2 mb-4">
-            <img src="images/business-card.svg" class="pt-1" style="width:48px;" alt="Business Cards">
-            <div class="flex flex-col">
-              <span class="classic-service-title px-2 pb-1">Business Cards</span>
-              <p class="classic-service-details px-2">Whether you prefer to print a few yourself on perforated
-                stock or have several boxes professionally printed and shipped to you, I can handle
-                your design needs. </p>
+          <!-- Scrollable blog content area -->
+          <div class="flex-1 overflow-y-auto p-3 space-y-4">
+            <div id="now-content" class="classic-normal-text leading-tight space-y-2">
+              Loading latest update...
             </div>
+            <div id="post-nav" class="classic-normal-text mt-4"></div>
           </div>
-          <div class="flex items-start mb-4">
-            <img src="images/letterhead.svg" class="pt-1" style="width:48px;" alt="Letterheads and Branding">
-            <div class="flex flex-col">
-              <span class="classic-service-title px-2 pb-1">Letterhead and Branding</span>
-              <p class="classic-service-details px-2">Do you have an old logo that needs freshened up and made
-                digital? Are you just starting and need a brand for your small business? I can
-                deliver a logo suitable for web, print, and screen printing in the filetypes and
-                sizes you need with guidance on how to best use them.</p>
+        
+          <!-- Fixed nav row inside the box, bottom-aligned -->
+          <div class="flex items-center justify-between px-4 py-2">
+            <!-- Left: Return to Latest -->
+            <img src="images/lg-return-arrow.svg" alt="Return to latest"
+              width="23" height="21" onclick="loadLatestPost()" class="cursor-pointer nav-icon" />
+        
+            <!-- Center: Prev + Next icons -->
+            <div class="flex gap-6 items-center">
+              <img id="nav-prev" src="images/prev-arrow.svg" alt="Newer post"
+                width="23" height="21" class="cursor-pointer nav-icon" />
+              <img id="nav-next" src="images/next-arrow.svg" alt="Older post"
+                width="22" height="21" class="cursor-pointer nav-icon" />
             </div>
-          </div>
-          <div class="flex items-start mb-4">
-            <img src="images/flyers.svg" class="pt-1" style="width:48px;" alt="Flyers & Brochures">
-            <div class="flex flex-col">
-              <span class="classic-service-title px-2 pb-1">Flyers & Brochures</span>
-              <p class="classic-service-details px-2">I can design full page flyers, half fold brochures,
-                tri-fold brochures, and larger marketing catalogs or posters in a wide variety of
-                sizes, styles, and paper finishes.</p>
-            </div>
-          </div>
-          <div class="flex items-start mb-4">
-            <img src="images/pdf-form-stack.svg" class="pt-1" style="width:48px;" alt="PDF Forms">
-            <div class="flex flex-col">
-              <span class="classic-service-title px-2 pb-1">Fillable PDF Forms</span>
-              <p class="classic-service-details px-2">Complex, fillable Acrobat forms are a specialty of mine.
-                If you need something new or an old form rethought and made modern, I have the
-                experience to make it happen.</p>
-            </div>
+        
+            <!-- Right spacer -->
+            <div style="width: 25px;"></div>
           </div>
         </div>
+
+      <!-- Bottom Row (Fixed 32px) -->
+      <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+        <button id="previous-button" class="icon-button w-8 h-8">
+          <img src="images/hand-pointing-left.svg" alt="Previous" />
+        </button>
+        <button id="next-button" class="icon-button w-8 h-8">
+          <img src="images/hand-pointing-right.svg" alt="Next" />
+        </button>
       </div>
+
     </div>
-
-    <!-- Bottom Row (Fixed 32px) -->
-    <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
-      <button id="previous-button" class="icon-button w-8 h-8">
-        <img src="images/hand-pointing-left.svg" alt="Previous" />
-      </button>
-      <button id="next-button" class="icon-button w-8 h-8">
-        <img src="images/hand-pointing-right.svg" alt="Next" />
-      </button>
-    </div>
-    <!-- tool palette -->
-    <div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
-
-      <div class="tool-palette-titlebar relative flex items-center">
-        <div class="tool-palette-spacer shrink-0"></div>
-        <div class="tool-palette-close-box-wrapper">
-          <div class="tool-palette-close-box" onclick="togglePalette()"></div>
-        </div>
-      </div>
-      <div class="grid grid-cols-3 grid-rows-6 w-full h-full">
-
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/finger-point-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/button-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/field-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/selection-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/lasso-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/pencil-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/paint-brush-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/eraser-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/line-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/spray-paint-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/rectangle-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/round-rect-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/paint-bucket-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/oval-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/freehand-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/text-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/polygon-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-        <div class="tool-cell tool-button flex items-center justify-center">
-          <img src="images/polyline-tile.svg" class="w-[22px] h-[20px]" />
-        </div>
-
-      </div>
-    </div>
-    <!-- end tool palette -->
   </div>
-  <!-- end hypercard-window -->
-  <!-- </div> -->
   <!-- After main content -->
 
   <!-- #1 Upper Right: Macintosh HD -->
@@ -238,8 +157,75 @@
     </span>
   </div>
 
+  <!-- tool palette -->
+  <div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
 
+    <div class="tool-palette-titlebar relative flex items-center">
+      <div class="tool-palette-spacer shrink-0"></div>
+      <div class="tool-palette-close-box-wrapper">
+        <div class="tool-palette-close-box" onclick="togglePalette()"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 grid-rows-6 w-full h-full">
 
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/finger-point-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/button-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/field-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/selection-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/lasso-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/pencil-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/paint-brush-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/eraser-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/line-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/spray-paint-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/rectangle-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/round-rect-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/paint-bucket-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/oval-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/freehand-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/text-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/polygon-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+      <div class="tool-cell tool-button flex items-center justify-center">
+        <img src="images/polyline-tile.svg" class="w-[22px] h-[20px]" />
+      </div>
+
+    </div>
+  </div>
+  <!-- end tool palette -->
 
   <script>
     document.getElementById('mail-button')?.addEventListener('click', () => {
@@ -251,14 +237,18 @@
     });
 
     document.getElementById('previous-button')?.addEventListener('click', () => {
-      window.location.href = 'now.html';
+      window.location.href = 'index.html';
     });
 
     document.getElementById('next-button')?.addEventListener('click', () => {
-      window.location.href = 'portfolio.html';
+      window.location.href = 'services.html';
     });
 
     document.addEventListener("touchstart", function () { }, true);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+
 
     //toggle happy and sad mac begin
     const macIcon = document.getElementById('mac-icon');
@@ -364,7 +354,6 @@
     }
     setupClock();
     // end clock
-
   </script>
 
 </body>

@@ -59,30 +59,35 @@
 
       <!-- Scrollable Content -->
       <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
-      <div class="flex-1 relative p-3 overflow-y-auto space-y-4 border border-black bg-white mx-6">
-        <div id="now-content" class="classic-normal-text leading-tight space-y-2">
-          Loading latest update...
-        </div>
-        <div id="post-nav" class="classic-normal-text mt-4"></div>
 
-        <!-- Fixed-position nav icons: left + center -->
-        <div class="absolute bottom-2 left-0 w-full flex items-center justify-between px-4 pt-4 z-10">
-          <!-- Left: Return to Latest -->
-          <img src="images/vlg-white-rtn-arrow.svg" alt="Return to latest" width="25" height="25"
-            onclick="loadLatestPost()" class="cursor-pointer nav-icon" />
+        <div class="flex-1 relative border border-black shadow-[2px_2px_0_black] bg-white mx-6 rounded-[0px] overflow-hidden flex flex-col">            
 
-          <!-- Center: Prev + Next icons -->
-          <div class="flex gap-6 items-center">
-            <img id="nav-prev" src="images/prev-arrow.svg" alt="Newer post" width="23" height="21"
-              class="cursor-pointer nav-icon" />
-            <img id="nav-next" src="images/next-arrow.svg" alt="Older post" width="23" height="21"
-              class="cursor-pointer nav-icon" />
+          <!-- Scrollable blog content area -->
+          <div class="flex-1 overflow-y-auto p-3 space-y-4">
+            <div id="now-content" class="classic-normal-text leading-tight space-y-2">
+              Loading latest update...
+            </div>
+            <div id="post-nav" class="classic-normal-text mt-4"></div>
           </div>
-
-          <!-- Right spacer (empty) -->
-          <div style="width: 25px;"></div>
+        
+          <!-- Fixed nav row inside the box, bottom-aligned -->
+          <div class="flex items-center justify-between px-4 py-2">
+            <!-- Left: Return to Latest -->
+            <img src="images/lg-return-arrow.svg" alt="Return to latest"
+              width="23" height="21" onclick="loadLatestPost()" class="cursor-pointer nav-icon" />
+        
+            <!-- Center: Prev + Next icons -->
+            <div class="flex gap-6 items-center">
+              <img id="nav-prev" src="images/prev-arrow.svg" alt="Newer post"
+                width="23" height="21" class="cursor-pointer nav-icon" />
+              <img id="nav-next" src="images/next-arrow.svg" alt="Older post"
+                width="22" height="21" class="cursor-pointer nav-icon" />
+            </div>
+        
+            <!-- Right spacer -->
+            <div style="width: 25px;"></div>
+          </div>
         </div>
-      </div>
 
       <!-- Bottom Row (Fixed 32px) -->
       <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
@@ -95,64 +100,8 @@
       </div>
 
     </div>
-  </div>
-  <!-- After main content -->
 
-  <!-- #1 Upper Right: Macintosh HD -->
-  <div id="mac-container" class="fixed top-0 right-0 mr-[7px] mt-[52px] flex flex-col items-center cursor-pointer">
-    <img id="mac-icon" src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Macintosh HD
-    </span>
-  </div>
-
-  <!-- #2 Hypercard Open -->
-  <div class="fixed top-0 right-0 mr-[16px] mt-[114px] flex flex-col items-center">
-    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      HyperCard
-    </span>
-  </div>
-
-  <!-- #3 Clarus -->
-  <div id="clarus-container" class="fixed top-[176px] right-[27px] flex flex-col items-center cursor-pointer">
-    <img id="clarus-icon" src="images/clarus-icon.svg" alt="Clarus" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Clarus
-    </span>
-  </div>
-
-  <!-- #4 Risk -->
-  <div class="fixed top-[238px] right-[32px] flex flex-col items-center">
-    <img src="images/risk.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Risk
-    </span>
-  </div>
-
-  <!-- #5 Photoshop -->
-  <div class="fixed top-[300px] right-[17px] flex flex-col items-center">
-    <img src="images/photoshop.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Photoshop
-    </span>
-  </div>
-
-  <!-- #6 Trash -->
-  <div id="trash-container" class="fixed bottom-0 right-0 mr-[32px] mb-4 flex flex-col items-center cursor-pointer">
-    <img id="trash-icon" src="images/trash.svg" alt="Trash" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Trash
-    </span>
-  </div>
-
-  <!-- tool palette -->
+      <!-- tool palette -->
   <div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
 
     <div class="tool-palette-titlebar relative flex items-center">
@@ -221,6 +170,67 @@
     </div>
   </div>
   <!-- end tool palette -->
+  </div> 
+  <!-- end hypercardwindow -->
+
+
+  <!-- After main content -->
+
+  <!-- #1 Upper Right: Macintosh HD -->
+  <div id="mac-container" class="fixed top-0 right-0 mr-[7px] mt-[52px] flex flex-col items-center cursor-pointer">
+    <img id="mac-icon" src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      Macintosh HD
+    </span>
+  </div>
+
+  <!-- #2 Hypercard Open -->
+  <div class="fixed top-0 right-0 mr-[16px] mt-[114px] flex flex-col items-center">
+    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      HyperCard
+    </span>
+  </div>
+
+  <!-- #3 Clarus -->
+  <div id="clarus-container" class="fixed top-[176px] right-[27px] flex flex-col items-center cursor-pointer">
+    <img id="clarus-icon" src="images/clarus-icon.svg" alt="Clarus" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      Clarus
+    </span>
+  </div>
+
+  <!-- #4 Risk -->
+  <div class="fixed top-[238px] right-[32px] flex flex-col items-center">
+    <img src="images/risk.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      Risk
+    </span>
+  </div>
+
+  <!-- #5 Photoshop -->
+  <div class="fixed top-[300px] right-[17px] flex flex-col items-center">
+    <img src="images/photoshop.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      Photoshop
+    </span>
+  </div>
+
+  <!-- #6 Trash -->
+  <div id="trash-container" class="fixed bottom-0 right-0 mr-[32px] mb-4 flex flex-col items-center cursor-pointer">
+    <img id="trash-icon" src="images/trash.svg" alt="Trash" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+      Trash
+    </span>
+  </div>
+
+
 
   <script>
     document.getElementById('mail-button')?.addEventListener('click', () => {
