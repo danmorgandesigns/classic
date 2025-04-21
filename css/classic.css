@@ -1152,7 +1152,21 @@ h1 {
 }
 
 
-.tool-palette {
+/* .tool-palette {
+    width: 68px;
+    height: 139px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 2px 2px 0 black;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  } */
+
+  .tool-palette {
+    position: absolute;    /* Position it relative to the .hypercard-window */
+    top: 20px;             /* 20px from the top of .hypercard-window */
+    right: 20px;           /* 20px from the right side of .hypercard-window */
     width: 68px;
     height: 139px;
     border: 1px solid black;
