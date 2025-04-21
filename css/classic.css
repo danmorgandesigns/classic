@@ -658,13 +658,31 @@ body {
   }
 
   .space-invaders {
-    position: fixed;
-    top: 120px; /* needs a unit */
-    left: 100px;
-    right: 100px;
-    height: auto; /* allow height to grow if needed */
+    position: absolute;
+    top: 175px;
+    left: 0;
+    height: auto;
     z-index: 100;
+    /* animation: space-bounce 4s linear infinite alternate; */
   }
+
+
+
+  @keyframes space-bounce {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(220px); /* adjust this based on actual max range */
+    }
+  }
+  
+  .animate-space {
+    animation: space-bounce 4s linear infinite alternate;
+  }
+
+  
+ 
 
 
   .system-bezel {
