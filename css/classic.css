@@ -657,6 +657,16 @@ body {
     text-align: left;
   }
 
+  .space-invaders {
+    position: fixed;
+    top: 120px; /* needs a unit */
+    left: 100px;
+    right: 100px;
+    height: auto; /* allow height to grow if needed */
+    z-index: 100;
+  }
+
+
   .system-bezel {
     position: fixed;
     top: 0;
