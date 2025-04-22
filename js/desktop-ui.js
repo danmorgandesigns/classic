@@ -55,13 +55,7 @@ function setupClock() {
     startClock();
   }
   
-  // Palette toggler
-  function togglePalette() {
-    const palette = document.getElementById("palette");
-    if (palette) {
-      palette.classList.toggle("hidden");
-    }
-  }
+
   
   // Load the system menubar and related UI
   window.addEventListener("DOMContentLoaded", () => {

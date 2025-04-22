@@ -114,18 +114,6 @@ function hideUFO() {
 }
 
 
-
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   // Load Space Invaders markup from external HTML file
-//   fetch('components/invaders-component.html')
-//     .then(res => res.text())
-//     .then(html => {
-//       document.getElementById('invader-container').innerHTML = html;
-//       startInvaderAnimation();
-//     });
-// });
-
 fetch('components/invaders-component.html')
   .then(res => res.text())
   .then(html => {
@@ -134,23 +122,23 @@ fetch('components/invaders-component.html')
     // Start the animation that cycles between frame 1 and 2
     startInvaderAnimation();
 
- // Load sound
-const eepSound = new Audio('sounds/whit.mp3');
-eepSound.load();
-// Make all invaders clickable: animate + hide + play sound
-const invaderImages = document.querySelectorAll('#space-invaders img[data-type]');
+    // Load sound
+    const eepSound = new Audio('sounds/whit.mp3');
+    eepSound.load();
+    // Make all invaders clickable: animate + hide + play sound
+    const invaderImages = document.querySelectorAll('#space-invaders img[data-type]');
 
-invaderImages.forEach((img) => {
-  img.addEventListener('click', () => {
-    // Rewind and play sound
-    eepSound.currentTime = 0;
-    eepSound.play();
+    invaderImages.forEach((img) => {
+      img.addEventListener('click', () => {
+        // Rewind and play sound
+        eepSound.currentTime = 0;
+        eepSound.play();
 
-    // Animate and hide
-    img.classList.add('animate-ping');
-    setTimeout(() => {
-      img.classList.add('hidden');
-    }, 200);
-  });
-});
+        // Animate and hide
+        img.classList.add('animate-ping');
+        setTimeout(() => {
+          img.classList.add('hidden');
+        }, 200);
+      });
+    });
   });

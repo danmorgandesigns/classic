@@ -13,23 +13,7 @@
 
 <body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
 
-  <!-- System Menubar -->
-  <div class="system-bezel"></div>
-  <div class="system-menubar">
-    <img src="images/apple-icon.svg" alt="Apple" class="apple-icon" />
-    <div class="menu-labels">
-      <span class="system-menubar-font">File</span>
-      <span class="system-menubar-font">Edit</span>
-      <span class="system-menubar-font">Go</span>
-      <span class="system-menubar-font" onclick="togglePalette()" style="cursor: pointer;">Tools</span>
-      <span class="system-menubar-font" onclick="window.location.href='index.html'" style="cursor: pointer;">Home</span>
-    </div>
-    <div class="clock" id="clock">Thu 9:41 AM</div>
-    <img src="images/help-mini.svg" alt="Help" class="help-icon" />
-    <button onclick="togglePalette()">
-      <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon">
-    </button>
-  </div>
+  <div id="desktop-container"></div>
 
   <!-- Window container -->
   <div class="hypercard-window">
@@ -60,34 +44,35 @@
       <!-- Scrollable Content -->
       <span class="classic-serif-heading pt-6 pb-2 pl-4">What I'm Doing Now</span>
 
-        <div class="flex-1 relative border border-black shadow-[2px_2px_0_black] bg-white mx-6 rounded-[0px] overflow-hidden flex flex-col">            
+      <div
+        class="flex-1 relative border border-black shadow-[2px_2px_0_black] bg-white mx-6 rounded-[0px] overflow-hidden flex flex-col">
 
-          <!-- Scrollable blog content area -->
-          <div class="flex-1 overflow-y-auto p-3 space-y-4">
-            <div id="now-content" class="classic-normal-text leading-tight space-y-2">
-              Loading latest update...
-            </div>
-            <div id="post-nav" class="classic-normal-text mt-4"></div>
+        <!-- Scrollable blog content area -->
+        <div class="flex-1 overflow-y-auto p-3 space-y-4">
+          <div id="now-content" class="classic-normal-text leading-tight space-y-2">
+            Loading latest update...
           </div>
-        
-          <!-- Fixed nav row inside the box, bottom-aligned -->
-          <div class="flex items-center justify-between px-4 py-2">
-            <!-- Left: Return to Latest -->
-            <img src="images/lg-return-arrow.svg" alt="Return to latest"
-              width="23" height="21" onclick="loadLatestPost()" class="cursor-pointer nav-icon" />
-        
-            <!-- Center: Prev + Next icons -->
-            <div class="flex gap-6 items-center">
-              <img id="nav-prev" src="images/prev-arrow.svg" alt="Newer post"
-                width="23" height="21" class="cursor-pointer nav-icon" />
-              <img id="nav-next" src="images/next-arrow.svg" alt="Older post"
-                width="22" height="21" class="cursor-pointer nav-icon" />
-            </div>
-        
-            <!-- Right spacer -->
-            <div style="width: 25px;"></div>
-          </div>
+          <div id="post-nav" class="classic-normal-text mt-4"></div>
         </div>
+
+        <!-- Fixed nav row inside the box, bottom-aligned -->
+        <div class="flex items-center justify-between px-4 py-2">
+          <!-- Left: Return to Latest -->
+          <img src="images/lg-return-arrow.svg" alt="Return to latest" width="23" height="21" onclick="loadLatestPost()"
+            class="cursor-pointer nav-icon" />
+
+          <!-- Center: Prev + Next icons -->
+          <div class="flex gap-6 items-center">
+            <img id="nav-prev" src="images/prev-arrow.svg" alt="Newer post" width="23" height="21"
+              class="cursor-pointer nav-icon" />
+            <img id="nav-next" src="images/next-arrow.svg" alt="Older post" width="22" height="21"
+              class="cursor-pointer nav-icon" />
+          </div>
+
+          <!-- Right spacer -->
+          <div style="width: 25px;"></div>
+        </div>
+      </div>
 
       <!-- Bottom Row (Fixed 32px) -->
       <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
@@ -101,134 +86,11 @@
 
     </div>
 
-      <!-- tool palette -->
-  <div id="palette" class="tool-palette mt-4 ml-[100px] hidden">
-
-    <div class="tool-palette-titlebar relative flex items-center">
-      <div class="tool-palette-spacer shrink-0"></div>
-      <div class="tool-palette-close-box-wrapper">
-        <div class="tool-palette-close-box" onclick="togglePalette()"></div>
-      </div>
-    </div>
-    <div class="grid grid-cols-3 grid-rows-6 w-full h-full">
-
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/finger-point-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/button-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/field-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/selection-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/lasso-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/pencil-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/paint-brush-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/eraser-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/line-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/spray-paint-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/rectangle-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/round-rect-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/paint-bucket-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/oval-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/freehand-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/text-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/polygon-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-      <div class="tool-cell tool-button flex items-center justify-center">
-        <img src="images/polyline-tile.svg" class="w-[22px] h-[20px]" />
-      </div>
-
-    </div>
+    <div id="invader-container"></div>
+    <div id="palette-container"></div>
   </div>
-  <!-- end tool palette -->
-  </div> 
   <!-- end hypercardwindow -->
 
-
-  <!-- After main content -->
-
-  <!-- #1 Upper Right: Macintosh HD -->
-  <div id="mac-container" class="fixed top-0 right-0 mr-[7px] mt-[52px] flex flex-col items-center cursor-pointer">
-    <img id="mac-icon" src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Macintosh HD
-    </span>
-  </div>
-
-  <!-- #2 Hypercard Open -->
-  <div class="fixed top-0 right-0 mr-[16px] mt-[114px] flex flex-col items-center">
-    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      HyperCard
-    </span>
-  </div>
-
-  <!-- #3 Clarus -->
-  <div id="clarus-container" class="fixed top-[176px] right-[27px] flex flex-col items-center cursor-pointer">
-    <img id="clarus-icon" src="images/clarus-icon.svg" alt="Clarus" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Clarus
-    </span>
-  </div>
-
-  <!-- #4 Risk -->
-  <div class="fixed top-[238px] right-[32px] flex flex-col items-center">
-    <img src="images/risk.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Risk
-    </span>
-  </div>
-
-  <!-- #5 Photoshop -->
-  <div class="fixed top-[300px] right-[17px] flex flex-col items-center">
-    <img src="images/photoshop.svg" alt="HyperCard" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Photoshop
-    </span>
-  </div>
-
-  <!-- #6 Trash -->
-  <div id="trash-container" class="fixed bottom-0 right-0 mr-[32px] mb-4 flex flex-col items-center cursor-pointer">
-    <img id="trash-icon" src="images/trash.svg" alt="Trash" class="h-[32px] w-auto" />
-    <span class="classic-icon-label"
-      style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
-      Trash
-    </span>
-  </div>
 
 
 
@@ -252,113 +114,11 @@
     document.addEventListener("touchstart", function () { }, true);
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
 
 
-    //toggle happy and sad mac begin
-    const macIcon = document.getElementById('mac-icon');
-    const macContainer = document.getElementById('mac-container');
-
-    macContainer.addEventListener('click', () => {
-      // Swap to sad Mac
-      macIcon.src = 'images/sad-mac-icon.svg';
-
-      // Revert to happy Mac after 10 seconds
-      setTimeout(() => {
-        macIcon.src = 'images/happy-mac-icon.svg';
-      }, 5000); // 10,000 ms = 10 seconds
-    });
-    //toggle happy and sad mac end
-
-    //rotate clarus begin
-    const clarusIcon = document.getElementById('clarus-icon');
-    const clarusContainer = document.getElementById('clarus-container');
-    clarusContainer.addEventListener('click', () => {
-      // Remove any existing animation class so we can reapply it
-      clarusIcon.classList.remove('rotate-once');
-      // Force reflow to restart animation
-      void clarusIcon.offsetWidth;
-      // Add the class back to trigger animation
-      clarusIcon.classList.add('rotate-once');
-    });
-    //rotate clarus end
-
-    //trash empty to full begin
-    const trashIcon = document.getElementById('trash-icon');
-    const trashContainer = document.getElementById('trash-container');
-
-    trashContainer.addEventListener('click', () => {
-      // Change to full trash
-      trashIcon.src = 'images/trash-full.svg';
-
-      // Revert to empty trash after 10 seconds
-      setTimeout(() => {
-        trashIcon.src = 'images/trash.svg';
-      }, 5000); // 10 seconds
-    });
-    //trash empty to full end
-
-    function togglePalette() {
-      const palette = document.getElementById('palette');
-      palette.classList.toggle('hidden');
-    }
-
-    // begin clock
-    function setupClock() {
-      const clockEl = document.getElementById('clock');
-
-      const formatTime = () => {
-        const now = new Date();
-        const options = {
-          hour: 'numeric',
-          minute: '2-digit',
-          hour12: true
-        };
-        return now.toLocaleTimeString('en-US', options);
-      };
-
-      const formatDate = () => {
-        const now = new Date();
-        const mm = now.getMonth() + 1; // 1–12
-        const dd = now.getDate();      // 1–31
-        const yy = now.getFullYear().toString().slice(-2); // "25"
-        return `${mm}/${dd}/${yy}`;
-      };
-
-      let showingDate = false;
-      let timeInterval;
-      let resetTimeout;
-
-      const showTime = () => {
-        clockEl.textContent = formatTime();
-      };
-
-      const startClock = () => {
-        timeInterval = setInterval(() => {
-          if (!showingDate) {
-            showTime();
-          }
-        }, 1000);
-      };
-
-      clockEl.addEventListener('click', () => {
-        if (showingDate) return; // ignore multiple taps while date is showing
-
-        showingDate = true;
-        clockEl.textContent = formatDate();
-
-        clearTimeout(resetTimeout);
-        resetTimeout = setTimeout(() => {
-          showingDate = false;
-          showTime();
-        }, 3000);
-      });
-
-      showTime();
-      startClock();
-    }
-    setupClock();
-    // end clock
+  <script src="js/invaders.js"></script>
+  <script src="js/desktop-ui.js"></script>
+  <script src="js/palette.js"></script>
   </script>
 
 </body>
