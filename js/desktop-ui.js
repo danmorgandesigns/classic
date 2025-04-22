@@ -72,6 +72,15 @@ function setupClock() {
             hideUFO();
           });
         }
+
+        // Space Invaders app icon → launch invaders
+        const invadersIcon = document.getElementById("space-invaders-launcher");
+        if (invadersIcon) {
+          invadersIcon.addEventListener("click", () => {
+            toggleInvaders();
+            hideUFO();
+          });
+        }
   
         // Tools label
         const toolsLabel = document.querySelector(".system-menubar-font:nth-child(4)");

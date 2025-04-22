@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icon_Layer" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #231f20;
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="32" height="32"/>
+  <rect width="32" height="1"/>
+  <rect y="31" width="32" height="1"/>
+  <rect y="1" width="1" height="30"/>
+  <g>
+    <path class="st0" d="M10,15v-1h-1v-1h-1v-1h-2v1h-1v1h-1v1h-1v2h2v1h1v-1h2v1h1v-1h2v-2h-1ZM5,16v-1h1v1h-1ZM8,16v-1h1v1h-1Z"/>
+    <rect class="st0" x="6" y="18" width="2" height="1"/>
+    <rect class="st0" x="9" y="18" width="1" height="1"/>
+    <rect class="st0" x="4" y="18" width="1" height="1"/>
+    <rect class="st0" x="3" y="19" width="1" height="1"/>
+    <rect class="st0" x="10" y="19" width="1" height="1"/>
+    <rect class="st0" x="5" y="19" width="1" height="1"/>
+    <rect class="st0" x="8" y="19" width="1" height="1"/>
+  </g>
+  <g>
+    <path class="st0" d="M29,14v-1h-3v-1h-4v1h-3v1h-1v3h3v1h-1v1h2v-1h1v-1h2.2v1h.8v1h2v-1h-.8v-1h2.8v-3h-1ZM21,16v-1h2v1h-2ZM27,16h-2v-1h2v1Z"/>
+    <rect class="st0" x="28" y="19" width="2" height="1"/>
+    <rect class="st0" x="18" y="19" width="2" height="1"/>
+    <rect class="st0" x="23" y="19" width="2" height="1"/>
+  </g>
+  <g>
+    <rect class="st0" x="4" y="21" width="1" height="1"/>
+    <rect class="st0" x="8" y="28" width="2" height="1"/>
+    <rect class="st0" x="5" y="28" width="2" height="1"/>
+    <rect class="st0" x="10" y="21" width="1" height="1"/>
+    <path class="st0" d="M12,25v-1h-1v-1h-1v-1h-1v1h-3v-1h-1v1h-1v1h-1v1h-1v3h1v-2h1v2h1v-1h5v1h1v-2h1v2h1v-3h-1ZM10,24v1h-1v-1h1ZM5,24h1v1h-1v-1Z"/>
+  </g>
+  <g>
+    <rect x="24" y="22" width="1" height="2"/>
+    <rect x="26" y="25" width="2" height="1"/>
+    <rect x="21" y="25" width="2" height="1"/>
+    <rect x="22" y="23" width="1" height="1"/>
+    <rect x="27" y="22" width="1" height="1"/>
+    <rect x="26" y="23" width="1" height="1"/>
+    <rect x="22" y="27" width="1" height="1"/>
+    <rect x="21" y="28" width="1" height="1"/>
+    <rect x="21" y="22" width="1" height="1"/>
+    <rect x="24" y="27" width="1" height="2"/>
+    <rect x="27" y="28" width="1" height="1"/>
+    <rect x="26" y="27" width="1" height="1"/>
+  </g>
+  <path class="st0" d="M22,5.5v-1h-1v-1h-1v-1h-2v-1h-6v1h-2v1h-1v1h-1v1h-1v1h2v1h1v1h1v-1h1v-1h2v1h2v-1h3v1h1.2v1h1v-1h.8v-1h1v-1h-1ZM20,5.5h-1v-1h1v1ZM10,4.5h1v1h-1v-1ZM13,5.5v-1h1v1h-1ZM16,5.5v-1h1v1h-1Z"/>
+  <g>
+    <rect x="14" y="12.1" width="1" height="1"/>
+    <rect x="15" y="11.1" width="1" height="1"/>
+    <rect x="15" y="9.1" width="1" height="1"/>
+    <rect x="14" y="10.1" width="1" height="1"/>
+    <rect x="14" y="16.1" width="1" height="1"/>
+    <rect x="15" y="15.1" width="1" height="1"/>
+    <rect x="15" y="13.1" width="1" height="1"/>
+    <rect x="14" y="14.1" width="1" height="1"/>
+  </g>
+  <rect x="31" y="1" width="1" height="30"/>
+</svg>

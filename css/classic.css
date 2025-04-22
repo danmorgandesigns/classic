@@ -637,9 +637,19 @@ body {
     overflow-y: auto;         
   }
 
+  .nav-icon {
+    cursor: pointer;
+}
+  
   .nav-icon:active {
-    filter: invert(1);
+      filter: invert(1);
+      cursor: pointer;
   }
+
+  .nav-icon:hover {
+    transform: scale(1.1);
+}
+
 
   .dialog-titlebar {
     height: 10px;
