@@ -68,7 +68,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
 
-
+        // INSERT THIS BLOCK ↓↓↓
+        const downloadBtn = document.getElementById("downloadPDF");
+        if (downloadBtn) {
+            if (isPDF) {
+                downloadBtn.classList.remove("hidden"); // if you're hiding it when not needed
+                downloadBtn.onclick = () => {
+                    const a = document.createElement("a");
+                    a.href = fullSrc;
+                    a.download = fullSrc.split("/").pop(); // optional custom name
+                    a.click();
+                };
+            } else {
+                downloadBtn.classList.add("hidden"); // hide if viewing an image
+                downloadBtn.onclick = null;
+            }
+        }
+        // END INSERT BLOCK ↑↑↑
 
                     if (aspectRatio >= 1.0 && isMobile) {
 
@@ -93,9 +109,6 @@ window.addEventListener("DOMContentLoaded", () => {
                             modalBox.style.margin = "auto";
                         }
                     }
-
-
-
                     if (isPDF) {
                         canvas.classList.remove("hidden");
                         imageViewer.classList.add("hidden");
@@ -144,6 +157,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     modal.style.display = "flex";
                 });
             });
+//end
+
 
             function closeModal() {
                 modal.style.display = "none";
