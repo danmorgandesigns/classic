@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DanMorganDesigns</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <link href="css/classic.css" rel="stylesheet">
 </head>
 
@@ -17,10 +18,10 @@
   <div class="hypercard-window">
 
     <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
-      <div class="spacer shrink-0"></div>
+      <!-- <div class="spacer shrink-0"></div>
       <div class="close-box-wrapper">
         <div class="close-box" onclick="closeModal()"></div>
-      </div>
+      </div> -->
       <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
         <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Services</span>
       </div>
@@ -88,11 +89,14 @@
 
           <!--Row 4-->
           <div class="flex min-h-[64px]">
-            <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
-              <img src="images/macdraft-document.svg" class="h-[48px] w-auto block" alt="..." />
+            <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0 ">
+              <img src="images/macdraft-document.svg" class="h-[48px] w-auto block pdf-launcher"
+                alt="Software UX Design"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager-new.pdf" />
+
             </div>
             <div class="flex flex-col pl-2 flex-grow justify-start">
-              <span class="classic-service-title pb-1 leading-snug">Website and Software UX Design</span>
+              <span class="classic-service-title pb-1 leading-snug">Software UX Design</span>
               <p class="classic-service-details leading-snug">
                 From ideation, event triggers, mockups through high fidelity prototypes.
               </p>
@@ -119,7 +123,7 @@
   </div>
 
   <!-- end hypercard-window -->
-
+  <div id="viewer-container"></div>
   <!-- After main content -->
 
 
@@ -128,19 +132,19 @@
 
   <script>
     document.getElementById('mail-button')?.addEventListener('click', () => {
-      window.location.href = 'contact-me.html';
+      window.location.href = '/contact-me.html';
     });
 
     document.getElementById('home-button')?.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      window.location.href = '/index.html';
     });
 
     document.getElementById('previous-button')?.addEventListener('click', () => {
-      window.location.href = 'now.html';
+      window.location.href = '/now.html';
     });
 
     document.getElementById('next-button')?.addEventListener('click', () => {
-      window.location.href = 'portfolio.html';
+      window.location.href = '/portfolio.html';
     });
 
     document.addEventListener("touchstart", function () { }, true);
@@ -150,6 +154,7 @@
   <script src="js/invaders.js"></script>
   <script src="js/desktop-ui.js"></script>
   <script src="js/palette.js"></script>
+  <script src="js/viewer.js"></script>
 </body>
 
 </html>
