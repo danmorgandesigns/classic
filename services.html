@@ -18,10 +18,7 @@
   <div class="hypercard-window">
 
     <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
-      <!-- <div class="spacer shrink-0"></div>
-      <div class="close-box-wrapper">
-        <div class="close-box" onclick="closeModal()"></div>
-      </div> -->
+
       <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
         <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Services</span>
       </div>
@@ -44,9 +41,40 @@
       <span class="classic-serif-heading pt-6 pb-2 pl-4">Design Services</span>
 
       <div class="flex-1 overflow-y-auto space-y-4"> <!--begin middle container-->
-        <div class="flex flex-col px-6 space-y-2 w-full"> <!--begin inner grid-->
+        <div class="flex flex-col px-6 space-y-0 w-full"> <!--begin inner grid-->
 
-          <!--Row 1-->
+          <!--Row 1 Software Design -->
+          <div class="flex min-h-[64px]">
+            <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0 ">
+              <img src="images/macdraft-document.svg" class="h-[48px] w-auto block pdf-launcher"
+                alt="Software UX Design"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager-new.pdf" />
+            </div>
+            <div class="flex flex-col pl-2 flex-grow justify-start">
+              <span class="classic-service-title pb-1 leading-snug">Software UX Design</span>
+              <p class="classic-service-details leading-snug">
+                From ideation, event triggers, mockups through high fidelity prototypes.
+              </p>
+            </div>
+          </div>
+
+                    <!--Row 2 Website Design -->
+                    <div class="flex min-h-[64px]">
+                      <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0 ">
+                        <img src="images/website-design.svg" class="h-[48px] w-auto block pdf-launcher"
+                          alt="Software UX Design"
+                          data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager-new.pdf" />
+                      </div>
+                      <div class="flex flex-col pl-2 flex-grow justify-start">
+                        <span class="classic-service-title pb-1 leading-snug">Website Design</span>
+                        <p class="classic-service-details leading-snug">
+                          From ideation, event triggers, mockups through high fidelity prototypes.
+                        </p>
+                      </div>
+                    </div>
+
+
+          <!--Row 3 Branding-->
           <div class="flex min-h-[64px]">
             <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
               <img src="images/branding-document.svg" class="h-[48px] w-auto block" alt="..." />
@@ -60,7 +88,7 @@
             </div>
           </div>
 
-          <!--Row 2-->
+          <!--Row 4 Flyers-->
           <div class="flex min-h-[64px]">
             <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
               <img src="images/macdraw-document-2.svg" class="h-[48px] w-auto block" alt="..." />
@@ -74,7 +102,7 @@
             </div>
           </div>
 
-          <!--Row 3-->
+          <!--Row 5 PDF FOrms-->
           <div class="flex min-h-[64px]">
             <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
               <img src="images/pdf-file.svg" class="h-[48px] w-auto block" alt="..." />
@@ -87,21 +115,7 @@
             </div>
           </div>
 
-          <!--Row 4-->
-          <div class="flex min-h-[64px]">
-            <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0 ">
-              <img src="images/macdraft-document.svg" class="h-[48px] w-auto block pdf-launcher"
-                alt="Software UX Design"
-                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/employee-manager-new.pdf" />
 
-            </div>
-            <div class="flex flex-col pl-2 flex-grow justify-start">
-              <span class="classic-service-title pb-1 leading-snug">Software UX Design</span>
-              <p class="classic-service-details leading-snug">
-                From ideation, event triggers, mockups through high fidelity prototypes.
-              </p>
-            </div>
-          </div>
 
         </div> <!--end inner grid-->
       </div> <!--end middle container-->
@@ -132,7 +146,7 @@
 
   <script>
     document.getElementById('mail-button')?.addEventListener('click', () => {
-      window.location.href = '/contact-me.html';
+      window.location.href = 'contact-me.html';
     });
 
     document.getElementById('home-button')?.addEventListener('click', () => {
@@ -140,17 +154,18 @@
     });
 
     document.getElementById('previous-button')?.addEventListener('click', () => {
-      window.location.href = '/now.html';
+      window.location.href = 'now.html';
     });
 
     document.getElementById('next-button')?.addEventListener('click', () => {
-      window.location.href = '/portfolio.html';
+      window.location.href = 'portfolio.html';
     });
 
     document.addEventListener("touchstart", function () { }, true);
 
 
   </script>
+
   <script src="js/invaders.js"></script>
   <script src="js/desktop-ui.js"></script>
   <script src="js/palette.js"></script>

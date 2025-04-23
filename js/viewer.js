@@ -157,18 +157,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             window.closeModal = closeModal; //find me
 
-            document.getElementById('mail-button')?.addEventListener('click', () => {
-                window.location.href = 'contact-me.html';
-            });
-            document.getElementById('home-button')?.addEventListener('click', () => {
-                window.location.href = 'index.html';
-            });
-            document.getElementById('previous-button')?.addEventListener('click', () => {
-                window.location.href = 'services.html';
-            });
-            document.getElementById('next-button')?.addEventListener('click', () => {
-                window.location.href = 'about-me.html';
-            });
+
 
             window.addEventListener("click", (e) => {
                 if (e.target === modal) {
