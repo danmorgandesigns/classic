@@ -58,7 +58,7 @@ function launchUFO() {
     ufo.style.transition = 'opacity 0.5s ease-in-out';
     ufo.style.opacity = '1';
 
-    const fadeOutStart = maxX - 50;
+    const fadeOutStart = maxX - 35;
 
     function animate() {
       position += speed;

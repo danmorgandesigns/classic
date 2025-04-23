@@ -637,16 +637,38 @@ body {
     overflow-y: auto;         
   }
 
-  .nav-icon {
+.nav-icon {
     cursor: pointer;
 }
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+.nav-icon:active {
+  filter: invert(1);
+}
   
-  .nav-icon:active {
+.desktop-icon {
+  cursor: pointer;
+}
+
+.desktop-icon:hover {
+transform: scale(1.1);
+}
+.desktop-icon:active {
+filter: invert(1);
+}
+
+
+
+.si-icon {
+  cursor: pointer;
+}
+  .si-icon:active {
       filter: invert(1);
-      cursor: pointer;
   }
 
-  .nav-icon:hover {
+  .si-icon:hover {
     transform: scale(1.1);
 }
 
