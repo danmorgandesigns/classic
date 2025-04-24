@@ -104,10 +104,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     } else {
                         // Portrait PDF (< 1.0 aspect ratio)
                         if (isMobile) {
-                            modalBox.style.width = "auto";
+                            // modalBox.style.width = "auto";
+                            // modalBox.style.height = "80vh";
+                            // modalBox.style.marginBottom = "";
+                            modalBox.style.width = "calc(100vw - 10px)";
                             modalBox.style.height = "80vh";
-                            // modalBox.style.marginTop = "1px";
-                            modalBox.style.marginBottom = "";
+                            modalBox.style.marginLeft = "auto";
+                            modalBox.style.marginRight = "auto";
                         } else {
                             modalBox.style.height = "80vh";
                             modalBox.style.width = "auto";
