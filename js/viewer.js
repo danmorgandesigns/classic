@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         canvas.height = viewport.height;
                         canvas.style.maxWidth = "100%"; //added
                         canvas.style.height = "auto"; //added
-                        canvas.style.width = "100%"; //added
+                        canvas.style.width = "98%"; //added
 
 
 
