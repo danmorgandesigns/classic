@@ -40,15 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
 
-                        // const scale = 1.5 * window.devicePixelRatio;
-                        // const viewport = page.getViewport({ scale });
-                        
-                        // canvas.width = viewport.width;
-                        // canvas.height = viewport.height;
-                        
-                        // // Ensure canvas *style* stays normal size to avoid zooming
-                        // canvas.style.width = `${viewport.width / window.devicePixelRatio}px`;
-                        // canvas.style.height = `${viewport.height / window.devicePixelRatio}px`;
+
 
 
 
