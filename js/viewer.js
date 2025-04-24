@@ -39,8 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
                         const viewport = page.getViewport({ scale: 1.5 });
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
-
-
+                        canvas.style.maxWidth = "100%"; //added
+                        canvas.style.height = "auto"; //added
+                        canvas.style.width = "100%"; //added
 
 
 
