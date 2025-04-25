@@ -138,7 +138,8 @@ window.addEventListener("DOMContentLoaded", () => {
                             canvas.style.width = "auto";
                             canvas.style.height = "100%";
                             canvas.style.maxHeight = "90vh";
-                            canvas.style.maxWidth = "auto";
+                            // canvas.style.maxWidth = "auto"; 
+                            canvas.style.maxWidth = "100%";   //added 4.25                          
 
 
                             //end of new handling
