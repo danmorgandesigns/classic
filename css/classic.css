@@ -1372,10 +1372,11 @@ h1 {
 
 /* NEW iframe CSS */
 
-/* #iframeContainer {
+
+#iframeContainer {
   overflow: auto;
-  max-height: 100%;
-} */
+  -webkit-overflow-scrolling: touch;
+}
 
 
 
