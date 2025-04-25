@@ -39,9 +39,11 @@ window.addEventListener("DOMContentLoaded", () => {
                         const viewport = page.getViewport({ scale: 1.5 });
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
-                        canvas.style.maxWidth = "100%"; //added
-                        canvas.style.height = "auto"; //added
-                        canvas.style.width = "98%"; //added
+                        canvas.style.maxWidth = "100%";
+                        canvas.style.height = "auto";
+                        
+                        canvas.style.width = "98%"; //added 4.24
+                        
 
 
 
@@ -105,21 +107,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     } else {
                         // Portrait PDF (< 1.0 aspect ratio)
                         if (isMobile) {
-                            // modalBox.style.width = "auto";
-                            // modalBox.style.height = "80vh";
-                            // modalBox.style.marginBottom = "";
                             modalBox.style.width = "calc(100vw - 10px)";
                             modalBox.style.height = "80vh";
                             modalBox.style.marginLeft = "auto";
                             modalBox.style.marginRight = "auto";
                         } else {
-                            // modalBox.style.height = "80vh";
-                            // modalBox.style.width = "auto";
-                            // modalBox.style.margin = "auto";
-                            modalBox.style.maxHeight = "90vh"; //added 4.25
-                            modalBox.style.height = "auto"; //added 4.25
-                            modalBox.style.width = "auto"; //added 4.25
-                            modalBox.style.margin = "auto"; //added 4.25                        
+                            modalBox.style.height = "80vh";
+                            modalBox.style.width = "auto";
+                            modalBox.style.margin = "auto";
                         }
                     }
                     if (isPDF) {
@@ -132,17 +127,13 @@ window.addEventListener("DOMContentLoaded", () => {
                         canvas.style.marginRight = "auto";
                         canvas.style.display = "block";
 
-                        // start of new handling
 
                         if (aspectRatio < 1.0) {
                             canvas.style.width = "auto";
                             canvas.style.height = "100%";
                             canvas.style.maxHeight = "90vh";
-                            // canvas.style.maxWidth = "auto"; 
-                            canvas.style.maxWidth = "100%";   //added 4.25                          
-
-
-                            //end of new handling
+                            canvas.style.maxWidth = "auto"; 
+                                                    
                         } else {
                             canvas.style.width = "100%";
                             canvas.style.height = "auto";
