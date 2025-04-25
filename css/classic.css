@@ -1263,17 +1263,6 @@ h1 {
 }
 
 
-/* .tool-palette {
-    width: 68px;
-    height: 139px;
-    border: 1px solid black;
-    background-color: white;
-    box-shadow: 2px 2px 0 black;
-    display: flex;
-    flex-direction: column;
-    z-index: 100;
-  } */
-
 .tool-palette {
   position: absolute;
   /* Position it relative to the .hypercard-window */
@@ -1379,6 +1368,16 @@ h1 {
   transition: opacity 0.2s ease;
 }
 
+/* NEW iframe CSS */
+
+/* #iframeContainer {
+  overflow: auto;
+  max-height: 100%;
+} */
+
+
+
+
 @keyframes rotate-once {
   from {
     transform: rotate(0deg);
@@ -1423,4 +1422,10 @@ h1 {
     max-height: calc(100vh - 20px);
     min-height: 480px;
   }
+
+/* 
+  #iframeModal iframe {
+    height: 90vh; 
+    width: 100%;
+  } */
 }

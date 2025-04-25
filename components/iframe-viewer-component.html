@@ -1,0 +1,29 @@
+<div id="iframeModal" class="modal hidden z-[200]">
+    <div class="modal-content">
+        <div class="modal-titlebar relative flex items-center">
+            <div class="spacer shrink-0"></div>
+            <div class="close-box-wrapper">
+                <div class="close-box" onclick="closeIframeModal()"></div>
+            </div>
+            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                <span id="iframeModalTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">PDF
+                    Preview</span>
+            </div>
+        </div>
+
+        <div id="iframeContainer" class="modal-body flex-1 overflow-hidden bg-white">
+            <iframe id="pdfFrame" class="w-full h-full border-none" allowfullscreen loading="lazy"></iframe>
+
+
+
+
+            <!-- <iframe
+            id="pdfFrame"
+            class="w-full h-[90vh] border-none"
+            allowfullscreen
+          ></iframe> -->
+
+
+        </div>
+    </div>
+</div>
