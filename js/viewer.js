@@ -113,9 +113,13 @@ window.addEventListener("DOMContentLoaded", () => {
                             modalBox.style.marginLeft = "auto";
                             modalBox.style.marginRight = "auto";
                         } else {
-                            modalBox.style.height = "80vh";
-                            modalBox.style.width = "auto";
-                            modalBox.style.margin = "auto";
+                            // modalBox.style.height = "80vh";
+                            // modalBox.style.width = "auto";
+                            // modalBox.style.margin = "auto";
+                            modalBox.style.maxHeight = "90vh"; //added 4.25
+                            modalBox.style.height = "auto"; //added 4.25
+                            modalBox.style.width = "auto"; //added 4.25
+                            modalBox.style.margin = "auto"; //added 4.25                        
                         }
                     }
                     if (isPDF) {
