@@ -1163,7 +1163,7 @@ h1 {
 .modal-content {
   width: 70vh;
   aspect-ratio: 8.5 / 11;
-  background-color: white;
+  background-color: #9F9F9F;
   display: flex;
   flex-direction: column;
   overflow: hidden;

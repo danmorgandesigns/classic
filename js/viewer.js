@@ -145,33 +145,32 @@ window.addEventListener("DOMContentLoaded", () => {
 
                         //added
 
-    // if (!isMobile && aspectRatio < 1.0) {
-    //     modalBox.style.width = "auto";
-    //     modalBox.style.height = "";        
-    //     modalBox.style.maxHeight = "80vh";
-    //     modalBox.style.margin = "auto";
-    //     canvas.style.height = "auto";
-    //     canvas.style.maxHeight = "80vh";
-    //     canvas.style.marginTop = "20px";
-    //     canvas.style.marginBottom = "20px";
-    // }
-            
-    const breathingSpace = 40; // or tweak this
-    const canvasOffset = 40;   // canvas leaves extra room inside
-    
     if (!isMobile && aspectRatio < 1.0) {
         modalBox.style.width = "auto";
-        modalBox.style.height = "";
-        modalBox.style.maxHeight = `calc(100vh - ${breathingSpace}px)`;
+        modalBox.style.height = "";        
+        modalBox.style.maxHeight = "90vh";
         modalBox.style.margin = "auto";
+        // canvas.style.height = "auto";
+        // canvas.style.maxHeight = "80vh";
+        // canvas.style.marginTop = "20px";
+        // canvas.style.marginBottom = "20px";
+    }
+            
+    // const breathingSpace = 60; // or tweak this
+    // const canvasOffset = 60;   // canvas leaves extra room inside
     
-        canvas.style.height = "auto";
-        canvas.style.maxHeight = `calc(100vh - ${breathingSpace + canvasOffset}px)`;
-        canvas.style.marginTop = "20px";
-        canvas.style.marginBottom = "20px";
-    } 
+    // if (!isMobile && aspectRatio < 1.0) {
+    //     // modalBox.style.width = "auto";
+    //     // modalBox.style.height = "";
+    //     // modalBox.style.maxHeight = `calc(100vh - ${breathingSpace}px)`;
+    //     // modalBox.style.margin = "auto";
+    //     // canvas.style.height = "auto";
+    //     // canvas.style.maxHeight = `calc(100vh - ${breathingSpace + canvasOffset}px)`;
+    //     // canvas.style.marginTop = "20px";
+    //     // canvas.style.marginBottom = "20px";
+    // } 
     
-    
+
     
     
     //end added
