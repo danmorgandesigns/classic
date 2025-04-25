@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         canvas.style.maxWidth = "100%";
                         canvas.style.height = "auto";
                         
-                        // canvas.style.width = "100%"; //added 4.24
+                        canvas.style.width = "98%"; //added 4.24
                         
 
 
@@ -142,39 +142,6 @@ window.addEventListener("DOMContentLoaded", () => {
                         if (isMobile && aspectRatio > 1.0) {
                             canvas.style.maxHeight = "50vh"; // tweak as needed
                         }
-
-                        //added
-
-    // if (!isMobile && aspectRatio < 1.0) {
-    //     modalBox.style.width = "auto";
-    //     modalBox.style.height = "";        
-    //     modalBox.style.maxHeight = "80vh";
-    //     modalBox.style.margin = "auto";
-    //     canvas.style.height = "auto";
-    //     canvas.style.maxHeight = "80vh";
-    //     canvas.style.marginTop = "20px";
-    //     canvas.style.marginBottom = "20px";
-    // }
-            
-    const breathingSpace = 40; // or tweak this
-    const canvasOffset = 40;   // canvas leaves extra room inside
-    
-    if (!isMobile && aspectRatio < 1.0) {
-        modalBox.style.width = "auto";
-        modalBox.style.height = "";
-        modalBox.style.maxHeight = `calc(100vh - ${breathingSpace}px)`;
-        modalBox.style.margin = "auto";
-    
-        canvas.style.height = "auto";
-        canvas.style.maxHeight = `calc(100vh - ${breathingSpace + canvasOffset}px)`;
-        canvas.style.marginTop = "20px";
-        canvas.style.marginBottom = "20px";
-    } 
-    
-    
-    
-    
-    //end added
 
                         pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
                             pdfDoc = pdf;
