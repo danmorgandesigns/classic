@@ -1164,7 +1164,7 @@ h1 {
 .modal-content {
   width: 70vh;
   aspect-ratio: 8.5 / 11;
-  background-color: #9F9F9F;
+  /* background-color: #9F9F9F; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1378,9 +1378,6 @@ h1 {
   -webkit-overflow-scrolling: touch;
 }
 
-#pdf-canvas {
-  background-color: #9F9F9F; /* same as your modal background */
-}
 
 @keyframes space-bounce {
   from {
