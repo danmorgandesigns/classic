@@ -1157,9 +1157,10 @@ h1 {
   height: 100vh;
   justify-content: center;
   align-items: center;
+
 }
 
-/* Floating dialog box with 8.5x11 aspect ratio */
+/* Floating dialog box with 8.5x11 aspect ratio   */
 .modal-content {
   width: 70vh;
   aspect-ratio: 8.5 / 11;
@@ -1377,6 +1378,9 @@ h1 {
   -webkit-overflow-scrolling: touch;
 }
 
+#pdf-canvas {
+  background-color: #9F9F9F; /* same as your modal background */
+}
 
 @keyframes space-bounce {
   from {
