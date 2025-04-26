@@ -236,7 +236,7 @@
 body {
   font-family: 'EspySans12', Geneva, sans-serif;
   margin: 0;
-  background: #eee;
+  /* background: #eee; */
   height: 100vh;
 
 }
@@ -498,11 +498,10 @@ body {
 
 .menu-labels {
   position: absolute;
-  top: 4px;
-  left: 45px;
+  left: 35px;
   display: flex;
-  gap: 12px;
   align-items: center;
+  font-size: 0;
 }
 
 
@@ -558,13 +557,17 @@ body {
 .classic-roundrect-button {
   font-family: 'Chicago', sans-serif;
   font-size: 12px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
   color: black;
   background: white;
   border: 1px solid black;
   border-radius: 20px;
   height: 22px;
-  width: 100px;
-  padding: 3px 12px;
+  width: auto;
+  padding: 0 24px;
   box-shadow: 1px 1px 0 black;
   outline: none;
   cursor: pointer;
@@ -580,13 +583,18 @@ body {
 .classic-shadow-button {
   font-family: 'Chicago', sans-serif;
   font-size: 12px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
   color: black;
   background: white;
   border: 1px solid black;
   border-radius: none;
   height: 22px;
-  width: 100px;
-  padding: 3px 12px;
+  max-width: 100px;
+  width: auto;
+  padding: 0 24px;
   box-shadow: 1px 1px 0 black;
   outline: none;
   cursor: pointer;
@@ -600,6 +608,8 @@ body {
 }
 
 .classic-standard-button {
+  all: unset;
+  display: inline-block;
   font-family: 'Chicago', sans-serif;
   font-size: 12px;
   font-smooth: never;
@@ -611,12 +621,9 @@ body {
   border: 1px solid black;
   border-radius: 8px;
   height: 22px;
-  width: auto;
   padding: 0 24px;
-  outline: none;
   cursor: pointer;
   user-select: none;
-  display: inline-block;
 }
 
 .classic-standard-button:active {
@@ -629,6 +636,22 @@ body {
 /*       GENERAL STYLES      */
 /* ========================= */
 
+.classic-menu {
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 2px 2px 0 black;
+}
+
+.menu-item-hover:hover {
+  background-color: black;
+  color: white;
+}
+
+.menu-item-active {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 0 4px black;
+}
 .classic-form-field {
   border: 1px solid black;
   box-shadow: 2px 2px 0 black;
@@ -833,7 +856,7 @@ body {
 
 .clock {
   position: absolute;
-  top: 5px;
+  top: 4px;
   right: 70px;
   /* adjust until it lines up nicely to the left of .help-icon */
   font-family: 'Chicago', sans-serif;
