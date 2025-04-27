@@ -130,6 +130,18 @@ function setupClock() {
             }, 5000);
           });
         }
+
+
+        const currentPath = window.location.pathname.replace(/\/$/, ""); 
+      const links = document.querySelectorAll(".menu-link");
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute("href").replace(/\/$/, ""); 
+        if (linkPath === currentPath) {
+          const holder = link.previousElementSibling;
+          holder.innerHTML = `<img src="/images/checkmark.svg" alt="Selected" class="w-[9px] h-[8px]">`;
+        }
+      });
   
         // Start the clock
         setupClock();
@@ -137,16 +149,3 @@ function setupClock() {
   });
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname.replace(/\/$/, ""); // normalize trailing slash
-    const links = document.querySelectorAll(".menu-link");
-  
-    links.forEach(link => {
-      const linkPath = link.getAttribute("href").replace(/\/$/, ""); // normalize too
-  
-      if (linkPath === currentPath) {
-        const holder = link.previousElementSibling;
-        holder.innerHTML = `<img src="../images/checkmark.svg" alt="Selected" class="w-[9px] h-[8px]">`;
-      }
-    });
-  });
