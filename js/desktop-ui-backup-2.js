@@ -133,17 +133,67 @@ function setupClock() {
 
 
         const currentPath = window.location.pathname.replace(/\/$/, ""); 
+   
+
+
+
       const links = document.querySelectorAll(".menu-link");
 
       links.forEach(link => {
-        const linkPath = link.getAttribute("href").replace(/\/$/, ""); 
-        if (linkPath === currentPath) {
-          const holder = link.previousElementSibling;
-          holder.innerHTML = `<img src="/images/checkmark.svg" alt="Selected" class="w-[9px] h-[8px]">`;
+        const href = link.getAttribute("href");
+      
+        // ✅ Checkmark logic: only if href exists
+        if (href) {
+          const linkPath = href.replace(/\/$/, ""); 
+          const currentPath = window.location.pathname.replace(/\/$/, ""); 
+      
+          if (linkPath === currentPath) {
+            const holder = link.previousElementSibling;
+            holder.innerHTML = `<img src="/images/checkmark.svg" alt="Selected" class="w-[9px] h-[8px]">`;
+          }
         }
+      
+        // ✅ Flicker logic: always attach, even if no href
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const item = link.closest('.menu-item');
+          if (item) {
+            item.classList.add('flash');
+            setTimeout(() => {
+              item.classList.remove('flash');
+              setTimeout(() => {
+                item.classList.add('flash');
+                setTimeout(() => {
+                  item.classList.remove('flash');
+                  setTimeout(() => {
+                    item.classList.add('flash');
+                    setTimeout(() => {
+                      item.classList.remove('flash');
+      
+                      // 👉 After flicker done, decide what action:
+                      const pdfURL = link.getAttribute('data-full');
+                      const hrefURL = link.getAttribute('href');
+      
+                      if (pdfURL) {
+                        openModal(pdfURL);
+                      } else if (hrefURL) {
+                        window.location.href = hrefURL;
+                      }
+      
+                      open = false;
+                      activeMenu = '';
+                    }, 60);
+                  }, 60);
+                }, 60);
+              }, 60);
+            }, 60);
+          }
+        });
       });
   
         // Start the clock
         setupClock();
       });
   });
+
+
