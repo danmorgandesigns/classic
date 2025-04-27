@@ -510,6 +510,25 @@ body {
   top: 1px; /* nudge upward by 1px */
 }
 
+@keyframes flash-effect {
+  0%, 100% {
+    background-color: black;
+    color: white;
+  }
+  20%, 60% {
+    background-color: white;
+    color: black;
+  }
+  40%, 80% {
+    background-color: black;
+    color: white;
+  }
+}
+
+.flash {
+  animation: flash-effect 0.45s ease-in-out;
+}
+
 
 /* ========================= */
 /*       BUTTON CLASSES      */
@@ -647,6 +666,11 @@ body {
 }
 
 .menu-item-hover:hover {
+  background-color: black;
+  color: white;
+}
+
+#tools-menu:active {
   background-color: black;
   color: white;
 }
@@ -1302,9 +1326,9 @@ h1 {
 .tool-palette {
   position: absolute;
   /* Position it relative to the .hypercard-window */
-  top: 20px;
+  top: 25px;
   /* 20px from the top of .hypercard-window */
-  right: 20px;
+  left: 70px;
   /* 20px from the right side of .hypercard-window */
   width: 68px;
   height: 139px;

@@ -1,0 +1,158 @@
+<!-- System Menubar -->
+<div class="system-bezel"></div>
+<div class="system-menubar">
+    <img src="images/apple-icon.svg" alt="Apple" style="cursor: pointer;" class="apple-icon" />
+    <div class="menu-labels">
+        <span class="system-menubar-font py-[4px] pl-[7px] pr-[6px]">File</span>
+        <span class="system-menubar-font py-[4px] pl-[7px] pr-[6px]" style="cursor: pointer;">Tools</span>
+        <span class="relative flex items-center justify-center" x-data="{ open: false, activeMenu: '' }"
+            @click.away="open = false; activeMenu = ''">
+            <span
+                class="system-menubar-font cursor-pointer select-none leading-[1] inline-block py-[4px] pl-[7px] pr-[6px]"
+                :class="{ 'bg-black text-white border-t border-white': activeMenu === 'home' }"
+                @click="open = !open; activeMenu = open ? 'home' : ''">
+                Services
+            </span>
+            <div x-show="open"
+                class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
+                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/software-design.pdf"
+                    alt="Software UX Design" @click="open = false; activeMenu = ''">Software</a>
+                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/website-design.pdf"
+                    alt="Website Design" @click="open = false; activeMenu = ''">Websites</a>
+                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/custom-branding.pdf"
+                    alt="Custom Branding" @click="open = false; activeMenu = ''">Branding</a>
+                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/flyers-brochures.pdf"
+                    alt="Flyers, Brochures, & Catalogs" @click="open = false; activeMenu = ''">Flyers</a>
+                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/pdf-forms.pdf"
+                    alt="Fillable PDF Forms" @click="open = false; activeMenu = ''">PDF Forms</a>
+            </div>
+
+
+        </span>
+
+
+
+        <!-- Home dropdown that keeps the vertical spacing perfect -->
+        <span class="relative flex items-center justify-center" x-data="{ open: false, activeMenu: '' }"
+            @click.away="open = false; activeMenu = ''">
+            <span
+                class="system-menubar-font cursor-pointer select-none leading-[1] inline-block py-[4px] pl-[7px] pr-[6px]"
+                :class="{ 'bg-black text-white border-t border-white': activeMenu === 'home' }"
+                @click="open = !open; activeMenu = open ? 'home' : ''">
+                Home
+            </span>
+            <!-- <div x-show="open"
+                class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
+                <a href="/index.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Home</a>
+                <a href="/now.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Now</a>
+                <a href="/services.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Services</a>
+                <a href="/portfolio.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Portfolio</a>
+                <a href="/about-me.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">About Me</a>
+                <a href="/contact-me.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Contact Me</a>
+            </div> -->
+
+            <div x-show="open" class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer  transition-none">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/index.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Home</a>
+                </div>
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/now.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Now</a>
+                </div>
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/services.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Services</a>
+                </div>
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/portfolio.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Portfolio</a>
+                </div>
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/about-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">About Me</a>
+                </div>
+                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
+                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                    <a href="/contact-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Contact Me</a>
+                </div>
+            </div>
+
+        </span>
+        <!-- end Home dropdown -->
+    </div>
+    <div class="clock" id="clock">Thu 9:41 AM</div>
+    <img src="images/help-mini.svg" alt="Help" class="help-icon" />
+    <button onclick="togglePalette()">
+        <img src="images/hypercard-app-mini.svg" alt="HyperCard" class="hypercard-icon">
+    </button>
+</div>
+
+<!-- #1 Upper Right: Macintosh HD -->
+<div id="mac-container" class="fixed top-0 right-0 mr-[7px] mt-[52px] flex flex-col items-center cursor-pointer">
+    <img id="mac-icon" src="images/happy-mac-icon.svg" alt="Macintosh HD" class="h-[32px] w-auto desktop-icon" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Macintosh HD
+    </span>
+</div>
+
+<!-- #2 Hypercard Open -->
+<div class="fixed top-0 right-0 mr-[16px] mt-[114px] flex flex-col items-center">
+    <img src="images/hypercard-open.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        HyperCard
+    </span>
+</div>
+
+<!-- #3 Clarus -->
+<div id="clarus-container" class="fixed top-[176px] right-[27px] flex flex-col items-center cursor-pointer">
+    <img id="clarus-icon" src="images/clarus-icon.svg" alt="Clarus" class="h-[32px] w-auto desktop-icon" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Clarus
+    </span>
+</div>
+
+<!-- #4 Risk -->
+<div class="fixed top-[238px] right-[30px] flex flex-col items-center">
+    <img src="images/risk.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Risk
+    </span>
+</div>
+
+<!-- #5 Space Invaders -->
+<div class="fixed top-[300px] right-[8px] flex flex-col items-center">
+    <img id="space-invaders-launcher" src="images/space-invaders-icon-white.svg" alt="Space Invaders"
+        class="h-[32px] w-auto si-icon" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Space Invaders
+    </span>
+</div>
+
+<!-- #5 Photoshop -->
+<div class="fixed top-[362px] right-[17px] flex flex-col items-center">
+    <img src="images/photoshop.svg" alt="HyperCard" class="h-[32px] w-auto" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Photoshop
+    </span>
+</div>
+
+<!-- #6 Trash -->
+<div id="trash-container" class="fixed bottom-0 right-0 mr-[32px] mb-4 flex flex-col items-center cursor-pointer">
+    <img id="trash-icon" src="images/trash.svg" alt="Trash" class="h-[32px] w-auto desktop-icon" />
+    <span class="classic-icon-label"
+        style="margin-top: 0px; background-color: white; color: black; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 3px;">
+        Trash
+    </span>
+</div>

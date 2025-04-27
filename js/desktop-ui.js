@@ -55,7 +55,39 @@ function setupClock() {
     startClock();
   }
   
-
+  function menuHandler() {
+    return {
+      open: false,
+      activeMenu: '',
+      flashAndNavigate(event) {
+        event.preventDefault();
+        const el = event.currentTarget;
+        const self = this; // capture Alpine's reactive context
+  
+        // ⬇ IMMEDIATELY collapse menu
+        self.open = false;
+        self.activeMenu = '';
+  
+        // Start Flash
+        el.classList.add('flash');
+  
+        // After animation, remove flash, and then open PDF or navigate
+        setTimeout(() => {
+          el.classList.remove('flash');
+  
+          const link = el.hasAttribute('data-full') ? el : el.querySelector('a');
+          const pdfUrl = link.getAttribute('data-full');
+  
+          if (pdfUrl) {
+            openPDFModal(pdfUrl);
+          } else {
+            window.location.href = link.getAttribute('href');
+          }
+  
+        }, 450); // match flash timing
+      }
+    }
+  }
   
   // Load the system menubar and related UI
   window.addEventListener("DOMContentLoaded", () => {

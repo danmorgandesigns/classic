@@ -4,8 +4,12 @@
     <img src="images/apple-icon.svg" alt="Apple" style="cursor: pointer;" class="apple-icon" />
     <div class="menu-labels">
         <span class="system-menubar-font py-[4px] pl-[7px] pr-[6px]">File</span>
-        <span class="system-menubar-font py-[4px] pl-[7px] pr-[6px]" style="cursor: pointer;">Tools</span>
-        <span class="relative flex items-center justify-center" x-data="{ open: false, activeMenu: '' }"
+        <span id="tools-menu" class="system-menubar-font py-[4px] pl-[7px] pr-[6px] " style="cursor: pointer;">Tools</span>
+
+
+
+        
+        <span class="relative flex items-center justify-center" x-data="menuHandler()"
             @click.away="open = false; activeMenu = ''">
             <span
                 class="system-menubar-font cursor-pointer select-none leading-[1] inline-block py-[4px] pl-[7px] pr-[6px]"
@@ -13,23 +17,43 @@
                 @click="open = !open; activeMenu = open ? 'home' : ''">
                 Services
             </span>
-            <div x-show="open"
-                class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
-                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
-                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/software-design.pdf"
-                    alt="Software UX Design" @click="open = false; activeMenu = ''">Software</a>
-                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
-                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/website-design.pdf"
-                    alt="Website Design" @click="open = false; activeMenu = ''">Websites</a>
-                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
-                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/custom-branding.pdf"
-                    alt="Custom Branding" @click="open = false; activeMenu = ''">Branding</a>
-                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
-                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/flyers-brochures.pdf"
-                    alt="Flyers, Brochures, & Catalogs" @click="open = false; activeMenu = ''">Flyers</a>
-                <a class="block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
-                    data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/pdf-forms.pdf"
-                    alt="Fillable PDF Forms" @click="open = false; activeMenu = ''">PDF Forms</a>
+            <div x-show="open" 
+     x-transition:leave-start=""
+     x-transition:leave-end=""
+     x-transition:leave.duration.900ms
+                
+            class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
+            
+                <a class="menu-action block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/software-design.pdf"
+                alt="Software UX Design"
+                @click="flashAndNavigate">
+                Software</a>
+
+                <a class="menu-action block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/website-design.pdf"
+                alt="Software UX Design"
+                @click="flashAndNavigate">
+                Websites</a>                
+
+                <a class="menu-action block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/custom-branding.pdf"
+                alt="Software UX Design"
+                @click="flashAndNavigate">
+                Branding</a>
+                
+                <a class="menu-action block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/flyers-brochures.pdf"
+                alt="Software UX Design"
+                @click="flashAndNavigate">
+                Flyers</a>
+                
+                <a class="menu-action block pl-[14px] pr-2 py-[2px] menu-item-hover pdf-launcher cursor-pointer"
+                data-full="https://raw.githubusercontent.com/danmorgandesigns/classic/main/portfolio/pdf-forms.pdf"
+                alt="Software UX Design"
+                @click="flashAndNavigate">
+                PDF Forms</a>
+
             </div>
 
 
@@ -38,52 +62,62 @@
 
 
         <!-- Home dropdown that keeps the vertical spacing perfect -->
-        <span class="relative flex items-center justify-center" x-data="{ open: false, activeMenu: '' }"
-            @click.away="open = false; activeMenu = ''">
-            <span
-                class="system-menubar-font cursor-pointer select-none leading-[1] inline-block py-[4px] pl-[7px] pr-[6px]"
-                :class="{ 'bg-black text-white border-t border-white': activeMenu === 'home' }"
-                @click="open = !open; activeMenu = open ? 'home' : ''">
-                Home
-            </span>
-            <!-- <div x-show="open"
-                class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
-                <a href="/index.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Home</a>
-                <a href="/now.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Now</a>
-                <a href="/services.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Services</a>
-                <a href="/portfolio.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Portfolio</a>
-                <a href="/about-me.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">About Me</a>
-                <a href="/contact-me.html" class="block pl-[14px] pr-2 py-[2px] menu-item-hover">Contact Me</a>
-            </div> -->
-
-            <div x-show="open" class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer  transition-none">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/index.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Home</a>
-                </div>
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/now.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Now</a>
-                </div>
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/services.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Services</a>
-                </div>
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/portfolio.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Portfolio</a>
-                </div>
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/about-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">About Me</a>
-                </div>
-                <div class="menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer">
-                    <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
-                    <a href="/contact-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Contact Me</a>
-                </div>
-            </div>
-
+        <span class="relative flex items-center justify-center" x-data="menuHandler()"
+        @click.away="open = false; activeMenu = ''">
+        
+        <span
+            class="system-menubar-font cursor-pointer select-none leading-[1] inline-block py-[4px] pl-[7px] pr-[6px]"
+            :class="{ 'bg-black text-white border-t border-white': activeMenu === 'home' }"
+            @click="open = !open; activeMenu = open ? 'home' : ''">
+            Home
         </span>
+    
+        <div x-show="open" 
+        x-transition:leave-start=""
+        x-transition:leave-end=""
+        x-transition:leave.duration.900ms
+        
+        class="absolute classic-menu -left-[0px] top-full mt-[-2px] w-32 z-50 system-menubar-font">
+            
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer transition-none"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/index.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Home</a>
+            </div>
+    
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/now.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Now</a>
+            </div>
+    
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/services.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Services</a>
+            </div>
+    
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/portfolio.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Portfolio</a>
+            </div>
+    
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/about-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">About Me</a>
+            </div>
+    
+            <div class="menu-action menu-item flex items-center w-full hover:bg-black hover:text-white cursor-pointer"
+                @click="flashAndNavigate">
+                <span class="checkmark-holder w-[9px] h-[8px] ml-[3px] mr-[2px]"></span>
+                <a href="/contact-me.html" class="block pl-[0px] pr-2 py-[2px] menu-item-hover menu-link">Contact Me</a>
+            </div>
+    
+        </div>
+    
+    </span>
         <!-- end Home dropdown -->
     </div>
     <div class="clock" id="clock">Thu 9:41 AM</div>
