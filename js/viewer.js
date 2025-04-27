@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 setTimeout(() => {
                     pdfDoc.getPage(num).then(page => {
-                        const viewport = page.getViewport({ scale: 1.5 });
+                        const viewport = page.getViewport({ scale: 4.0 });
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
                         canvas.style.maxWidth = "100%";
