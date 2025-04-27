@@ -504,7 +504,11 @@ body {
   font-size: 0;
 }
 
-
+.checkmark-holder img {
+  display: block;
+  position: relative;
+  top: 1px; /* nudge upward by 1px */
+}
 
 
 /* ========================= */
