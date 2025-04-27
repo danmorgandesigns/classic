@@ -83,7 +83,7 @@ function setupClock() {
         }
   
         // Tools label
-        const toolsLabel = document.querySelector(".system-menubar-font:nth-child(4)");
+        const toolsLabel = document.querySelector(".system-menubar-font:nth-child(2)");
         if (toolsLabel) {
           toolsLabel.addEventListener("click", togglePalette);
         }
