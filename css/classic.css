@@ -869,6 +869,11 @@ body {
   top: 2px;
   right: 44px;
   width: 16px;
+  cursor: pointer;
+}
+
+.help-icon:active {
+  filter: invert(1);
 }
 
 .hypercard-icon {
@@ -876,6 +881,7 @@ body {
   top: 3px;
   right: 17px;
   width: 16px;
+  cursor: pointer;
 }
 
 .hypercard-icon:active {
