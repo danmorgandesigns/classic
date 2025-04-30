@@ -756,9 +756,9 @@ body {
   cursor: pointer;
 }
 
-.nav-icon:hover {
+/* .nav-icon:hover {
   transform: scale(1.1);
-}
+} */
 
 .nav-icon:active {
   filter: invert(1);
@@ -768,9 +768,9 @@ body {
   cursor: pointer;
 }
 
-.desktop-icon:hover {
+/* .desktop-icon:hover {
   transform: scale(1.1);
-}
+} */
 
 .desktop-icon:active {
   filter: invert(1);
@@ -786,9 +786,9 @@ body {
   filter: invert(1);
 }
 
-.si-icon:hover {
+/* .si-icon:hover {
   transform: scale(1.1);
-}
+} */
 
 
 .dialog-titlebar {
@@ -1137,9 +1137,9 @@ h1 {
   transition: transform 0.2s;
 }
 
-.download-button:hover img {
+/* .download-button:hover img {
   transform: scale(1.1);
-}
+} */
 
 .download-button:active img {
   filter: invert(1);
@@ -1153,9 +1153,9 @@ h1 {
   transition: transform 0.2s;
 }
 
-.icon-button:hover img {
+/* .icon-button:hover img {
   transform: scale(1.1);
-}
+} */
 
 .icon-button:active img {
   filter: invert(1);
@@ -1169,9 +1169,9 @@ h1 {
   transition: transform 0.2s;
 }
 
-.media-button:hover img {
+/* .media-button:hover img {
   transform: scale(1.1);
-}
+} */
 
 .media-button:active img {
   filter: invert(1);
