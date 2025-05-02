@@ -96,15 +96,7 @@ function setupClock() {
       .then(res => res.text())
       .then(html => {
         document.getElementById("desktop-container").innerHTML = html;
-  
-        // Apple icon → launch invaders
-        // const appleIcon = document.querySelector(".apple-icon");
-        // if (appleIcon) {
-        //   appleIcon.addEventListener("click", () => {
-        //     toggleInvaders();
-        //     hideUFO();
-        //   });
-        // }
+
 
         // Space Invaders app icon → launch invaders
         const invadersIcon = document.getElementById("space-invaders-launcher");
@@ -116,10 +108,7 @@ function setupClock() {
         }
 
              // File label
-             const fileLabel = document.getElementById("file-menu");
-             if (fileLabel) {
-               fileLabel.addEventListener("click", toggleAboutMac);
-             }
+
   
         // Tools label
         const toolsLabel = document.getElementById("tools-menu");

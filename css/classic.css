@@ -1329,6 +1329,37 @@ h1 {
 }
 
 
+.about-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  /* padding: 16px; */
+  width: 381px;
+  height: 163px;
+  z-index: 9999;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0 black;
+  display: none; /* toggled to block via JS */
+}
+
+.about-modal-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* border: 1px solid black; */
+  /* box-shadow: 2px 2px 0 black; */
+  border-radius: 0px;
+  /* padding: 6px; */
+  overflow: auto;
+}
+
+
+
+
+
 .tool-palette {
   position: absolute;
   /* Position it relative to the .hypercard-window */

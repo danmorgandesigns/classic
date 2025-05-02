@@ -1,29 +1,30 @@
-<div id="aboutmacModal" class="modal hidden">
-    <div class="modal-content">
+<div id="aboutmacModal" class="about-modal">
+    <div class="about-modal-content">
         <div class="modal-titlebar relative flex items-center">
             <div class="spacer shrink-0"></div>
             <div class="close-box-wrapper">
-                <div class="close-box" onclick="closeModal()"></div>
+                <div class="close-box" onclick=" closeAboutMac()"></div>
             </div>
             <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
                 <span id="aboutTitle" class="bg-white px-2 py-[1px] leading-none z-10 modal-title">About this Macintosh</span>
             </div>
         </div>
-        <div id="modalContent" class="modal-body flex-1 overflow-auto flex justify-center items-center bg-white">
-            <div class="flex flex-col px-6 space-y-1 w-full"> <!--begin inner grid-->
+        
+
+            <div class="flex flex-col px-6 mt-[20px] w-full"> 
                 <div class="flex min-h-[64px] cursor-pointer">
                   <div class="w-[175px] h-[26px] flex justify-center items-start shrink-0">
                     <img src="images/macintosh-portable.svg" class="w-[26px] h-auto block" />
-                    <p class="classic-service-details leading-snug">Macintosh Portable M1 Pro</p>
+                    <p class="classic-service-title leading-snug">Macintosh Portable</p>
                   </div>
                   <div class="flex flex-col pl-2 flex-grow justify-start">
                     <span class="classic-service-title pb-1 leading-snug">macOS Sequoia 15.5</span>
                     <p class="classic-service-details leading-snug">
-                        ™ and ® Apple Computer, Inc 1983–2025
+                        © Apple Computer, Inc 1983–2025
                     </p>
                   </div>
                 </div>
-              </div> <!--end inner grid-->          
+              </div> 
         </div>       
     </div>
 </div>
