@@ -98,9 +98,10 @@ x-data="menuHandler()"
 
 
     <div class="menu-labels">
-        <span class="system-menubar-font py-[4px] pl-[7px] pr-[6px]" style="cursor: pointer;">File</span>
-        <span id="tools-menu" class="system-menubar-font py-[4px] pl-[7px] pr-[6px] "
-            style="cursor: pointer;">Tools</span>
+        <span id="file-menu" class="system-menubar-font py-[4px] pl-[7px] pr-[6px]" style="cursor: pointer;">File</span>
+
+        <span id="tools-menu" class="system-menubar-font py-[4px] pl-[7px] pr-[6px]" style="cursor: pointer;">Tools</span>
+        
         <span class="relative flex items-center justify-center" x-data="menuHandler()"
             @click.away="open = false; activeMenu = ''">
             <span

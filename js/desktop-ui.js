@@ -114,6 +114,12 @@ function setupClock() {
             hideUFO();
           });
         }
+
+             // File label
+             const fileLabel = document.getElementById("file-menu");
+             if (fileLabel) {
+               fileLabel.addEventListener("click", toggleAboutMac);
+             }
   
         // Tools label
         const toolsLabel = document.getElementById("tools-menu");
