@@ -1331,14 +1331,14 @@ h1 {
 
 .about-modal {
   position: fixed;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   border: 1px solid black;
   /* padding: 16px; */
-  width: 400px;
-  height: 200px;
+  width: 381px;
+  height: 163px;
   z-index: 9999;
   border: 1px solid black;
   box-shadow: 2px 2px 0 black;

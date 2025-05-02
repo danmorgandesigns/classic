@@ -14,11 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
             document.getElementById("aboutmac-container").innerHTML = html;
 
             // TEMP test button:
-            const testButton = document.createElement("button");
-            testButton.innerText = "Open About Modal";
-            testButton.className = "classic-default-button fixed bottom-6 left-6 z-50";
-            testButton.addEventListener("click", toggleAboutMac);
-            document.body.appendChild(testButton);
+            // const testButton = document.createElement("button");
+            // testButton.innerText = "Open About Modal";
+            // testButton.className = "classic-default-button fixed bottom-6 left-6 z-50";
+            // testButton.addEventListener("click", toggleAboutMac);
+            // document.body.appendChild(testButton);
         });
 });
 
