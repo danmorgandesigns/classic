@@ -97,13 +97,13 @@ function setupClock() {
         document.getElementById("desktop-container").innerHTML = html;
   
         // Apple icon → launch invaders
-        const appleIcon = document.querySelector(".apple-icon");
-        if (appleIcon) {
-          appleIcon.addEventListener("click", () => {
-            toggleInvaders();
-            hideUFO();
-          });
-        }
+        // const appleIcon = document.querySelector(".apple-icon");
+        // if (appleIcon) {
+        //   appleIcon.addEventListener("click", () => {
+        //     toggleInvaders();
+        //     hideUFO();
+        //   });
+        // }
 
         // Space Invaders app icon → launch invaders
         const invadersIcon = document.getElementById("space-invaders-launcher");
