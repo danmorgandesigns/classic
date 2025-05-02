@@ -61,6 +61,7 @@ function setupClock() {
       activeMenu: '',
       flashAndNavigate(event) {
         event.preventDefault();
+        event.stopPropagation();
         const el = event.currentTarget;
         const self = this; // capture Alpine's reactive context
   
@@ -115,7 +116,7 @@ function setupClock() {
         }
   
         // Tools label
-        const toolsLabel = document.querySelector(".system-menubar-font:nth-child(2)");
+        const toolsLabel = document.getElementById("tools-menu");
         if (toolsLabel) {
           toolsLabel.addEventListener("click", togglePalette);
         }
