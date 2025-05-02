@@ -29,3 +29,9 @@ function closeAboutMac() {
       modal.style.display = "none";
     }
   }
+
+  function scrollAboutText(direction) {
+    const box = document.getElementById('about-mac-text');
+    const scrollAmount = 10; // pixels per click
+    box.scrollBy({ top: direction * scrollAmount, behavior: 'smooth' });
+  }

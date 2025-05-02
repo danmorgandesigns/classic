@@ -10,7 +10,7 @@
                     Macintosh</span>
             </div>
         </div>
-        <!-- <img src="images/macintosh-portable.svg" alt="Macintosh Portable" class="h-[32px] w-auto" /> -->
+        
 
         <div class="flex items-start gap-[20px] pl-[16px] mt-[8px]">
             <!-- Left Column -->
@@ -39,6 +39,23 @@
                     class=" pt-[8px] pl-[6px] about-text leading-snug">994.66GB</span>
             </div>
         </div>
-        <div class="h-[72px] border-t border-black mt-[2px]"></div>
+        <div class="relative h-[72px] border-t border-black mt-[2px]">
+            <!-- Scrollable Text -->
+            <div id="about-mac-text" class="h-full overflow-hidden pr-[16px] pl-[8px] pt-[8px] leading-tight about-text">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </p>
+            </div>
+          
+            <!-- Scroll Arrows -->
+            <div class="absolute top-0 right-[2px] h-full flex flex-col justify-between py-[4px]">
+              <img src="images/about-arrow-up.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(-1)" />
+              <img src="images/about-arrow-down.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(1)" />
+            </div>
+          </div>
     </div>
 </div>
