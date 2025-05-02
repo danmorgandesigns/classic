@@ -1337,8 +1337,8 @@ h1 {
   background-color: white;
   border: 1px solid black;
   /* padding: 16px; */
-  width: 381px;
-  height: 163px;
+  width: 400px;
+  height: 200px;
   z-index: 9999;
   border: 1px solid black;
   box-shadow: 2px 2px 0 black;
@@ -1356,8 +1356,26 @@ h1 {
   overflow: auto;
 }
 
+.about-text {
+  font-family: 'EspySans12', sans-serif;
+  font-size: 10px;
+  line-height: 1;
+  color: black;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
 
-
+.about-text-bold {
+  font-family: 'EspySansBold12', sans-serif;
+  font-size: 10px;
+  
+  line-height: 1;
+  color: black;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
 
 
 .tool-palette {
