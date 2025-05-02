@@ -52,10 +52,17 @@
             </div>
           
             <!-- Scroll Arrows -->
-            <div class="absolute top-0 right-[2px] h-full flex flex-col justify-between py-[4px]">
-              <img src="images/about-arrow-up.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(-1)" />
-              <img src="images/about-arrow-down.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(1)" />
-            </div>
+            <!-- <div class="absolute top-0 right-0 w-[14px] h-full border-l border-black flex flex-col justify-between items-center py-[1px]">
+                <img src="images/about-up-arrow.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(-1)" />
+                <img src="images/about-down-arrow.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(1)" />
+              </div> -->
+
+              <div class="absolute top-0 right-0 w-[14px] h-full border-l border-black flex flex-col justify-between items-center py-[1px]">
+                <img src="images/about-up-arrow.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow" onclick="scrollAboutText(-1)" />
+                <div class="absolute top-[14px] w-full h-[1px] bg-black"></div>
+                <img src="images/about-down-arrow.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow" onclick="scrollAboutText(1)" />
+                <div class="absolute bottom-[14px] w-full h-[1px] bg-black"></div>
+              </div>
           </div>
     </div>
 </div>
