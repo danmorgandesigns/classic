@@ -51,17 +51,35 @@
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </p>
             </div>
           
-            <!-- Scroll Arrows -->
-            <!-- <div class="absolute top-0 right-0 w-[14px] h-full border-l border-black flex flex-col justify-between items-center py-[1px]">
-                <img src="images/about-up-arrow.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(-1)" />
-                <img src="images/about-down-arrow.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer" onclick="scrollAboutText(1)" />
-              </div> -->
 
-              <div class="absolute top-0 right-0 w-[14px] h-full border-l border-black flex flex-col justify-between items-center py-[1px]">
+
+              <!-- <div class="absolute top-0 right-0 w-[14px] h-full border-l border-black flex flex-col justify-between items-center py-[1px]">
                 <img src="images/about-up-arrow.svg" alt="Scroll Up" class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow" onclick="scrollAboutText(-1)" />
                 <div class="absolute top-[14px] w-full h-[1px] bg-black"></div>
                 <img src="images/about-down-arrow.svg" alt="Scroll Down" class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow" onclick="scrollAboutText(1)" />
                 <div class="absolute bottom-[14px] w-full h-[1px] bg-black"></div>
+              </div> -->
+
+
+              <div class="absolute top-0 right-0 w-[14px] h-full">
+                <!-- Top Arrow Box -->
+                <div class="h-[14px] w-full border-l border-black flex justify-center items-center">
+                  <img src="images/about-up-arrow.svg" alt="Scroll Up"
+                       class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow"
+                       onclick="scrollAboutText(-1)" />
+                </div>
+              
+                <!-- Middle Track Box -->
+                <div class="h-[41px] w-full border-l border-t border-b border-black bg-repeat-y"
+                     style="background-image: url('images/scroll-fill.svg'); background-position: center;">
+                </div>
+              
+                <!-- Bottom Arrow Box -->
+                <div class="h-[14px] w-full border-l border-black flex justify-center items-center">
+                  <img src="images/about-down-arrow.svg" alt="Scroll Down"
+                       class="h-[10px] w-[12px] cursor-pointer about-scroll-arrow"
+                       onclick="scrollAboutText(1)" />
+                </div>
               </div>
           </div>
     </div>
