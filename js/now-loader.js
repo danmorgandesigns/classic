@@ -3,11 +3,11 @@ async function loadLatestPost() {
   const navContainer = document.getElementById("post-nav");
 
   try {
-    const res = await fetch("posts.json");
+    const res = await fetch("now-posts.json");
     const posts = await res.json();
     const latest = posts[0];
 
-    const postRes = await fetch("posts/" + latest.filename);
+    const postRes = await fetch("now-posts/" + latest.filename);
     const md = await postRes.text();
     const html = marked.parse(md);
     const withClass = html.replace("<h1>", "<h1 class='post-date'>");
@@ -40,13 +40,13 @@ async function loadPost(filename, index) {
   const navContainer = document.getElementById("post-nav");
 
   try {
-    const res = await fetch("posts/" + filename);
+    const res = await fetch("now-posts/" + filename);
     const md = await res.text();
     const html = marked.parse(md);
     const withClass = html.replace("<h1>", "<h1 class='post-date'>");
     contentContainer.innerHTML = withClass;
 
-    const resPosts = await fetch("posts.json");
+    const resPosts = await fetch("now-posts.json");
     const posts = await resPosts.json();
 
     const prevBtn = document.getElementById("nav-prev");
