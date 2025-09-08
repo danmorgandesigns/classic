@@ -100,17 +100,17 @@
                             style="animation: colorTransition 2s ease forwards 2s;"
                             onclick="document.getElementById('startup-sound').play()" />
                         <p>I’m a software and graphic designer in Kansas City.</p>
-                        <p>I'm available for freelance design work.<br>
+                        <p>I'm available for contract or full-time design and development work.<br>
                             Drop me a line.</p>
                     </div>
                 </div>
 
                 <div class="p-2 col-span-3 row-start-3">
-                    <div class="grid grid-cols-4 gap-x-1 gap-y-0">
+                    <div class="grid grid-cols-5 gap-x-1 gap-y-0">
                         <div class="flex flex-col items-center justify-end">
-                            <a href="now.html" id="now-button" class="icon-button h-8 p-0 m-0">
-                                <img src="images/alert-face-info.svg" alt="Now" class="w-full h-full align-bottom" />
-                            </a>
+<button id="now-button" class="icon-button h-8 p-0 m-0">
+    <img src="images/alert-face-info.svg" alt="Now" class="w-full h-full align-bottom" />
+</button>
 
                             <span class="classic-thumbnail-label" style="margin-top: 3px;">Now</span>
                         </div>
@@ -126,6 +126,13 @@
                                     class="w-full h-full align-bottom" />
                             </button>
                             <span class="classic-thumbnail-label" style="margin-top: 3px;">Portfolio</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-end">
+                            <button id="blog-button" class="icon-button h-8 p-0 m-0">
+                                <img src="images/news.svg" alt="Blog"
+                                    class="w-full h-full align-bottom" />
+                            </button>
+                            <span class="classic-thumbnail-label" style="margin-top: 3px;">My Blog</span>
                         </div>
                         <div class="flex flex-col items-center justify-end">
                             <button id="about-button" class="icon-button h-8 p-0 m-0">
@@ -170,11 +177,17 @@
         document.getElementById('services-button')?.addEventListener('click', () => {
             window.location.href = 'services.html';
         });
+                document.getElementById('now-button')?.addEventListener('click', () => {
+            window.location.href = 'now.html';
+        });
 
         document.getElementById('portfolio-button')?.addEventListener('click', () => {
             window.location.href = 'portfolio.html';
         });
 
+        document.getElementById('blog-button')?.addEventListener('click', () => {
+            window.location.href = 'blog.html';
+        });
         document.getElementById('about-button')?.addEventListener('click', () => {
             window.location.href = 'about-me.html';
         });
