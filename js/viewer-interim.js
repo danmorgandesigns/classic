@@ -31,47 +31,43 @@ window.addEventListener("DOMContentLoaded", () => {
             let totalPages = 0;
 
 function renderPage(num) {
-    // Force layout calculation before rendering
-    const modalContent = document.getElementById("modalContent");
-    const modalBox = document.querySelector(".modal-content");
-    
-    // Ensure modal is visible before calculations
-    if (modalBox.style.display === 'none') {
-        modalBox.style.display = 'flex';
-    }
-    
-    // Force layout recalculation
-    modalBox.offsetHeight;
-    
     // Fade out
     canvas.style.opacity = 0;
 
     setTimeout(() => {
-        pdfDoc.getPage(num).then(page => {
-            const originalViewport = page.getViewport({ scale: 1.0 });
-            
-            // Get accurate modal dimensions after layout
-            const availableWidth = modalContent.clientWidth - 20;
-            const availableHeight = modalContent.clientHeight - 40;
-            
-            let scale;
-            if (originalViewport.width > originalViewport.height) {
-                // Landscape
-                scale = Math.min(
-                    availableWidth / originalViewport.width,
-                    availableHeight / originalViewport.height
-                );
-            } else {
-                // Portrait - ensure consistent scaling
-                scale = Math.min(
-                    availableWidth / originalViewport.width,
-                    availableHeight / originalViewport.height
-                ) * 0.95; // Small reduction for padding
-            }
-            
+    pdfDoc.getPage(num).then(page => {
+        const originalViewport = page.getViewport({ scale: 1.0 });
+        const modalContent = document.getElementById("modalContent");
+        
+        // Add padding buffer for calculations
+        const paddingBuffer = 40; // 20px top/bottom
+        const availableWidth = modalContent.clientWidth - 20;
+        const availableHeight = modalContent.clientHeight - paddingBuffer;
+        
+        let scale;
+        if (originalViewport.width > originalViewport.height) {
+            // Landscape - keep existing logic
+            scale = Math.min(
+                availableWidth / originalViewport.width,
+                availableHeight / originalViewport.height
+            );
+        } else {
+            // Portrait - add a small reduction factor
+            scale = Math.min(
+                availableWidth / originalViewport.width,
+                availableHeight / originalViewport.height
+            ) * 0.95; // Reduce by 5% to ensure padding
+        }
+
+            // Create new viewport with calculated scale
             const viewport = page.getViewport({ scale });
+
+            // Reset canvas dimensions each time
             canvas.width = viewport.width;
             canvas.height = viewport.height;
+            
+            // Clear any previous transforms
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
             
             const renderContext = {
                 canvasContext: ctx,
@@ -80,6 +76,7 @@ function renderPage(num) {
             
             return page.render(renderContext).promise;
         }).then(() => {
+            // Fade back in
             canvas.style.opacity = 1;
         });
     }, 100);
@@ -117,12 +114,7 @@ function closeModal() {
 
                     modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
 
-        // Show modal first
-        modal.style.display = "flex";
-        
-        // Force layout calculation
-        modal.offsetHeight;                    
-
+        // INSERT THIS BLOCK ↓↓↓
         const downloadBtn = document.getElementById("downloadPDF");
         if (downloadBtn) {
             if (isPDF) {
@@ -186,17 +178,40 @@ function closeModal() {
                         }
 
                         if (isMobile && aspectRatio > 1.0) {
-                            canvas.style.maxHeight = "50vh"; 
+                            canvas.style.maxHeight = "50vh"; // tweak as needed
                         }
 
-
+                        //added
 
     if (!isMobile && aspectRatio < 1.0) {
         modalBox.style.width = "auto";
         modalBox.style.height = "";        
         modalBox.style.maxHeight = "90vh";
         modalBox.style.margin = "auto";
+        // canvas.style.height = "auto";
+        // canvas.style.maxHeight = "80vh";
+        // canvas.style.marginTop = "20px";
+        // canvas.style.marginBottom = "20px";
+    }
+            
+    // const breathingSpace = 60; // or tweak this
+    // const canvasOffset = 60;   // canvas leaves extra room inside
+    
+    // if (!isMobile && aspectRatio < 1.0) {
+    //     // modalBox.style.width = "auto";
+    //     // modalBox.style.height = "";
+    //     // modalBox.style.maxHeight = `calc(100vh - ${breathingSpace}px)`;
+    //     // modalBox.style.margin = "auto";
+    //     // canvas.style.height = "auto";
+    //     // canvas.style.maxHeight = `calc(100vh - ${breathingSpace + canvasOffset}px)`;
+    //     // canvas.style.marginTop = "20px";
+    //     // canvas.style.marginBottom = "20px";
+    // } 
+    
 
+    
+    
+    //end added
 
                         pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
                             pdfDoc = pdf;
