@@ -30,36 +30,50 @@ window.addEventListener("DOMContentLoaded", () => {
             let currentPage = 1;
             let totalPages = 0;
 
-            function renderPage(num) {
-                // Fade out
-                canvas.style.opacity = 0;
+function renderPage(num) {
+    // Fade out
+    canvas.style.opacity = 0;
 
-                setTimeout(() => {
-                    pdfDoc.getPage(num).then(page => {
-                        const viewport = page.getViewport({ scale: 4.0 });
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
-                        canvas.style.maxWidth = "100%";
-                        canvas.style.height = "auto";
-                        
-                        // canvas.style.width = "100%"; //added 4.24
-                        
-
-
-
-                        const renderContext = {
-                            canvasContext: ctx,
-                            viewport: viewport
-                        };
-                        return page.render(renderContext).promise;
-                    }).then(() => {
-                        // Fade back in after render
-                        canvas.style.opacity = 1;
-                    });
-                }, 100); // delay before rendering to allow fade-out
-
-                document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
+    setTimeout(() => {
+        pdfDoc.getPage(num).then(page => {
+            // Get original viewport at scale 1.0 first
+            const originalViewport = page.getViewport({ scale: 1.0 });
+            
+            // Calculate available space in modal
+            const modalContent = document.getElementById("modalContent");
+            const availableWidth = modalContent.clientWidth - 40;  // 40px for padding
+            const availableHeight = modalContent.clientHeight - 40;
+            
+            // Calculate best scale based on orientation
+            let scale;
+            if (originalViewport.width > originalViewport.height) {
+                // Landscape
+                scale = Math.min(
+                    availableWidth / originalViewport.width,
+                    availableHeight / originalViewport.height
+                ) * 3.5;  // Adjust this multiplier as needed
+            } else {
+                // Portrait
+                scale = 4.0;  // Your existing scale
             }
+
+            const viewport = page.getViewport({ scale });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            
+            const renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            return page.render(renderContext).promise;
+        }).then(() => {
+            // Fade back in after render
+            canvas.style.opacity = 1;
+        });
+    }, 100);
+
+    document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
+}
 
 
 

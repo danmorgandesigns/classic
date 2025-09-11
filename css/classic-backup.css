@@ -1324,12 +1324,8 @@ h1 {
 
 /* Modal body below title bar */
 .modal-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden;
-    background: white;
+  flex: 1;
+  display: flex;
 }
 
 
@@ -1487,21 +1483,20 @@ h1 {
 
 .image-viewer,
 .pdf-viewer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: contain;
 }
 
 #pdf-canvas {
-    max-width: 100%;
-    max-height: calc(100% - 40px); /* Account for padding */
-    width: auto !important; /* Override any inline styles */
-    height: auto !important; /* Override any inline styles */
-    display: block;
-    margin: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  transition: opacity 0.2s ease;
 }
 
 #iframeContainer {
