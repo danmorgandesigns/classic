@@ -35,30 +35,29 @@ function renderPage(num) {
     canvas.style.opacity = 0;
 
     setTimeout(() => {
-        pdfDoc.getPage(num).then(page => {
-            // Get viewport at scale 1 to determine orientation
-            const originalViewport = page.getViewport({ scale: 1.0 });
-            
-            // Get modal dimensions
-            const modalContent = document.getElementById("modalContent");
-            const availableWidth = modalContent.clientWidth - 20; // 10px padding on each side
-            const availableHeight = modalContent.clientHeight - 20;
-            
-            // Calculate scale based on orientation
-            let scale;
-            if (originalViewport.width > originalViewport.height) {
-                // Landscape
-                scale = Math.min(
-                    availableWidth / originalViewport.width,
-                    availableHeight / originalViewport.height
-                );
-            } else {
-                // Portrait - calculate fresh each time
-                scale = Math.min(
-                    availableWidth / originalViewport.width,
-                    availableHeight / originalViewport.height
-                );
-            }
+    pdfDoc.getPage(num).then(page => {
+        const originalViewport = page.getViewport({ scale: 1.0 });
+        const modalContent = document.getElementById("modalContent");
+        
+        // Add padding buffer for calculations
+        const paddingBuffer = 40; // 20px top/bottom
+        const availableWidth = modalContent.clientWidth - 20;
+        const availableHeight = modalContent.clientHeight - paddingBuffer;
+        
+        let scale;
+        if (originalViewport.width > originalViewport.height) {
+            // Landscape - keep existing logic
+            scale = Math.min(
+                availableWidth / originalViewport.width,
+                availableHeight / originalViewport.height
+            );
+        } else {
+            // Portrait - add a small reduction factor
+            scale = Math.min(
+                availableWidth / originalViewport.width,
+                availableHeight / originalViewport.height
+            ) * 0.95; // Reduce by 5% to ensure padding
+        }
 
             // Create new viewport with calculated scale
             const viewport = page.getViewport({ scale });
