@@ -36,38 +36,48 @@ function renderPage(num) {
 
     setTimeout(() => {
         pdfDoc.getPage(num).then(page => {
-            // Get original viewport at scale 1.0 first
+            // Get viewport at scale 1 to determine orientation
             const originalViewport = page.getViewport({ scale: 1.0 });
             
-            // Calculate available space in modal
+            // Get modal dimensions
             const modalContent = document.getElementById("modalContent");
-            const availableWidth = modalContent.clientWidth - 40;  // 40px for padding
-            const availableHeight = modalContent.clientHeight - 40;
+            const availableWidth = modalContent.clientWidth - 20; // 10px padding on each side
+            const availableHeight = modalContent.clientHeight - 20;
             
-            // Calculate best scale based on orientation
+            // Calculate scale based on orientation
             let scale;
             if (originalViewport.width > originalViewport.height) {
                 // Landscape
                 scale = Math.min(
                     availableWidth / originalViewport.width,
                     availableHeight / originalViewport.height
-                ) * 3.5;  // Adjust this multiplier as needed
+                );
             } else {
-                // Portrait
-                scale = 4.0;  // Your existing scale
+                // Portrait - calculate fresh each time
+                scale = Math.min(
+                    availableWidth / originalViewport.width,
+                    availableHeight / originalViewport.height
+                );
             }
 
+            // Create new viewport with calculated scale
             const viewport = page.getViewport({ scale });
+
+            // Reset canvas dimensions each time
             canvas.width = viewport.width;
             canvas.height = viewport.height;
+            
+            // Clear any previous transforms
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
             
             const renderContext = {
                 canvasContext: ctx,
                 viewport: viewport
             };
+            
             return page.render(renderContext).promise;
         }).then(() => {
-            // Fade back in after render
+            // Fade back in
             canvas.style.opacity = 1;
         });
     }, 100);
@@ -75,6 +85,21 @@ function renderPage(num) {
     document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
 }
 
+// Add a cleanup function when closing modal
+function closeModal() {
+    const modal = document.getElementById("previewModal");
+    const canvas = document.getElementById("pdf-canvas");
+    
+    // Reset canvas
+    canvas.width = 0;
+    canvas.height = 0;
+    canvas.style.width = 'auto';
+    canvas.style.height = 'auto';
+    
+    modal.style.display = "none";
+    pdfDoc = null;
+    currentPage = 1;
+}
 
 
 
