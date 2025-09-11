@@ -1221,15 +1221,14 @@ h1 {
 .modal-content {
   width: 70vh;
   aspect-ratio: 8.5 / 11;
-  /* background-color: #9F9F9F; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
   border: 1px solid black;
   box-shadow: 2px 2px 0 black;
   border-radius: 0px;
-  /* padding: 6px; */
-  overflow: auto;
+  background: white;
+  
 }
 
 .modal-title {
@@ -1327,7 +1326,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
     background: white;
 }
@@ -1493,11 +1492,12 @@ h1 {
     justify-content: center;
     align-items: center;
     background: white;
+    padding: 5px;
 }
 
 #pdf-canvas {
-    max-width: 100%;
-    max-height: calc(100% - 40px); /* Account for padding */
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 20px); 
     width: auto !important; /* Override any inline styles */
     height: auto !important; /* Override any inline styles */
     display: block;
