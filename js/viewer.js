@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
                             scale = Math.min(
                                 availableWidth / originalViewport.width,
                                 availableHeight / originalViewport.height
-                            ) * 0.95; // Small reduction for padding
+                            ) * 1; // Small reduction for padding
                         }
                         
                         const viewport = page.getViewport({ scale });
@@ -130,10 +130,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         modalBox.style.height = "";
                         modalBox.style.maxHeight = "100vh";
                     } else if (aspectRatio >= 1.0) {
-                        modalBox.style.width = "80vw";
-                        modalBox.style.maxHeight = "80vh";
-                        modalBox.style.height = "auto";
-                        modalBox.style.margin = "auto";
+    modalBox.style.width = "75vw";        // Reduced from 80vw
+    modalBox.style.maxHeight = "75vh";    // Reduced from 80vh
+    modalBox.style.height = "auto";
+    modalBox.style.margin = "auto";
+
+    // Add these canvas style modifications
+    canvas.style.width = "100%";          // Fill modal width
+    canvas.style.maxWidth = "none";       // Remove max-width constraint
+    canvas.style.height = "auto";
+    canvas.style.maxHeight = "100%";      // Fill available height
                     } else {
                         if (isMobile) {
                             modalBox.style.width = "calc(100vw - 10px)";
