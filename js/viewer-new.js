@@ -45,83 +45,62 @@ window.addEventListener("DOMContentLoaded", () => {
             let currentPage = 1;
             let totalPages = 0;
 
-function renderPage(num) {
-    const modalContent = document.getElementById("modalContent");
-    const modalBox = document.querySelector(".modal-content");
-    
-    // Clear previous render state
-    canvas.width = 0;
-    canvas.height = 0;
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    
-    if (modalBox.style.display === 'none') {
-        modalBox.style.display = 'flex';
-    }
-    
-    modalBox.offsetHeight;
-    canvas.style.opacity = 0;
+            function renderPage(num) {
+                const modalContent = document.getElementById("modalContent");
+                const modalBox = document.querySelector(".modal-content");
+                
+                if (modalBox.style.display === 'none') {
+                    modalBox.style.display = 'flex';
+                }
+                
+                modalBox.offsetHeight;
+                canvas.style.opacity = 0;
 
-    setTimeout(() => {
-        pdfDoc.getPage(num).then(page => {
-            const originalViewport = page.getViewport({ scale: 1.0 });
-            const availableWidth = modalContent.clientWidth - 20;
-            const availableHeight = modalContent.clientHeight - 40;
-            
-            // Adjust scale calculation based on orientation
-            let scale;
-            if (originalViewport.width > originalViewport.height) {
-                // Landscape calculation
-                scale = Math.min(
-                    availableWidth / originalViewport.width,
-                    availableHeight / originalViewport.height
-                );
-                scale *= (window.devicePixelRatio || 1) * 1.5;  // Full scale for landscape
-            } else {
-                // Portrait calculation - reduced scale
-                scale = Math.min(
-                    (availableWidth * 0.85) / originalViewport.width,
-                    (availableHeight * 0.4) / originalViewport.height
-                );
-    scale *= (window.devicePixelRatio || 1) * 1.2;  // Added multiplier back for better quality
+                setTimeout(() => {
+                    pdfDoc.getPage(num).then(page => {
+                        const originalViewport = page.getViewport({ scale: 1.0 });
+                        const availableWidth = modalContent.clientWidth - 20;
+                        const availableHeight = modalContent.clientHeight - 40;
+                        
+                        // Calculate base scale for fitting
+                        let scale = Math.min(
+                            availableWidth / originalViewport.width,
+                            availableHeight / originalViewport.height
+                        );
+                        
+                        // Apply device pixel ratio for sharp rendering
+                        const pixelRatio = window.devicePixelRatio || 1;
+                        scale *= pixelRatio * 1.5;
+                        
+                        const viewport = page.getViewport({ scale });
+                        
+                        // Set canvas size to high-DPI dimensions
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        
+                        // Set display size to CSS pixels
+                        canvas.style.width = `${viewport.width / pixelRatio}px`;
+                        canvas.style.height = `${viewport.height / pixelRatio}px`;
+                        
+                        const renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport,
+                            intent: 'print',
+                            renderInteractiveForms: true,
+                            antialiasing: false,
+                            backgroundGraphics: true
+                        };
+                        
+                        return page.render(renderContext).promise;
+                    }).then(() => {
+                        canvas.style.opacity = 1;
+                    }).catch(error => {
+                        console.error('Render error:', error);
+                    });
+                }, 100);
+
+                document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
             }
-            
-            const viewport = page.getViewport({ scale });
-            
-            // Set canvas size to high-DPI dimensions
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-            
-            // Set display size to CSS pixels
-            canvas.style.width = `${viewport.width / (window.devicePixelRatio || 1)}px`;
-            canvas.style.height = `${viewport.height / (window.devicePixelRatio || 1)}px`;
-            
-            const renderContext = {
-                canvasContext: ctx,
-                viewport: viewport,
-                intent: 'print',
-                renderInteractiveForms: true,
-                antialiasing: false,
-                backgroundGraphics: true
-            };
-            
-            // Debug logging moved inside promise chain where variables are available
-            console.log('Debug:', {
-                originalDims: `${originalViewport.width}x${originalViewport.height}`,
-                scale: scale,
-                finalDims: `${viewport.width}x${viewport.height}`,
-                devicePixelRatio: window.devicePixelRatio
-            });
-            
-            return page.render(renderContext).promise;
-        }).then(() => {
-            canvas.style.opacity = 1;
-        }).catch(error => {
-            console.error('Render error:', error);
-        });
-    }, 100);
-
-    document.getElementById("pageInfo").textContent = `Page ${num} of ${totalPages}`;
-}
 
             function closeModal() {
                 modal.style.display = "none";
@@ -182,7 +161,7 @@ function renderPage(num) {
                             modalBox.style.marginRight = "auto";
                         } else {
                             modalBox.style.width = "auto";
-                            modalBox.style.height = "80vh"; //reduced from 80 to 70 2025.09.13
+                            modalBox.style.height = "70vh"; //reduced from 80 to 70 2025.09.13
                             modalBox.style.margin = "auto";
                         }
                     }
@@ -199,8 +178,8 @@ function renderPage(num) {
 
                         if (aspectRatio < 1.0) {
                             canvas.style.width = "auto";
-                            canvas.style.height = "80%"; // changed from 100 to 80 2025.09.13
-                            canvas.style.maxHeight = "80vh"; // changed from 90 to 80 2025.09.13
+                            canvas.style.height = "100%";
+                            canvas.style.maxHeight = "90vh";
                             canvas.style.maxWidth = "auto";
                         } else {
                             canvas.style.width = "100%";
