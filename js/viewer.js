@@ -1,10 +1,23 @@
+// Set up PDF.js worker and quality settings
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// Configure PDF.js with higher quality settings
+const pdfViewerOptions = {
+    maxImageSize: 10000 * 10000,
+    useSystemFonts: true,
+    isOffscreenCanvasSupported: true,
+    cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
+    cMapPacked: true,
+    disableFontFace: false,
+    fontExtraProperties: true
+};
+
 window.addEventListener("DOMContentLoaded", () => {
     fetch("components/viewer-component.html")
         .then(res => res.text())
         .then(html => {
             document.getElementById("viewer-container").innerHTML = html;
 
-            // ✅ Modal close button logic
             const closeBox = document.querySelector('.close-box');
             if (closeBox) {
                 closeBox.addEventListener('click', () => {
@@ -18,64 +31,71 @@ window.addEventListener("DOMContentLoaded", () => {
             const modalBox = document.querySelector(".modal-content");
             const modalTitle = document.getElementById("modalTitle");
             const canvas = document.getElementById("pdf-canvas");
-            const ctx = canvas.getContext("2d");
+            const ctx = canvas.getContext("2d", {
+                alpha: false,
+                willReadFrequently: true
+            });
             const imageViewer = document.getElementById("image-viewer");
+
+            // Enable image smoothing for better quality
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
 
             let pdfDoc = null;
             let currentPage = 1;
             let totalPages = 0;
 
             function renderPage(num) {
-                // Force layout calculation before rendering
                 const modalContent = document.getElementById("modalContent");
                 const modalBox = document.querySelector(".modal-content");
                 
-                // Ensure modal is visible before calculations
                 if (modalBox.style.display === 'none') {
                     modalBox.style.display = 'flex';
                 }
                 
-                // Force layout recalculation
                 modalBox.offsetHeight;
-                
-                // Fade out
                 canvas.style.opacity = 0;
 
                 setTimeout(() => {
                     pdfDoc.getPage(num).then(page => {
                         const originalViewport = page.getViewport({ scale: 1.0 });
-                        
-                        // Get accurate modal dimensions after layout
                         const availableWidth = modalContent.clientWidth - 20;
                         const availableHeight = modalContent.clientHeight - 40;
                         
-                        let scale;
-                        if (originalViewport.width > originalViewport.height) {
-                            // Landscape
-                            scale = Math.min(
-                                availableWidth / originalViewport.width,
-                                availableHeight / originalViewport.height
-                            );
-                        } else {
-                            // Portrait - ensure consistent scaling
-                            scale = Math.min(
-                                availableWidth / originalViewport.width,
-                                availableHeight / originalViewport.height
-                            ) * 1; // Small reduction for padding
-                        }
+                        // Calculate base scale for fitting
+                        let scale = Math.min(
+                            availableWidth / originalViewport.width,
+                            availableHeight / originalViewport.height
+                        );
+                        
+                        // Apply device pixel ratio for sharp rendering
+                        const pixelRatio = window.devicePixelRatio || 1;
+                        scale *= pixelRatio * 1.5;
                         
                         const viewport = page.getViewport({ scale });
+                        
+                        // Set canvas size to high-DPI dimensions
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
                         
+                        // Set display size to CSS pixels
+                        canvas.style.width = `${viewport.width / pixelRatio}px`;
+                        canvas.style.height = `${viewport.height / pixelRatio}px`;
+                        
                         const renderContext = {
                             canvasContext: ctx,
-                            viewport: viewport
+                            viewport: viewport,
+                            intent: 'print',
+                            renderInteractiveForms: true,
+                            antialiasing: false,
+                            backgroundGraphics: true
                         };
                         
                         return page.render(renderContext).promise;
                     }).then(() => {
                         canvas.style.opacity = 1;
+                    }).catch(error => {
+                        console.error('Render error:', error);
                     });
                 }, 100);
 
@@ -106,7 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     modalTitle.textContent = thumb.getAttribute("alt") || "Untitled";
                     modal.style.display = "flex";
-                    modalBox.offsetHeight; // Force layout calculation
+                    modalBox.offsetHeight;
 
                     const downloadBtn = document.getElementById("downloadPDF");
                     if (downloadBtn) {
@@ -124,22 +144,15 @@ window.addEventListener("DOMContentLoaded", () => {
                         }
                     }
 
-                    // Set modal dimensions based on aspect ratio
                     if (aspectRatio >= 1.0 && isMobile) {
                         modalBox.style.width = "100vw";
                         modalBox.style.height = "";
                         modalBox.style.maxHeight = "100vh";
                     } else if (aspectRatio >= 1.0) {
-    modalBox.style.width = "75vw";        // Reduced from 80vw
-    modalBox.style.maxHeight = "75vh";    // Reduced from 80vh
-    modalBox.style.height = "auto";
-    modalBox.style.margin = "auto";
-
-    // Add these canvas style modifications
-    canvas.style.width = "100%";          // Fill modal width
-    canvas.style.maxWidth = "none";       // Remove max-width constraint
-    canvas.style.height = "auto";
-    canvas.style.maxHeight = "100%";      // Fill available height
+                        modalBox.style.width = "65vw";
+                        modalBox.style.maxHeight = "75vh";
+                        modalBox.style.height = "auto";
+                        modalBox.style.margin = "auto";
                     } else {
                         if (isMobile) {
                             modalBox.style.width = "calc(100vw - 10px)";
@@ -178,7 +191,10 @@ window.addEventListener("DOMContentLoaded", () => {
                             canvas.style.maxHeight = "50vh";
                         }
 
-                        pdfjsLib.getDocument(fullSrc).promise.then(pdf => {
+                        pdfjsLib.getDocument({
+                            url: fullSrc,
+                            ...pdfViewerOptions
+                        }).promise.then(pdf => {
                             pdfDoc = pdf;
                             totalPages = pdf.numPages;
                             currentPage = 1;
@@ -194,7 +210,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            // Event Listeners
             window.addEventListener("click", (e) => {
                 if (e.target === modal) {
                     closeModal();
