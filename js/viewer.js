@@ -166,9 +166,10 @@ function renderPage(num) {
                     }
 
                     if (aspectRatio >= 1.0 && isMobile) {
-                        modalBox.style.width = "100vw";
-                        modalBox.style.height = "";
-                        modalBox.style.maxHeight = "100vh";
+    modalBox.style.width = "calc(100vw - 20px)";  // Changed from 100vw
+    modalBox.style.height = "auto";
+    modalBox.style.maxHeight = "90vh";
+    modalBox.style.margin = "10px";  // Added margin
                     } else if (aspectRatio >= 1.0) {
                         modalBox.style.width = "65vw";
                         modalBox.style.maxHeight = "75vh";
@@ -209,7 +210,10 @@ function renderPage(num) {
                         }
 
                         if (isMobile && aspectRatio > 1.0) {
-                            canvas.style.maxHeight = "50vh";
+    canvas.style.width = "100%";  // Force full width
+    canvas.style.height = "auto";
+    canvas.style.maxHeight = "80vh";
+    canvas.style.maxWidth = "100%";  // Override the 1024px limit
                         }
 
                         pdfjsLib.getDocument({
