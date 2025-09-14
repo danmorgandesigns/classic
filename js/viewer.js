@@ -79,10 +79,10 @@ function renderPage(num) {
             } else {
                 // Portrait calculation - reduced scale
                 scale = Math.min(
-                    (availableWidth * 0.85) / originalViewport.width,
+                    (availableWidth * 1.0) / originalViewport.width,
                     (availableHeight * 0.4) / originalViewport.height
                 );
-    scale *= (window.devicePixelRatio || 1) * 1.2;  // Added multiplier back for better quality
+    scale *= (window.devicePixelRatio || 1) * 4.0;  // Added multiplier back for better quality
             }
             
             const viewport = page.getViewport({ scale });
@@ -103,14 +103,6 @@ function renderPage(num) {
                 antialiasing: false,
                 backgroundGraphics: true
             };
-            
-            // Debug logging moved inside promise chain where variables are available
-            console.log('Debug:', {
-                originalDims: `${originalViewport.width}x${originalViewport.height}`,
-                scale: scale,
-                finalDims: `${viewport.width}x${viewport.height}`,
-                devicePixelRatio: window.devicePixelRatio
-            });
             
             return page.render(renderContext).promise;
         }).then(() => {
