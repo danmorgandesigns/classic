@@ -4,6 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Chicago';
@@ -16,95 +25,11 @@
 }
 
 @font-face {
-  font-family: 'Cairo';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Cairo.ttf') format('truetype');
+  font-family: 'Courier-18';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Courier-18.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Courier-18.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Courier-18.ttf') format('truetype');
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Times18Med';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Times24Med';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Times-18';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Geneva9';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geneva10';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Geneva12';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff2') format('woff2'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geneva14';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff2') format('woff2'),
-    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Geneva18';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff2') format('woff2'),
-    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geneva20';
-  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff2') format('woff2'),
-    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff') format('woff'),
-    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.ttf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
@@ -180,6 +105,61 @@
 }
 
 @font-face {
+  font-family: 'Geneva9';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva9-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geneva10';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva10-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Geneva12';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva12-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geneva14';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff2') format('woff2'),
+    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva14-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geneva18';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff2') format('woff2'),
+    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva18-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geneva20';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff2') format('woff2'),
+    url('https: //raw .githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Geneva20-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Palatino10';
   src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-10.woff2') format('woff2'),
     url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-10.woff') format('woff'),
@@ -225,6 +205,33 @@
     url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-24.woff') format('woff'),
     url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Palatino-24.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Times18Med';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times18-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Times24Med';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times24-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Times-18';
+  src: url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.woff') format('woff'),
+    url('https://raw.githubusercontent.com/danmorgandesigns/classic/main/fonts/Times-18.ttf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
@@ -685,16 +692,12 @@ body {
   box-shadow: 2px 2px 0 black;
   padding: 0.25rem;
   border-radius: 0;
-  /* 👈 key fix for iOS */
   -webkit-appearance: none;
-  /* 👈 optional, also helps strip native styles */
 }
 
 .classic-dialog-overlay {
   position: fixed;
-  inset: 0;
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  display: flex;
+  inset: 0;  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 50;
@@ -703,7 +706,6 @@ body {
 .classic-dismiss-dialog {
   background-color: white;
   border: 1px solid black;
-  /* box-shadow: 2px 2px 0 black; */
   width: 336px;
   height: 138px;
   max-width: 300px;
@@ -711,7 +713,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2px;
-  /* creates the 2px gap */
 }
 
 .classic-inner-box {
@@ -818,16 +819,9 @@ body {
   /* animation: space-bounce 4s linear infinite alternate; */
 }
 
-
-
-
 .animate-space {
   animation: space-bounce 4s linear infinite alternate;
 }
-
-
-
-
 
 .system-bezel {
   position: fixed;
@@ -852,8 +846,6 @@ body {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
-
-
 
 .apple-icon {
   position: absolute;
@@ -904,8 +896,6 @@ body {
   -moz-osx-font-smoothing: auto;
   image-rendering: pixelated;
 }
-
-
 
 .hypercard-window {
   width: calc(100% - 20px);
@@ -969,15 +959,12 @@ h1 {
   image-rendering: pixelated;
 }
 
-
 .medallion-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   line-height: 12px;
   font-weight: 600;
 }
-
-
 
 .medallion-subtitle {
   font-family: 'Montserrat', sans-serif;
@@ -1022,9 +1009,7 @@ h1 {
   -moz-osx-font-smoothing: auto;
   image-rendering: pixelated;
   padding-bottom: 6px;
-  /* ← use padding instead of margin */
   display: block;
-  /* just in case any collapsing happens */
 }
 
 .classic-dialog-text {
@@ -1045,7 +1030,14 @@ h1 {
 .classic-service-details {
   font-family: 'EspySans12', 'Geneva', sans-serif;
   font-size: 12px;
-  /* font-style: italic; */
+  line-height: 1.3;
+  color: black;
+}
+
+.classic-tag {
+  font-family: 'Courier-18', 'Courier', serif;
+  font-size: 12px;
+  font-weight: 700;
   line-height: 1.3;
   color: black;
 }
