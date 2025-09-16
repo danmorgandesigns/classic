@@ -990,7 +990,7 @@ h1 {
   image-rendering: pixelated;
 }
 
-.post-date {
+.post-title {
   font-family: 'EspySansBold12', sans-serif;
   font-size: 12px;
   line-height: 1;
@@ -999,6 +999,19 @@ h1 {
   -moz-osx-font-smoothing: auto;
   image-rendering: pixelated;
 }
+
+.post-date {
+  font-family: 'EspySans12', sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: black;
+  font-style: italic;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: pixelated;
+}
+
+
 
 .past-entries {
   font-family: 'EspySansBold12', sans-serif;

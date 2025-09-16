@@ -10,7 +10,7 @@ async function loadLatestPost() {
     const postRes = await fetch("now-posts/" + latest.filename);
     const md = await postRes.text();
     const html = marked.parse(md);
-    const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+    const withClass = html.replace("<h1>", "<h1 class='post-title'>");
     contentContainer.innerHTML = withClass;
 
     const nextBtn = document.getElementById("nav-next");
