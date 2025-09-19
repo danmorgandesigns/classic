@@ -163,7 +163,7 @@ function renderPage(num) {
     modalBox.style.maxHeight = "90vh";
     modalBox.style.margin = "10px";  // Added margin
                     } else if (aspectRatio >= 1.0) {
-                        modalBox.style.width = "65vw";
+                        modalBox.style.width = "75vw"; // changed from 65 to 75 to try to fix tablet
                         modalBox.style.maxHeight = "75vh";
                         modalBox.style.height = "auto";
                         modalBox.style.margin = "auto";
