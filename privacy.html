@@ -26,7 +26,7 @@
         <div class="close-box" onclick="closeModal()"></div>
       </div>
       <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Privacy Policy</span>
+        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Arts & Rec Privacy Policy</span>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
       </div>
 
       <!-- Scrollable Content -->
-      <span class="classic-serif-heading pt-6 pb-2 pl-4">Privacy Policy</span>
+      <span class="classic-serif-heading pt-6 pb-2 pl-4">Arts & Rec Privacy Policy</span>
 
       <div
         class="flex-1 relative border border-black shadow-[2px_2px_0_black] bg-white mx-6 rounded-[0px] overflow-hidden flex flex-col">
@@ -72,11 +72,11 @@
 
       <h2 class="classic-service-title">Contact</h2>
       <p>If you have questions or concerns about this Privacy Policy, please use the contact form:</p>
-        <a href="https://danmorgandesigns.com/contact-me.html"></a></br>
-        <button type="button" class="classic-default-button">Contact Me</button>
+        <!-- <a href="https://danmorgandesigns.com/contact-me.html"></a> -->
+        <button type="button" class="classic-default-button" id="contact-button">Contact Me</button>
       </a>
           </div>
-          <div id="post-nav" class="classic-normal-text mt-4"></div>
+          <!-- <div id="post-nav" class="classic-normal-text mt-4"></div> -->
         </div>
 
 
@@ -113,6 +113,9 @@
       window.location.href = 'contact-me.html';
     });
 
+    document.getElementById('contact-button')?.addEventListener('click', () => {
+      window.location.href = 'contact-me.html';
+    });
     document.getElementById('home-button')?.addEventListener('click', () => {
       window.location.href = 'index.html';
     });
