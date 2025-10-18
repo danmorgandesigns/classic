@@ -1468,6 +1468,11 @@ h1 {
   filter: invert(1);
 }
 
+.small-image {
+  width: 400px;
+  max-width: 100%;
+}
+
 .image-viewer,
 .pdf-viewer {
     width: 100%;

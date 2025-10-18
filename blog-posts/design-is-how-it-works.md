@@ -9,4 +9,4 @@ As a UX/UI designer I was fascinated by her workflow and by the choices the desi
 
 It made me realize how much thoughtful design exists in places we never think to look. Good design truly isn't how things look, its how they work.
 
-![Design Is How It Works](../blog-posts/images/design-is-how-it-works.png)
+<img src="../blog-posts/images/design-is-how-it-works.png" alt="Design Is How It Works" width="400" />
