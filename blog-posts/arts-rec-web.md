@@ -6,5 +6,5 @@ I had a nice public launch of the Arts and Rec Guide iOS app on Monday night dur
 Do I did.
 [ARts & Rec Guide Website](http://artsrecguide.com)
 
-<img src="../blog-posts/images/arts-rec-web.jpg" alt="Version 1.1 Features" width="600" />
+<img src="../blog-posts/images/arts-rec-web.jpg" alt="Version 1.1 Features" width="300" />
 
