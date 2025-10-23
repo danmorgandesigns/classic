@@ -45,7 +45,9 @@ async function loadPost(filename, index) {
     const res = await fetch("blog-posts/" + filename);
     const md = await res.text();
     const html = marked.parse(md);
-    const withClass = html.replace("<h1>", "<h1 class='post-date'>");
+     const withClass = html
+    .replace(/<h1>/g, "<h1 class='post-title'>")
+    .replace(/<h2>/g, "<h2 class='post-date'>");
     contentContainer.innerHTML = withClass;
 
     const resPosts = await fetch("blog-posts.json");

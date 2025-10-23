@@ -5,4 +5,4 @@ I volunteer on an advisory board for a local arboretum and botanical garden. (Su
 
 I will have descriptions about the art installations, trees, and various gardens accessible with just a tap of the icon.
 
-<img src="../blog-posts/images/trail-map-1.jpg" alt="Trail map 1" width="400" />
+<img src="../blog-posts/images/trail-map-1.jpg" alt="Trail map 1" width="200" />
