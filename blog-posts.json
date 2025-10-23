@@ -1,4 +1,36 @@
 [
+      {
+    "title": "Website Version - Arts & Rec Guide",
+    "filename": "arts-rec-web.md"
+  },
+    {
+    "title": "Version 1.1 Features - Arts & Rec Guide",
+    "filename": "arts-rec-v1-1.md"
+  },
+  {
+    "title": "App Store Video - Arts & Rec Guide",
+    "filename": "app-store-video.md"
+  },
+        {
+    "title": "App Store Approved - Arts & Rec Guide",
+    "filename": "app-store-approved.md"
+  },
+      {
+    "title": "App Store Review - Arts & Rec Guide",
+    "filename": "app-store-review.md"
+  },
+    {
+    "title": "Gretel Announcement",
+    "filename": "gretel-announcement.md"
+  },
+  {
+    "title": "External Test Flight Beta - Arts & Rec Guide",
+    "filename": "external-test-flight.md"
+  },
+         {
+    "title": "Internal Test Flight Beta - Arts & Rec Guide",
+    "filename": "test-flight-beta.md"
+  },
        {
     "title": "Arts & Rec Guide - 1",
     "filename": "arts-and-rec-guide-1.md"
@@ -16,3 +48,4 @@
     "filename": "no-synths-used.md"
   }
 ]
+
