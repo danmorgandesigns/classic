@@ -1,51 +1,75 @@
 [
-      {
+    {
+    "title": "Gretel Website",
+    "filename": "2025-11-17-gretel-website.md"
+  },
+  {
+    "title": "Gretel — MVP",
+    "filename": "2025-11-14-gretel-mvp.md"
+  },
+   {
+    "title": "Version 1.1 Approved",
+    "filename": "2025-11-11-version-1-1-launched.md"
+  },     
+   {
+    "title": "Sunday Ritual",
+    "filename": "2025-11-09-sunday-ritual.md"
+  },   
+   {
+    "title": "Gretel — Feature Creep",
+    "filename": "2025-11-05-feature-creep.md"
+  },   
+   {
+    "title": "Arts & Rec Guide — Close to V1.1 Launch",
+    "filename": "2025-11-04-close-to-launch.md"
+  }, 
+  {
     "title": "Website Version - Arts & Rec Guide",
-    "filename": "arts-rec-web.md"
+    "filename": "2025-10-22-arts-rec-web.md"
   },
     {
     "title": "Version 1.1 Features - Arts & Rec Guide",
-    "filename": "arts-rec-v1-1.md"
+    "filename": "2025-10-19-arts-rec-v1-1.md"
   },
   {
     "title": "App Store Video - Arts & Rec Guide",
-    "filename": "app-store-video.md"
+    "filename": "2025-10-17-app-store-video.md"
   },
         {
     "title": "App Store Approved - Arts & Rec Guide",
-    "filename": "app-store-approved.md"
+    "filename": "2025-10-16-app-store-approved.md"
   },
       {
     "title": "App Store Review - Arts & Rec Guide",
-    "filename": "app-store-review.md"
+    "filename": "2025-10-15-app-store-review.md"
   },
     {
     "title": "Gretel Announcement",
-    "filename": "gretel-announcement.md"
+    "filename": "2025-10-14-gretel-announcement.md"
   },
   {
     "title": "External Test Flight Beta - Arts & Rec Guide",
-    "filename": "external-test-flight.md"
+    "filename": "2025-10-13-external-test-flight.md"
   },
          {
     "title": "Internal Test Flight Beta - Arts & Rec Guide",
-    "filename": "test-flight-beta.md"
+    "filename": "2025-10-09-test-flight-beta.md"
   },
        {
     "title": "Arts & Rec Guide - 1",
-    "filename": "arts-rec-guide-1.md"
+    "filename": "2025-10-07-arts-rec-guide-1.md"
   },
      {
     "title": "Trust the Process",
-    "filename": "trust-the-process.md"
+    "filename": "2025-09-17-trust-the-process.md"
   },
        {
     "title": "Design Is How It Works",
-    "filename": "design-is-how-it-works.md"
+    "filename": "2025-09-16-design-is-how-it-works.md"
   },
      {
     "title": "Is This Developement's 'No Synths Used' Moment?",
-    "filename": "no-synths-used.md"
+    "filename": "2025-09-08-no-synths-used.md"
   }
 ]
 
