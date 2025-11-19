@@ -175,6 +175,11 @@
       e.preventDefault();
 
       const form = this;
+
+      // Append #dmd to comments field
+      const commentsField = document.getElementById("comments");
+      commentsField.value = commentsField.value.trim() + " #dmd";
+
       const formData = new FormData(form);
 
       fetch(form.action, {
