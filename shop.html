@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan Morgan Designs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="css/classic.css" rel="stylesheet">
+</head>
+
+<body class="bg-mac-os min-h-screen flex items-center justify-center p-4">
+
+  <div id="desktop-container"></div>
+
+  <!-- Window container -->
+  <div class="hypercard-window">
+
+    <div class="modal-titlebar  modal-titlebar--static relative flex items-center">
+
+      <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+        <span class="bg-white px-2 py-[1px] leading-none z-10 modal-title">Design Shop</span>
+      </div>
+    </div>
+
+    <!-- Inner Layout -->
+    <div class="flex flex-col flex-1 overflow-hidden min-h-0">
+
+      <!-- Top Row (Fixed 32px) -->
+      <div class="h-8 px-4 pt-5 flex items-center justify-between">
+        <button id="home-button" class="icon-button w-8 h-8">
+          <img src="images/home.svg" alt="Home" />
+        </button>
+        <button id="mail-button" class="icon-button w-8 h-8">
+          <img src="images/mail.svg" alt="Contact" />
+        </button>
+      </div>
+
+      <!-- Scrollable Content -->
+      <span class="classic-serif-heading pt-6 pb-2 pl-4">Design Shop</span>
+
+      <div class="flex-1 overflow-y-auto space-y-4"> <!--begin middle container-->
+        <div class="flex flex-col px-6 space-y-1 w-full"> <!--begin inner grid-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div> <!--end inner grid-->
+      </div> <!--end middle container-->
+    </div>
+
+    <!-- Bottom Row (Fixed 32px) -->
+    <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
+      <button id="previous-button" class="icon-button w-8 h-8">
+        <img src="images/hand-pointing-left.svg" alt="Previous" />
+      </button>
+      <button id="next-button" class="icon-button w-8 h-8">
+        <img src="images/hand-pointing-right.svg" alt="Next" />
+      </button>
+    </div>
+
+
+    <div id="invader-container"></div>
+    
+  </div>
+
+  <!-- end hypercard-window -->
+  <div id="palette-container"></div>
+  <div id="viewer-container"></div>
+  <div id="aboutmac-container"></div>
+
+
+
+
+
+  <script>
+    document.getElementById('mail-button')?.addEventListener('click', () => {
+      window.location.href = 'contact-me.html';
+    });
+
+    document.getElementById('home-button')?.addEventListener('click', () => {
+      window.location.href = '/index.html';
+    });
+
+    document.getElementById('previous-button')?.addEventListener('click', () => {
+      window.location.href = 'now.html';
+    });
+
+    document.getElementById('next-button')?.addEventListener('click', () => {
+      window.location.href = 'apps.html';
+    });
+
+    document.addEventListener("touchstart", function () { }, true);
+
+
+  </script>
+
+  <script src="js/invaders.js"></script>
+  <script src="js/desktop-ui.js"></script>
+  <script src="js/palette.js"></script>
+  <script src="js/viewer.js"></script>
+  <script src="js/aboutmac.js"></script>
+</body>
+
+</html>

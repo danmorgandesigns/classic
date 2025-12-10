@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="p-0 col-span-3 row-start-3">
-                    <div class="grid grid-cols-6 gap-x-1 gap-y-0">
+                    <div class="grid grid-cols-7 gap-x-1 gap-y-0">
                         <div class="flex flex-col items-center justify-end">
                             <button id="now-button" class="icon-button h-8 p-0 m-0">
                                 <img src="images/alert-face-info.svg" alt="Now" class="w-full h-full align-bottom" />
@@ -142,6 +142,14 @@
                             </button>
                             <span class="classic-thumbnail-label" style="margin-top: 3px;">Blog</span>
                         </div>
+
+                        <div class="flex flex-col items-center justify-end">
+                            <button id="shop-button" class="icon-button h-8 p-0 m-0">
+                                <img src="images/shop.svg" alt="Shop" class="w-full h-full align-bottom" />
+                            </button>
+                            <span class="classic-thumbnail-label" style="margin-top: 3px;">Shops</span>
+                        </div>
+
                         <div class="flex flex-col items-center justify-end">
                             <button id="about-button" class="icon-button h-8 p-0 m-0">
                                 <img src="images/happy-mac-icon.svg" alt="About Me" class="w-full h-full align-top" />
@@ -200,6 +208,11 @@
         document.getElementById('blog-button')?.addEventListener('click', () => {
             window.location.href = 'blog.html';
         });
+
+        document.getElementById('shop-button')?.addEventListener('click', () => {
+            window.location.href = 'shop.html';
+        });        
+
         document.getElementById('about-button')?.addEventListener('click', () => {
             window.location.href = 'about-me.html';
         });
