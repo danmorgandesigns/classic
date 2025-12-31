@@ -147,7 +147,7 @@
                             <button id="shop-button" class="icon-button h-8 p-0 m-0">
                                 <img src="images/shop.svg" alt="Shop" class="w-full h-full align-bottom" />
                             </button>
-                            <span class="classic-thumbnail-label" style="margin-top: 3px;">Shop</span>
+                            <span class="classic-thumbnail-label" style="margin-top: 3px;">Store</span>
                         </div>
 
                         <div class="flex flex-col items-center justify-end">
@@ -209,9 +209,9 @@
             window.location.href = 'blog.html';
         });
 
-        document.getElementById('shop-button')?.addEventListener('click', () => {
-            window.location.href = 'shop.html';
-        });        
+document.getElementById('shop-button')?.addEventListener('click', () => {
+    window.open('https://store.danmorgandesigns.com', '_blank');
+});   
 
         document.getElementById('about-button')?.addEventListener('click', () => {
             window.location.href = 'about-me.html';

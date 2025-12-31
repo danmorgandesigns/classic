@@ -80,7 +80,7 @@ function renderPage(num) {
                 // Portrait calculation - reduced scale
                 scale = Math.min(
                     (availableWidth * 1.0) / originalViewport.width,
-                    (availableHeight * 0.8) / originalViewport.height // changing this from 0.4 to 0.8 on 2005.12.31
+                    (availableHeight * 0.4) / originalViewport.height
                 );
     scale *= (window.devicePixelRatio || 1) * 4.0;  // Added multiplier back for better quality
             }
