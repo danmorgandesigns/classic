@@ -1,33 +1,69 @@
 [
-      {
+  {
+    "title": "I Miss My MTV",
+    "filename": "2026-01-19-miss-my-mtv.md"
+  },
+  {
+    "title": "Not My Circus, Not My Monkeys",
+    "filename": "2026-01-08-not-my-circus.md"
+  },
+  {
+    "title": "Getting a DUNS Number",
+    "filename": "2026-01-06-getting-duns.md"
+  },
+  {
+    "title": "Getting an EIN from the IRS",
+    "filename": "2026-01-05-EIN-IRS.md"
+  },
+  {
+    "title": "Happy New Year",
+    "filename": "2026-01-01-new-year.md"
+  },
+  {
+    "title": "Parody Use?",
+    "filename": "2025-12-27-parody-use.md"
+  },
+  {
+    "title": "A Fox Knows Many Things",
+    "filename": "2025-12-24-fox-knows.md"
+  },
+  {
+    "title": "A Fox Knows Many Things",
+    "filename": "2025-12-24-fox-knows.md"
+  },
+  {
+    "title": "Underwear Gnomes",
+    "filename": "2025-12-19-underwear-gnomes.md"
+  },
+  {
     "title": "Throwing Spaghetti",
     "filename": "2025-12-11-throwing-spaghetti.md"
-  },    
-      {
+  },
+  {
     "title": "Cool Jazz",
     "filename": "2025-12-06-cool-jazz.md"
-  },  
-    {
+  },
+  {
     "title": "Happy Holiday Inn",
     "filename": "2025-12-05-happy-holiday-inn.md"
-  },  
+  },
   {
     "title": "John Deere Coffee Mug",
     "filename": "2025-12-04-coffee-mug.md"
-  },  
-{
+  },
+  {
     "title": "Happy Thanksgiving",
     "filename": "2025-11-27-happy-thanksgiving.md"
-  },  
-{
+  },
+  {
     "title": "Pool Halls",
     "filename": "2025-11-26-pool-halls.md"
   },
-      {
+  {
     "title": "Adding Photos to Trails and POIs",
     "filename": "2025-11-20-adding-photos.md"
   },
-    {
+  {
     "title": "Gretel Website",
     "filename": "2025-11-17-gretel-website.md"
   },
@@ -35,27 +71,27 @@
     "title": "Gretel — MVP",
     "filename": "2025-11-14-gretel-mvp.md"
   },
-   {
+  {
     "title": "Version 1.1 Approved",
     "filename": "2025-11-11-v1-1-launched.md"
-  },     
-   {
+  },
+  {
     "title": "Sunday Ritual",
     "filename": "2025-11-09-sunday-ritual.md"
-  },   
-   {
+  },
+  {
     "title": "Gretel — Feature Creep",
     "filename": "2025-11-05-feature-creep.md"
-  },   
-   {
+  },
+  {
     "title": "Arts & Rec Guide — Close to V1.1 Launch",
     "filename": "2025-11-04-close-to-launch.md"
-  }, 
+  },
   {
     "title": "Website Version - Arts & Rec Guide",
     "filename": "2025-10-22-arts-rec-web.md"
   },
-    {
+  {
     "title": "Version 1.1 Features - Arts & Rec Guide",
     "filename": "2025-10-19-arts-rec-v1-1.md"
   },
@@ -63,15 +99,15 @@
     "title": "App Store Video - Arts & Rec Guide",
     "filename": "2025-10-17-app-store-video.md"
   },
-        {
+  {
     "title": "App Store Approved - Arts & Rec Guide",
     "filename": "2025-10-16-app-store-approved.md"
   },
-      {
+  {
     "title": "App Store Review - Arts & Rec Guide",
     "filename": "2025-10-15-app-store-review.md"
   },
-    {
+  {
     "title": "Gretel Announcement",
     "filename": "2025-10-14-gretel-announcement.md"
   },
@@ -79,25 +115,24 @@
     "title": "External Test Flight Beta - Arts & Rec Guide",
     "filename": "2025-10-13-external-test-flight.md"
   },
-         {
+  {
     "title": "Internal Test Flight Beta - Arts & Rec Guide",
     "filename": "2025-10-09-test-flight-beta.md"
   },
-       {
+  {
     "title": "Arts & Rec Guide - 1",
     "filename": "2025-10-07-arts-rec-guide-1.md"
   },
-     {
+  {
     "title": "Trust the Process",
     "filename": "2025-09-17-trust-the-process.md"
   },
-       {
+  {
     "title": "Design Is How It Works",
     "filename": "2025-09-16-design-is-how-it-works.md"
   },
-     {
+  {
     "title": "Is This Developement's 'No Synths Used' Moment?",
     "filename": "2025-09-08-no-synths-used.md"
   }
 ]
-
