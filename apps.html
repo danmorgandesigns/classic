@@ -43,7 +43,7 @@
             <div class="flex-1 overflow-y-auto space-y-4"> <!--begin middle container-->
                 <div class="flex flex-col px-6 space-y-1 w-full"> <!--begin inner grid-->
 
-                    <!--Row 1 Arts & Rec Design -->
+                    <!--Row 1 Arts & Rec Guide -->
                     <div id="arts-rec" class="flex min-h-[64px] pdf-launcher cursor-pointer"
                         data-modal-open="arts-recDialog" alt="Overland Park Arts & Rec Guide">
                         <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
@@ -58,11 +58,27 @@
                         </div>
                     </div>
 
-                    <!--Row 2 Gretel Design -->
+                    <!--Row 2 Gretel -->
                     <div id="gretel" class="flex min-h-[64px] pdf-launcher cursor-pointer"
                         data-modal-open="gretelDialog" alt="Gretel">
                         <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
                             <img src="images/gretel-512.png" class="h-[64px] w-auto block" />
+                        </div>
+                        <div class="flex flex-col pl-2 flex-grow justify-start">
+                            <span class="classic-service-title pb-1 leading-snug">Gretel</span>
+                            <p class="classic-service-details leading-snug">
+                                Exporting trail route and points of interest out of commercial hiking apps is cumbersome and unintuitive. 
+                                Gretel is focused on mapping a trail route and marking points of interest along the way. 
+                                It allows the export of data in a variety of file formats such as geoJSON, Google Earth KML/KMZ, GPX Route, etc.
+                            </p>
+                        </div>
+                    </div>    
+                    
+                    <!--Row 3 Show Me KC Guide -->
+                    <div id="gretel" class="flex min-h-[64px] pdf-launcher cursor-pointer"
+                        data-modal-open="showmekcDialog" alt="Show Me KC Guide">
+                        <div class="w-[64px] h-[64px] flex justify-center items-start shrink-0">
+                            <img src="images/show-me-kc.png" class="h-[64px] w-auto block" />
                         </div>
                         <div class="flex flex-col pl-2 flex-grow justify-start">
                             <span class="classic-service-title pb-1 leading-snug">Gretel</span>
@@ -163,6 +179,47 @@ Whether you're hiking the trails at the Overland Park Arboretum & Botanical Gard
                 </div>
             </div>
 
+            <!-- Show Me KC Modal -->
+            <div id="showmekcDialog" class="classic-dialog-overlay hidden">
+                <div class="colophon-dialog">
+                    <div class="colophon-inner-box relative">
+                        <div class="dialog-content">
+                            <div class="flex">
+                                <div>
+                                    <p class="classic-service-title pt-0 pb-2 pl-0" style="line-height: 1.0;">
+                                        Show Me KC Guide: Explore Kansas City like a local — in your language
+                                    </p>
+                                    <div class="classic-normal-text mb-6">
+                                        <p class="mb-2">
+                                            Show Me KC Guide offers insider-itineraries crafted by a long-time Kansas City resident, not just business listings. 
+                                            Discover the real KC through beautifully crafted experiences that connect the city's BBQ heritage, jazz culture, hidden gems, 
+                                            and authentic neighborhoods — fully localized in seven languages.
+                                        </p>
+                                        <img src="images/four-screenshots-showmekc-sm.png" class="h-[200px] w-auto block mx-auto" />                                        
+                                        <p class="mb-2 mt-2">
+                                            Whether you're visiting for the 2026 World Cup or exploring America's heartland, skip the tourist traps and experience Kansas City the way locals do. 
+                                            Offline maps, insider tips, and carefully planned routes ensure you make the most of every moment in the City of Fountains.
+                                        </p>
+                                        <p class="mb-2">
+                                            <a style="text-decoration: underline" href="https://showmekcguide.com" target="_blank"
+                                                rel="noopener noreferrer">Visit the Show Me KC Guide Website</a>
+                                        </p>                                        
+                                        <p class="mb-2">
+                                        Coming soon. Still in development.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <button type="button" data-modal-close="showmekcDialog"
+                                        class="classic-default-button absolute right-[10px] bottom-[10px]">
+                                        OK
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
 
 
             <div class="h-8 mt-3 px-4 pb-4 flex items-center justify-between">
