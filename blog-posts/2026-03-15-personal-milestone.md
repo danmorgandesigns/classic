@@ -1,4 +1,4 @@
-# Gretel TestFlight Beta
+# Personal Milestone
 ## March 15, 2026
 
 Big day! I submitted all three of my apps for App Store review. The Arts & Rec guide is a just a point update with some additional POIs and a UI tweak. Gretel: "The trail route and POI mapping utility" is in its first review for commercial distribution. A milestone for something that started out as a tool for my use that I hope is useful for someone mapping trails and managing parks.
